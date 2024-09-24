@@ -7,10 +7,12 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Fix type of hashed model property to `string`
+- Fix tests on Windows
 
 ### Changed
 
 ### Added
+- Add support for intersection types
 
 2024-07-12, 3.1.0
 ------------------
