@@ -48,9 +48,11 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\ContextFactory;
 use ReflectionClass;
+use ReflectionIntersectionType;
 use ReflectionNamedType;
 use ReflectionObject;
 use ReflectionType;
+use ReflectionUnionType;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -1613,19 +1615,31 @@ class ModelsCommand extends Command
         return $type;
     }
 
-    protected function extractReflectionTypes(ReflectionType $reflection_type)
+    /**
+     * @return string[]
+     */
+    protected function extractReflectionTypes(ReflectionType $reflectionType): array
     {
-        if ($reflection_type instanceof ReflectionNamedType) {
-            $types[] = $this->getReflectionNamedType($reflection_type);
-        } else {
+        if ($reflectionType instanceof ReflectionIntersectionType) {
             $types = [];
-            foreach ($reflection_type->getTypes() as $named_type) {
-                if ($named_type->getName() === 'null') {
-                    continue;
-                }
-
-                $types[] = $this->getReflectionNamedType($named_type);
+            foreach ($reflectionType->getTypes() as $t) {
+                $types = array_merge($types, $this->extractReflectionTypes($t));
             }
+
+            return ['('.implode('&', $types).')'];
+        } elseif ($reflectionType instanceof ReflectionUnionType) {
+            $types = [];
+            foreach ($reflectionType->getTypes() as $t) {
+                $types = array_merge($types, $this->extractReflectionTypes($t));
+            }
+
+            return $types;
+        } elseif ($reflectionType instanceof ReflectionNamedType) {
+            if ($reflectionType->getName() == 'null') {
+                return [];
+            }
+
+            return [$this->getReflectionNamedType($reflectionType)];
         }
 
         return $types;
