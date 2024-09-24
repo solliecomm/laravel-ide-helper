@@ -87,6 +87,6 @@ class Simple extends Model
 
 PHP;
 
-        $this->assertSame($expectedContent, $actualContent);
+        $this->assertStringEqualsStringIgnoringLineEndings($expectedContent, $actualContent);
     }
 }

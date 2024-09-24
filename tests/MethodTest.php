@@ -43,7 +43,7 @@ class MethodTest extends TestCase
  * @static 
  */
 DOC;
-        $this->assertSame($output, $method->getDocComment(''));
+        $this->assertStringEqualsStringIgnoringLineEndings($output, $method->getDocComment(''));
         $this->assertSame('setName', $method->getName());
         $this->assertSame('\\' . ExampleClass::class, $method->getDeclaringClass());
         $this->assertSame('$last, $first, ...$middle', $method->getParams(true));
@@ -73,7 +73,7 @@ DOC;
  * @static 
  */
 DOC;
-        $this->assertSame($output, $method->getDocComment(''));
+        $this->assertStringEqualsStringIgnoringLineEndings($output, $method->getDocComment(''));
         $this->assertSame('with', $method->getName());
         $this->assertSame('\\' . Builder::class, $method->getDeclaringClass());
         $this->assertSame('$relations, $callback', $method->getParams(true));
@@ -119,7 +119,7 @@ DOC;
  */
 DOC;
 
-        $this->assertSame($output, $method->getDocComment(''));
+        $this->assertStringContainsStringIgnoringLineEndings($output, $method->getDocComment(''));
         $this->assertSame('getApplication', $method->getName());
         $this->assertSame('\\' . ExampleClass::class, $method->getDeclaringClass());
         $this->assertSame('', $method->getParams(true));

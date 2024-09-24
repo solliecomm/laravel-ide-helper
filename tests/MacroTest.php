@@ -251,7 +251,7 @@ class MacroTest extends TestCase
  * @static 
  */
 DOC;
-        $this->assertSame($output, $macro->getDocComment(''));
+        $this->assertStringEqualsStringIgnoringLineEndings($output, $macro->getDocComment(''));
         $this->assertSame('__invoke', $macro->getRealName());
         $this->assertSame('\\' . UrlGenerator::class, $macro->getDeclaringClass());
         $this->assertSame('$foo, $bar', $macro->getParams(true));

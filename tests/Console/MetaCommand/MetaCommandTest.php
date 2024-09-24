@@ -33,8 +33,8 @@ class MetaCommandTest extends TestCase
         $this->artisan('ide-helper:meta');
 
         // We're not testing the whole file, just some basic structure elements
-        self::assertStringContainsString("namespace PHPSTORM_META {\n", $this->mockFilesystemOutput);
-        self::assertStringContainsString("PhpStorm Meta file, to provide autocomplete information for PhpStorm\n", $this->mockFilesystemOutput);
+        self::assertStringContainsString("namespace PHPSTORM_META {".PHP_EOL, $this->mockFilesystemOutput);
+        self::assertStringContainsString("PhpStorm Meta file, to provide autocomplete information for PhpStorm".PHP_EOL, $this->mockFilesystemOutput);
         self::assertStringContainsString('override(', $this->mockFilesystemOutput);
     }
 
