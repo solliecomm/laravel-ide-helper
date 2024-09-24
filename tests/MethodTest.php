@@ -67,8 +67,8 @@ DOC;
 /**
  * Set the relationships that should be eager loaded.
  *
- * @param string|array $relations
- * @param string|\Closure|null $callback
+ * @param \Illuminate\Database\Eloquent\array<array-key, array|(\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>):  mixed)|string>|string  $relations
+ * @param \Illuminate\Database\Eloquent\(\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>):  mixed)|string|null  $callback
  * @return \Illuminate\Database\Eloquent\Builder|static 
  * @static 
  */
