@@ -24,7 +24,9 @@ class AdvancedCastsTable extends Migration
             $table->string('cast_to_encrypted_json');
             $table->string('cast_to_encrypted_object');
             $table->string('cast_to_as_collection');
+            $table->string('cast_to_as_collection_with_params');
             $table->string('cast_to_as_enum_collection');
+            $table->string('cast_to_as_enum_collection_with_params');
             $table->string('cast_to_as_array_object');
         });
     }

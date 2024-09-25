@@ -5,21 +5,15 @@ declare(strict_types=1);
 namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\LaravelCustomCasts\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Illuminate\Support\Collection;
 
-class CustomCasterWithPrimitiveDocblockReturn implements CastsAttributes
+class CustomCasterWithNullableCollectionGenerics implements CastsAttributes
 {
-    /**
-     * @inheritDoc
-     * @return array
-     */
-    public function get($model, string $key, $value, array $attributes)
+    public function get($model, string $key, $value, array $attributes): ?Collection
     {
-        return new CastedProperty();
+        return new Collection();
     }
-
-    /**
-     * @inheritDoc
-     */
+    
     public function set($model, string $key, $value, array $attributes)
     {
         // TODO: Implement set() method.

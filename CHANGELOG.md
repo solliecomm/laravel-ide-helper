@@ -10,9 +10,11 @@ All notable changes to this project will be documented in this file.
 - Fix tests on Windows
 
 ### Changed
+- Casts without properties are now removed
 
 ### Added
 - Add support for intersection types
+- Add support for collection generics
 
 2024-07-12, 3.1.0
 ------------------

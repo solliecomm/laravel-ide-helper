@@ -11,12 +11,14 @@
 
 namespace Barryvdh\LaravelIdeHelper\Console;
 
+use ArrayObject;
 use Barryvdh\LaravelIdeHelper\Contracts\ModelHookInterface;
 use Barryvdh\LaravelIdeHelper\Parsers\PhpDocReturnTypeParser;
 use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Context;
 use Barryvdh\Reflection\DocBlock\Serializer as DocBlockSerializer;
 use Barryvdh\Reflection\DocBlock\Tag;
+use Carbon\CarbonImmutable;
 use Composer\ClassMapGenerator\ClassMapGenerator;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Database\Eloquent\Castable;
@@ -290,7 +292,7 @@ class ModelsCommand extends Command
                     $this->getPropertiesFromTable($model);
 
                     if (method_exists($model, 'getCasts')) {
-                        $this->castPropertiesType($model);
+                        $this->castPropertyTypes($model);
                     }
 
                     $this->getPropertiesFromMethods($model);
@@ -346,107 +348,68 @@ class ModelsCommand extends Command
     }
 
     /**
-     * cast the properties's type from $casts.
-     *
-     * @param Model $model
+     * Handle casts in the $casts array or getCasts method.
      */
-    public function castPropertiesType($model)
+    public function castPropertyTypes(Model $model): void
     {
         $casts = $model->getCasts();
+
         foreach ($casts as $name => $type) {
-            if (Str::startsWith($type, 'decimal:')) {
-                $type = 'decimal';
-            } elseif (Str::startsWith($type, 'custom_datetime:')) {
-                $type = 'date';
-            } elseif (Str::startsWith($type, 'date:')) {
-                $type = 'date';
-            } elseif (Str::startsWith($type, 'datetime:')) {
-                $type = 'date';
-            } elseif (Str::startsWith($type, 'immutable_custom_datetime:')) {
-                $type = 'immutable_date';
-            } elseif (Str::startsWith($type, 'immutable_date:')) {
-                $type = 'immutable_date';
-            } elseif (Str::startsWith($type, 'immutable_datetime:')) {
-                $type = 'immutable_datetime';
-            } elseif (Str::startsWith($type, 'encrypted:')) {
-                $type = Str::after($type, ':');
+            if (!isset($this->properties[$name])) {
+                // Remove unknown properties from the casts array
+                continue;
             }
 
             $params = [];
-
-            switch ($type) {
-                case 'encrypted':
-                    $realType = 'mixed';
-                    break;
-                case 'boolean':
-                case 'bool':
-                    $realType = 'bool';
-                    break;
-                case 'decimal':
-                case 'string':
-                case 'hashed':
-                    $realType = 'string';
-                    break;
-                case 'array':
-                case 'json':
-                    $realType = 'array';
-                    break;
-                case 'object':
-                    $realType = 'object';
-                    break;
-                case 'int':
-                case 'integer':
-                case 'timestamp':
-                    $realType = 'int';
-                    break;
-                case 'real':
-                case 'double':
-                case 'float':
-                    $realType = 'float';
-                    break;
-                case 'date':
-                case 'datetime':
-                    $realType = $this->dateClass;
-                    break;
-                case 'immutable_date':
-                case 'immutable_datetime':
-                    $realType = '\Carbon\CarbonImmutable';
-                    break;
-                case AsCollection::class:
-                case AsEnumCollection::class:
-                case 'collection':
-                    $realType = '\Illuminate\Support\Collection';
-                    break;
-                case AsArrayObject::class:
-                    $realType = '\ArrayObject';
-                    break;
-                default:
-                    // In case of an optional custom cast parameter , only evaluate
-                    // the `$type` until the `:`
-                    $type = strtok($type, ':');
-                    $realType = class_exists($type) ? ('\\' . $type) : 'mixed';
-                    $this->setProperty($name, null, true, true);
-
-                    $params = strtok(':');
-                    $params = $params ? explode(',', $params) : [];
-                    break;
+            if (Str::contains($type, ':')) {
+                $params = explode(',', Str::after($type, ':'));
+                $type = Str::before($type, ':');
             }
 
-            if (!isset($this->properties[$name])) {
-                continue;
-            }
-            if ($this->isInboundCast($realType)) {
-                continue;
+            $type = $this->castPropertyType($model, $type, $params);
+            if (isset($this->nullableColumns[$name])) {
+                $type = $this->applyNullability($type, true);
             }
 
-            $realType = $this->checkForCastableCasts($realType, $params);
-            $realType = $this->checkForCustomLaravelCasts($realType);
-            $realType = $this->getTypeOverride($realType);
-            $realType = $this->getTypeInModel($model, $realType);
-            $realType = $this->applyNullability($realType, isset($this->nullableColumns[$name]));
-
-            $this->properties[$name]['type'] = $realType;
+            $this->properties[$name]['type'] = $type;
         }
+    }
+
+    /**
+     * Cast a property type to the correct type.
+     */
+    public function castPropertyType(Model $model, string $type, array $params): ?string
+    {
+        if ($type === 'encrypted' && $params) {
+            $type = $params[0];
+            $params = [];
+        }
+
+        $realType = match ($type) {
+            'encrypted' => $params[0] ?? 'mixed',
+            'boolean', 'bool' => 'bool',
+            'decimal', 'string', 'hashed' => 'string',
+            'array', 'json' => 'array',
+            'object' => 'object',
+            'int', 'integer', 'timestamp' => 'int',
+            'real', 'double', 'float' => 'float',
+            'date', 'datetime', 'custom_datetime' => $this->dateClass,
+            'immutable_date', 'immutable_datetime', 'immutable_custom_datetime' => CarbonImmutable::class,
+            AsCollection::class, AsEnumCollection::class, 'collection' => Collection::class,
+            AsArrayObject::class => ArrayObject::class,
+            default => class_exists($type) ? '\\'.$type : $type,
+        };
+
+        if ($this->isInboundCast($realType)) {
+            return null;
+        }
+
+        $realType = $this->checkForCastableCasts($realType, $params);
+        $realType = $this->checkForCustomLaravelCasts($realType, $params);
+        $realType = $this->getTypeOverride($realType);
+        $realType = $this->checkForCollectionGenerics($model, $realType, $params);
+
+        return $this->getTypeInModel($model, $realType);
     }
 
     protected function applyNullability(?string $type, bool $isNullable): ?string
@@ -1141,12 +1104,16 @@ class ModelsCommand extends Command
     /**
      * Determine a model classes' collection type hint.
      *
-     * @param string $collectionClassNameInModel
-     * @param string $relatedModel
+     * @param class-string $collectionClassNameInModel
+     * @param class-string|null $relatedModel
      * @return string
      */
-    protected function getCollectionTypeHint(string $collectionClassNameInModel, string $relatedModel): string
+    protected function getCollectionTypeHint(string $collectionClassNameInModel, ?string $relatedModel = null): string
     {
+        if ($relatedModel === null) {
+            return $collectionClassNameInModel;
+        }
+
         $useGenericsSyntax = $this->laravel['config']->get('ide-helper.use_generics_annotations', true);
         if ($useGenericsSyntax) {
             return $collectionClassNameInModel . '<int, ' . $relatedModel . '>';
@@ -1403,19 +1370,19 @@ class ModelsCommand extends Command
 
     protected function checkForCastableCasts(string $type, array $params = []): string
     {
-        if (!class_exists($type) || !interface_exists(Castable::class)) {
+        if (! class_exists($type) || ! interface_exists(Castable::class)) {
             return $type;
         }
 
         $reflection = new ReflectionClass($type);
 
-        if (!$reflection->implementsInterface(Castable::class)) {
+        if (! $reflection->implementsInterface(Castable::class)) {
             return $type;
         }
 
         $cast = call_user_func([$type, 'castUsing'], $params);
 
-        if (is_string($cast) && !is_object($cast)) {
+        if (is_string($cast) && ! is_object($cast)) {
             return $cast;
         }
 
@@ -1433,7 +1400,7 @@ class ModelsCommand extends Command
      * @return string|null
      * @throws \ReflectionException
      */
-    protected function checkForCustomLaravelCasts(string $type): ?string
+    protected function checkForCustomLaravelCasts(string $type, array $params): ?string
     {
         if (!class_exists($type) || !interface_exists(CastsAttributes::class)) {
             return $type;
@@ -1458,6 +1425,27 @@ class ModelsCommand extends Command
         }
 
         return $reflectionType;
+    }
+
+    protected function checkForCollectionGenerics(Model $model, ?string $type, array $params): ?string
+    {
+        if (! $type || ! $params) {
+            return $type;
+        }
+
+        $types = explode('|', $type);
+        $types = array_map(function (string $type) use ($model, $params) {
+            if (! is_a($type, Collection::class, true)) {
+                return $type;
+            }
+
+            return $this->getCollectionTypeHint(
+                $this->getTypeInModel($model, $type),
+                $this->getTypeInModel($model, $params[0]),
+            );
+        }, $types);
+
+        return implode('|', $types);
     }
 
     protected function getTypeInModel(object $model, ?string $type): ?string

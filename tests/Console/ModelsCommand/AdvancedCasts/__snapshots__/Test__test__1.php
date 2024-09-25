@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsCollection;
 use Illuminate\Database\Eloquent\Casts\AsEnumCollection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 /**
  * 
@@ -21,18 +22,22 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $cast_to_timestamp
  * @property mixed $cast_to_encrypted
  * @property array $cast_to_encrypted_array
- * @property \Illuminate\Support\Collection $cast_to_encrypted_collection
+ * @property Collection $cast_to_encrypted_collection
  * @property array $cast_to_encrypted_json
  * @property object $cast_to_encrypted_object
- * @property \Illuminate\Support\Collection $cast_to_as_collection
- * @property \Illuminate\Support\Collection $cast_to_as_enum_collection
+ * @property Collection $cast_to_as_collection
+ * @property Collection<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleCollection> $cast_to_as_collection_with_params
+ * @property Collection $cast_to_as_enum_collection
+ * @property Collection<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleEnum> $cast_to_as_enum_collection_with_params
  * @property \ArrayObject $cast_to_as_array_object
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast query()
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToAsArrayObject($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToAsCollection($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToAsCollectionWithParams($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToAsEnumCollection($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToAsEnumCollectionWithParams($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToCustomDatetime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToDateSerialization($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast whereCastToDatetimeSerialization($value)
@@ -63,7 +68,12 @@ class AdvancedCast extends Model
         'cast_to_encrypted_json' => 'encrypted:json',
         'cast_to_encrypted_object' => 'encrypted:object',
         'cast_to_as_collection' => AsCollection::class,
+        'cast_to_as_collection_with_params' => AsCollection::class.':'.ExampleCollection::class,
         'cast_to_as_enum_collection' => AsEnumCollection::class,
+        'cast_to_as_enum_collection_with_params' => AsEnumCollection::class.':'.ExampleEnum::class,
         'cast_to_as_array_object' => AsArrayObject::class,
     ];
 }
+
+class ExampleCollection extends Collection {}
+enum ExampleEnum: string {}

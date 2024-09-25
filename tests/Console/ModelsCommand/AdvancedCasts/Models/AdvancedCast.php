@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsCollection;
 use Illuminate\Database\Eloquent\Casts\AsEnumCollection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class AdvancedCast extends Model
 {
@@ -25,7 +26,12 @@ class AdvancedCast extends Model
         'cast_to_encrypted_json' => 'encrypted:json',
         'cast_to_encrypted_object' => 'encrypted:object',
         'cast_to_as_collection' => AsCollection::class,
+        'cast_to_as_collection_with_params' => AsCollection::class.':'.ExampleCollection::class,
         'cast_to_as_enum_collection' => AsEnumCollection::class,
+        'cast_to_as_enum_collection_with_params' => AsEnumCollection::class.':'.ExampleEnum::class,
         'cast_to_as_array_object' => AsArrayObject::class,
     ];
 }
+
+class ExampleCollection extends Collection {}
+enum ExampleEnum: string {}
