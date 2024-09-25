@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Ignore errors when running model hooks. This prevents compatability issues with other packages that define model hooks for the upstream package, such as [staudenmeir/belongs-to-through](https://github.com/staudenmeir/belongs-to-through). 
 - Drop support for Laravel 10.x
-- 
+
 2024-09-25, 4.0.1
 ------------------
 
