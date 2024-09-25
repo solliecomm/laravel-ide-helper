@@ -452,7 +452,12 @@ class ModelsCommand extends Command
     {
         $typeOverrides = $this->laravel['config']->get('ide-helper.type_overrides', []);
 
-        return $typeOverrides[$type] ?? $type;
+        $types = explode('|', $type);
+        $types = array_map(function (string $type) use ($typeOverrides) {
+            return $typeOverrides[$type] ?? $type;
+        }, $types);
+
+        return implode('|', $types);
     }
 
     /**
