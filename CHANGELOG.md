@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fix type of hashed model property to `string`
 - Fix tests on Windows
+- Use the `Illuminate\Database\Eloquent\Casts\ArrayObject` class when using the `AsArrayObject` cast
 
 ### Changed
 - Casts without properties are now removed

@@ -29,7 +29,7 @@ use Illuminate\Support\Collection;
  * @property Collection<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleCollection> $cast_to_as_collection_with_params
  * @property Collection $cast_to_as_enum_collection
  * @property Collection<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleEnum> $cast_to_as_enum_collection_with_params
- * @property \ArrayObject $cast_to_as_array_object
+ * @property \Illuminate\Database\Eloquent\Casts\ArrayObject $cast_to_as_array_object
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast query()
