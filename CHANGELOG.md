@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 - Add support for intersection types
 - Add support for collection generics
 - Add ability for model hooks to add custom PHPdoc tags using the `addCustomTag` method
+- Add support for generics in Attribute casts
 
 2024-07-12, 3.1.0
 ------------------

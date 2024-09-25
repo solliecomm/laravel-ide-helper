@@ -50,11 +50,14 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\ContextFactory;
 use ReflectionClass;
+use ReflectionFunction;
 use ReflectionIntersectionType;
+use ReflectionMethod;
 use ReflectionNamedType;
 use ReflectionObject;
 use ReflectionType;
 use ReflectionUnionType;
+use Reflector;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -1107,21 +1110,28 @@ class ModelsCommand extends Command
     /**
      * @psalm-suppress NoValue
      */
-    protected function getAttributeTypes(Model $model, \ReflectionMethod $reflectionMethod): Collection
+    protected function getAttributeTypes(Model $model, ReflectionMethod $reflectionMethod): Collection
     {
-        // Private/protected ReflectionMethods require setAccessible prior to PHP 8.1
-        $reflectionMethod->setAccessible(true);
-
         /** @var Attribute $attribute */
         $attribute = $reflectionMethod->invoke($model);
 
         $methods = new Collection();
 
         if ($attribute->get) {
-            $methods['get'] = optional(new \ReflectionFunction($attribute->get))->getReturnType();
+            $returnType = (new ReflectionFunction($attribute->get))->getReturnType();
+
+            if ($returnType instanceof ReflectionNamedType && ($returnType->getName() === 'array' || is_a($returnType->getName(), Collection::class, true))) {
+                $docblockReturnType = $this->getReturnTypeFromDocBlock(new ReflectionFunction($attribute->get), $reflectionMethod);
+                if ($docblockReturnType) {
+                    $returnType = $docblockReturnType;
+                }
+            }
+
+            $methods['get'] = $returnType;
         }
+
         if ($attribute->set) {
-            $function = optional(new \ReflectionFunction($attribute->set));
+            $function = optional(new ReflectionFunction($attribute->set));
             if ($function->getNumberOfParameters() === 0) {
                 $methods['set'] = null;
             } else {
@@ -1130,21 +1140,27 @@ class ModelsCommand extends Command
         }
 
         return $methods
-            ->map(function ($type) {
+            ->map(function (ReflectionType|string|null $type) use ($model) {
                 if ($type === null) {
                     $types = collect([]);
-                } elseif ($type instanceof \ReflectionUnionType) {
+                } elseif ($type instanceof ReflectionNamedType) {
+                    $name = $type->getName();
+                    if (class_exists($name)) {
+                        $name = $this->getTypeInModel($model, $name);
+                    }
+
+                    $types = collect([$name]);
+                } elseif ($type instanceof ReflectionUnionType || $type instanceof ReflectionIntersectionType) {
                     $types = collect($type->getTypes())
-                        /** @var ReflectionType $reflectionType */
-                        ->map(function ($reflectionType) {
+                        ->map(function (ReflectionType $reflectionType) {
                             return collect($this->extractReflectionTypes($reflectionType));
                         })
                         ->flatten();
                 } else {
-                    $types = collect($this->extractReflectionTypes($type));
+                    $types = collect([$type]);
                 }
 
-                if ($type && $type->allowsNull()) {
+                if ($type instanceof ReflectionType && $type->allowsNull()) {
                     $types->push('null');
                 }
 
@@ -1188,12 +1204,8 @@ class ModelsCommand extends Command
 
     /**
      * Get method return type based on it DocBlock comment
-     *
-     * @param \ReflectionMethod $reflection
-     *
-     * @return null|string
      */
-    protected function getReturnTypeFromDocBlock(\ReflectionMethod $reflection, \Reflector $reflectorForContext = null)
+    protected function getReturnTypeFromDocBlock(Reflector $reflection, Reflector $reflectorForContext = null): ?string
     {
         $phpDocContext = (new ContextFactory())->createFromReflector($reflectorForContext ?? $reflection);
         $context = new Context(

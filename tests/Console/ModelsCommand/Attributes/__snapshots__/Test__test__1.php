@@ -81,6 +81,7 @@ declare(strict_types=1);
 
 namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Attributes\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
@@ -88,6 +89,8 @@ use Illuminate\Database\Eloquent\Model;
  * 
  *
  * @property int $id
+ * @property-read array<int, self>|null $array_generics_in_docblock
+ * @property-read Carbon|null $classes_as_return_type
  * @property int $diverging_type_hinted_get_and_set
  * @property string|null $name
  * @property-read mixed $non_type_hinted_get
@@ -189,6 +192,25 @@ class Simple extends Model
         return Attribute::set(function () {
             $this->name = null;
         });
+    }
+    
+    protected function classesAsReturnType(): Attribute
+    {
+        return new Attribute(
+            function (?string $name): ?Carbon {
+                return Carbon::now();
+            },
+        );
+    }
+    
+    protected function arrayGenericsInDocblock(): Attribute
+    {
+        return new Attribute(
+            /** @return array<int, self>|null */
+            function (?string $name): ?array {
+                return [$this];
+            },
+        );
     }
 
     /**

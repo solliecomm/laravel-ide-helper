@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Attributes\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
@@ -93,6 +94,25 @@ class Simple extends Model
         return Attribute::set(function () {
             $this->name = null;
         });
+    }
+    
+    protected function classesAsReturnType(): Attribute
+    {
+        return new Attribute(
+            function (?string $name): ?Carbon {
+                return Carbon::now();
+            },
+        );
+    }
+    
+    protected function arrayGenericsInDocblock(): Attribute
+    {
+        return new Attribute(
+            /** @return array<int, self>|null */
+            function (?string $name): ?array {
+                return [$this];
+            },
+        );
     }
 
     /**
