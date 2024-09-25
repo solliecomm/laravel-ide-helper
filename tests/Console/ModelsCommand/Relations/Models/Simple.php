@@ -88,7 +88,7 @@ class Simple extends Model
     {
         return $this->belongsTo(AnotherModel::class, __FUNCTION__);
     }
-    
+
     public function relationBelongsToToAModelWithAGlobalScope(): BelongsTo
     {
         return $this->belongsTo(AnotherModelWithAGlobalScope::class);

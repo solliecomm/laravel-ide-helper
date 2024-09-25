@@ -45,7 +45,6 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Schema\Builder;
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\ContextFactory;
@@ -400,7 +399,7 @@ class ModelsCommand extends Command
             'immutable_date', 'immutable_datetime', 'immutable_custom_datetime' => CarbonImmutable::class,
             AsCollection::class, AsEnumCollection::class, 'collection' => Collection::class,
             AsArrayObject::class => ArrayObject::class,
-            default => class_exists($type) ? '\\'.$type : $type,
+            default => class_exists($type) ? '\\' . $type : $type,
         };
 
         if ($this->isInboundCast($realType)) {
@@ -535,7 +534,7 @@ class ModelsCommand extends Command
         if ($reflections) {
             // Filter out private methods because they can't be used to generate magic properties and HasAttributes'
             // methods that resemble mutators but aren't.
-            $reflections = array_filter($reflections, function (\ReflectionMethod $methodReflection) {
+            $reflections = array_filter($reflections, function (ReflectionMethod $methodReflection) {
                 return !$methodReflection->isPrivate() && !(
                     $methodReflection->getDeclaringClass()->getName() === Model::class && (
                         $methodReflection->getName() === 'setClassCastableAttribute' ||
@@ -760,10 +759,10 @@ class ModelsCommand extends Command
             $defaultProp = $reflectionObj->getProperty('withDefault');
             $defaultProp->setAccessible(true);
 
-            return ! $defaultProp->getValue($relationObj);
+            return !$defaultProp->getValue($relationObj);
         }
 
-        if (! $reflectionObj->hasProperty('foreignKey')) {
+        if (!$reflectionObj->hasProperty('foreignKey')) {
             return false;
         }
 
@@ -1168,7 +1167,7 @@ class ModelsCommand extends Command
             });
     }
 
-    protected function getReturnType(\ReflectionMethod $reflection): ?string
+    protected function getReturnType(ReflectionMethod $reflection): ?string
     {
         $type = $this->getReturnTypeFromDocBlock($reflection);
         if ($type) {
@@ -1181,11 +1180,11 @@ class ModelsCommand extends Command
     /**
      * Get method comment based on it DocBlock comment
      *
-     * @param \ReflectionMethod $reflection
+     * @param ReflectionMethod $reflection
      *
      * @return null|string
      */
-    protected function getCommentFromDocBlock(\ReflectionMethod $reflection)
+    protected function getCommentFromDocBlock(ReflectionMethod $reflection)
     {
         $phpDocContext = (new ContextFactory())->createFromReflector($reflection);
         $context = new Context(
@@ -1229,7 +1228,7 @@ class ModelsCommand extends Command
         return $type;
     }
 
-    protected function getReturnTypeFromReflection(\ReflectionMethod $reflection): ?string
+    protected function getReturnTypeFromReflection(ReflectionMethod $reflection): ?string
     {
         $returnType = $reflection->getReturnType();
         if (!$returnType) {
@@ -1339,19 +1338,19 @@ class ModelsCommand extends Command
 
     protected function checkForCastableCasts(string $type, array $params = []): string
     {
-        if (! class_exists($type) || ! interface_exists(Castable::class)) {
+        if (!class_exists($type) || !interface_exists(Castable::class)) {
             return $type;
         }
 
         $reflection = new ReflectionClass($type);
 
-        if (! $reflection->implementsInterface(Castable::class)) {
+        if (!$reflection->implementsInterface(Castable::class)) {
             return $type;
         }
 
         $cast = call_user_func([$type, 'castUsing'], $params);
 
-        if (is_string($cast) && ! is_object($cast)) {
+        if (is_string($cast) && !is_object($cast)) {
             return $cast;
         }
 
@@ -1381,7 +1380,7 @@ class ModelsCommand extends Command
             return $type;
         }
 
-        $methodReflection = new \ReflectionMethod($type, 'get');
+        $methodReflection = new ReflectionMethod($type, 'get');
 
         $reflectionType = $this->getReturnTypeFromReflection($methodReflection);
 
@@ -1398,13 +1397,13 @@ class ModelsCommand extends Command
 
     protected function checkForCollectionGenerics(Model $model, ?string $type, array $params): ?string
     {
-        if (! $type || ! $params) {
+        if (!$type || !$params) {
             return $type;
         }
 
         $types = explode('|', $type);
         $types = array_map(function (string $type) use ($model, $params) {
-            if (! is_a($type, Collection::class, true)) {
+            if (!is_a($type, Collection::class, true)) {
                 return $type;
             }
 
@@ -1480,7 +1479,7 @@ class ModelsCommand extends Command
         $builderClassBasedOnFQCNOption = $this->getClassNameInDestinationFile($model, get_class($model->newModelQuery()));
 
         foreach ($newMethodsFromNewBuilder as $builderMethod) {
-            $reflection = new \ReflectionMethod($fullBuilderClass, $builderMethod);
+            $reflection = new ReflectionMethod($fullBuilderClass, $builderMethod);
             $args = $this->getParameters($reflection);
 
             $this->setMethod(
@@ -1491,7 +1490,7 @@ class ModelsCommand extends Command
         }
     }
 
-    protected function getParamType(\ReflectionMethod $method, \ReflectionParameter $parameter): ?string
+    protected function getParamType(ReflectionMethod $method, \ReflectionParameter $parameter): ?string
     {
         if ($paramType = $parameter->getType()) {
             $types = $this->extractReflectionTypes($paramType);
@@ -1583,7 +1582,7 @@ class ModelsCommand extends Command
                 $types = array_merge($types, $this->extractReflectionTypes($t));
             }
 
-            return ['('.implode('&', $types).')'];
+            return ['(' . implode('&', $types) . ')'];
         } elseif ($reflectionType instanceof ReflectionUnionType) {
             $types = [];
             foreach ($reflectionType->getTypes() as $t) {

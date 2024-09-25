@@ -13,7 +13,7 @@ class CustomCasterWithNullableCollectionGenerics implements CastsAttributes
     {
         return new Collection();
     }
-    
+
     public function set($model, string $key, $value, array $attributes)
     {
         // TODO: Implement set() method.

@@ -95,7 +95,7 @@ class Simple extends Model
             $this->name = null;
         });
     }
-    
+
     protected function classesAsReturnType(): Attribute
     {
         return new Attribute(
@@ -104,7 +104,7 @@ class Simple extends Model
             },
         );
     }
-    
+
     protected function arrayGenericsInDocblock(): Attribute
     {
         return new Attribute(
