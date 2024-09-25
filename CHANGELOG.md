@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Package renamed to `solliecomm/laravel-ide-helper` and published on Packagist.
+- Drop support for Laravel 10.x
 
 2024-09-25, 4.0.0
 ------------------
