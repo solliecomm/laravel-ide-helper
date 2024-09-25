@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 [Next release](https://github.com/barryvdh/laravel-ide-helper/compare/v3.1.0...master)
 --------------
 
+2024-09-25, 4.0.1
+------------------
+
+### Changed
+- Package renamed to `solliecomm/laravel-ide-helper` and published on Packagist.
+
+2024-09-25, 4.0.0
+------------------
+
 ### Fixed
 - Fix type of hashed model property to `string`
 - Fix tests on Windows

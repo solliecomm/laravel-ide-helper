@@ -1,17 +1,17 @@
 # IDE Helper Generator for Laravel
 
-[![Tests](https://github.com/barryvdh/laravel-ide-helper/actions/workflows/run-tests.yml/badge.svg)](https://github.com/barryvdh/laravel-ide-helper/actions)
+[![Tests](https://github.com/solliecomm/laravel-ide-helper/actions/workflows/run-tests.yml/badge.svg)](https://github.com/solliecomm/laravel-ide-helper/actions)
 [![Packagist License](https://img.shields.io/badge/Licence-MIT-blue)](http://choosealicense.com/licenses/mit/)
-[![Latest Stable Version](https://img.shields.io/packagist/v/barryvdh/laravel-ide-helper?label=Stable)](https://packagist.org/packages/barryvdh/laravel-ide-helper)
-[![Total Downloads](https://img.shields.io/packagist/dt/barryvdh/laravel-ide-helper?label=Downloads)](https://packagist.org/packages/barryvdh/laravel-ide-helper)
-[![Fruitcake](https://img.shields.io/badge/Powered%20By-Fruitcake-b2bc35.svg)](https://fruitcake.nl/)
+[![Latest Stable Version](https://img.shields.io/packagist/v/solliecomm/laravel-ide-helper?label=Stable)](https://packagist.org/packages/solliecomm/laravel-ide-helper)
+[![Total Downloads](https://img.shields.io/packagist/dt/solliecomm/laravel-ide-helper?label=Downloads)](https://packagist.org/packages/solliecomm/laravel-ide-helper)
 
 **Complete PHPDocs, directly from the source**
 
 This package generates helper files that enable your IDE to provide accurate autocompletion.
 Generation is done based on the files in your project, so they are always up-to-date.
 
-The 3.x branch supports Laravel 10 and 11. For older version, use the 2.x releases.
+This package is a fork of the popular [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper) package.
+For changes between this fork and the original package, see the [changelog](./CHANGELOG.md)
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -30,12 +30,12 @@ The 3.x branch supports Laravel 10 and 11. For older version, use the 2.x releas
 Require this package with composer using the following command:
 
 ```bash
-composer require --dev barryvdh/laravel-ide-helper
+composer require --dev solliecomm/laravel-ide-helper
 ```
 
 > [!NOTE]  
 > If you encounter version conflicts with doctrine/dbal, please try:
-> `composer require --dev barryvdh/laravel-ide-helper --with-all-dependencies`
+> `composer require --dev solliecomm/laravel-ide-helper --with-all-dependencies`
  
 This package makes use of [Laravels package auto-discovery mechanism](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518), which means if you don't install dev dependencies in production, it also won't be loaded.
 
@@ -45,21 +45,21 @@ If for some reason you want manually control this:
   "extra": {
     "laravel": {
       "dont-discover": [
-        "barryvdh/laravel-ide-helper"
+        "solliecomm/laravel-ide-helper"
       ]
     }
   }
   ```
 - Add the following class to the `providers` array in `config/app.php`:
   ```php
-  Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+  Sollie\LaravelIdeHelper\IdeHelperServiceProvider::class,
   ```
   If you want to manually load it only in non-production environments, instead you can add this to your `AppServiceProvider` with the `register()` method:
   ```php
   public function register()
   {
       if ($this->app->isLocal()) {
-          $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+          $this->app->register(\Sollie\LaravelIdeHelper\IdeHelperServiceProvider::class);
       }
       // ...
   }
