@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 [Next release](https://github.com/barryvdh/laravel-ide-helper/compare/v3.1.0...master)
 --------------
 
+2024-09-25, 4.0.2
+------------------
+
+### Changed
+- Ignore errors when running model hooks. This prevents compatability issues with other packages that define model hooks for the upstream package, such as [staudenmeir/belongs-to-through](https://github.com/staudenmeir/belongs-to-through). 
+
 2024-09-25, 4.0.1
 ------------------
 

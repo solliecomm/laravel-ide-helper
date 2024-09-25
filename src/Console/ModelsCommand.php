@@ -1621,7 +1621,11 @@ class ModelsCommand extends Command
         $hooks = $this->laravel['config']->get('ide-helper.model_hooks', []);
 
         foreach ($hooks as $hook) {
-            $hookInstance = $this->laravel->make($hook);
+            try {
+                $hookInstance = $this->laravel->make($hook);
+            } catch (Throwable $e) {
+                continue;
+            }
 
             if (!$hookInstance instanceof ModelHookInterface) {
                 throw new \RuntimeException(
