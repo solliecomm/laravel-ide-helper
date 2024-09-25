@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int|null $nullable_column_with_foreign_key_constraint
  * @property int|null $nullable_column_with_no_foreign_key_constraint
  * @property-read BelongsToVariation $notNullColumnWithForeignKeyConstraint
- * @property-read BelongsToVariation|null $notNullColumnWithNoForeignKeyConstraint
+ * @property-read BelongsToVariation $notNullColumnWithNoForeignKeyConstraint
  * @property-read BelongsToVariation|null $nullableColumnWithForeignKeyConstraint
  * @property-read BelongsToVariation|null $nullableColumnWithNoForeignKeyConstraint
  * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation newModelQuery()
@@ -57,69 +57,8 @@ declare(strict_types=1);
 
 namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
-/**
- * 
- *
- * @property int $id
- * @property int $not_null_column_with_foreign_key_constraint
- * @property int $not_null_column_with_no_foreign_key_constraint
- * @property int|null $nullable_column_with_foreign_key_constraint
- * @property int|null $nullable_column_with_no_foreign_key_constraint
- * @property-read CompositeBelongsToVariation $bothNonNullableWithForeignKeyConstraint
- * @property-read CompositeBelongsToVariation|null $nonNullableMixedWithoutForeignKeyConstraint
- * @property-read CompositeBelongsToVariation|null $nullableMixedWithForeignKeyConstraint
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation query()
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation whereNotNullColumnWithForeignKeyConstraint($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation whereNotNullColumnWithNoForeignKeyConstraint($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation whereNullableColumnWithForeignKeyConstraint($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CompositeBelongsToVariation whereNullableColumnWithNoForeignKeyConstraint($value)
- * @mixin \Eloquent
- */
-class CompositeBelongsToVariation extends Model
-{
-    public $table = 'belongs_to_variations';
-
-    public function bothNonNullableWithForeignKeyConstraint(): BelongsTo
-    {
-        // Note, duplicating the keys here for simplicity.
-        return $this->belongsTo(
-            self::class,
-            ['not_null_column_with_foreign_key_constraint', 'not_null_column_with_foreign_key_constraint'],
-            ['not_null_column_with_foreign_key_constraint', 'not_null_column_with_foreign_key_constraint'],
-        );
-    }
-
-    public function nonNullableMixedWithoutForeignKeyConstraint(): BelongsTo
-    {
-        return $this->belongsTo(
-            self::class,
-            ['not_null_column_with_foreign_key_constraint', 'not_null_column_with_no_foreign_key_constraint'],
-            ['not_null_column_with_foreign_key_constraint', 'not_null_column_with_no_foreign_key_constraint'],
-        );
-    }
-
-    public function nullableMixedWithForeignKeyConstraint(): BelongsTo
-    {
-        return $this->belongsTo(
-            self::class,
-            ['nullable_column_with_no_foreign_key_constraint', 'not_null_column_with_foreign_key_constraint'],
-            ['nullable_column_with_no_foreign_key_constraint', 'not_null_column_with_foreign_key_constraint'],
-        );
-    }
-}
-<?php
-
-declare(strict_types=1);
-
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\Models;
-
 use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\ModelsOtherNamespace\AnotherModel;
+use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\ModelsOtherNamespace\AnotherModelWithAGlobalScope;
 use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\Traits\HasTestRelations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -135,15 +74,16 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * 
  *
  * @property int $id
- * @property-read Simple|null $relationBelongsTo
- * @property-read AnotherModel|null $relationBelongsToInAnotherNamespace
+ * @property-read Simple $relationBelongsTo
+ * @property-read AnotherModel $relationBelongsToInAnotherNamespace
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationBelongsToMany
  * @property-read int|null $relation_belongs_to_many_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationBelongsToManyWithSub
  * @property-read int|null $relation_belongs_to_many_with_sub_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationBelongsToManyWithSubAnother
  * @property-read int|null $relation_belongs_to_many_with_sub_another_count
- * @property-read AnotherModel|null $relationBelongsToSameNameAsColumn
+ * @property-read AnotherModel $relationBelongsToSameNameAsColumn
+ * @property-read AnotherModelWithAGlobalScope|null $relationBelongsToToAModelWithAGlobalScope
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationHasMany
  * @property-read int|null $relation_has_many_count
  * @property-read Simple|null $relationHasOne
@@ -237,6 +177,11 @@ class Simple extends Model
     public function relationBelongsToSameNameAsColumn(): BelongsTo
     {
         return $this->belongsTo(AnotherModel::class, __FUNCTION__);
+    }
+    
+    public function relationBelongsToToAModelWithAGlobalScope(): BelongsTo
+    {
+        return $this->belongsTo(AnotherModelWithAGlobalScope::class);
     }
 
     public function relationSampleToManyRelationType()

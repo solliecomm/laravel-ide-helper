@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\Models;
 
 use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\ModelsOtherNamespace\AnotherModel;
+use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\ModelsOtherNamespace\AnotherModelWithAGlobalScope;
 use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\Traits\HasTestRelations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -86,6 +87,11 @@ class Simple extends Model
     public function relationBelongsToSameNameAsColumn(): BelongsTo
     {
         return $this->belongsTo(AnotherModel::class, __FUNCTION__);
+    }
+    
+    public function relationBelongsToToAModelWithAGlobalScope(): BelongsTo
+    {
+        return $this->belongsTo(AnotherModelWithAGlobalScope::class);
     }
 
     public function relationSampleToManyRelationType()

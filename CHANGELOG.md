@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Casts without properties are now removed
+- `belongsTo` relationships pointing to a column that is not a foreign key will not always be marked as nullable anymore
+- Relationships pointing to a model that has global scopes will now always be marked as nullable.
 
 ### Added
 - Add support for intersection types

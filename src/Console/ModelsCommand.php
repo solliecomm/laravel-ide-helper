@@ -119,10 +119,6 @@ class ModelsCommand extends Command
      * @var array<string, true>
      */
     protected $nullableColumns = [];
-    /**
-     * @var string[]
-     */
-    protected $foreignKeyConstraintsColumns = [];
 
     /**
      * During initialization we use Laravels Date Facade to
@@ -268,9 +264,9 @@ class ModelsCommand extends Command
                 }
                 continue;
             }
+
             $this->properties = [];
             $this->methods = [];
-            $this->foreignKeyConstraintsColumns = [];
             if (class_exists($name)) {
                 try {
                     // handle abstract classes, interfaces, ...
@@ -447,11 +443,8 @@ class ModelsCommand extends Command
 
     /**
      * Returns the override type for the give type.
-     *
-     * @param string $type
-     * @return string|null
      */
-    protected function getTypeOverride($type)
+    protected function getTypeOverride(?string $type): ?string
     {
         $typeOverrides = $this->laravel['config']->get('ide-helper.type_overrides', []);
 
@@ -460,23 +453,17 @@ class ModelsCommand extends Command
 
     /**
      * Load the properties from the database table.
-     *
-     * @param Model $model
-     *
      */
-    public function getPropertiesFromTable($model)
+    public function getPropertiesFromTable(Model $model): void
     {
         $table = $model->getTable();
         $schema = $model->getConnection()->getSchemaBuilder();
         $columns = $schema->getColumns($table);
-        $driverName = $model->getConnection()->getDriverName();
-
 
         if (!$columns) {
             return;
         }
 
-        $this->setForeignKeys($schema, $table);
         foreach ($columns as $column) {
             $name = $column['name'];
             if (in_array($name, $model->getDates())) {
@@ -748,41 +735,30 @@ class ModelsCommand extends Command
 
     /**
      * Check if the relation is nullable
-     *
-     * @param string   $relation
-     * @param Relation $relationObj
-     *
-     * @return bool
      */
     protected function isRelationNullable(string $relation, Relation $relationObj): bool
     {
+        if ($relationObj->getRelated()->getGlobalScopes()) {
+            return true;
+        }
+
         $reflectionObj = new ReflectionObject($relationObj);
 
         if (in_array($relation, ['hasOne', 'hasOneThrough', 'morphOne'], true)) {
             $defaultProp = $reflectionObj->getProperty('withDefault');
             $defaultProp->setAccessible(true);
 
-            return !$defaultProp->getValue($relationObj);
+            return ! $defaultProp->getValue($relationObj);
         }
 
-        if (!$reflectionObj->hasProperty('foreignKey')) {
+        if (! $reflectionObj->hasProperty('foreignKey')) {
             return false;
         }
 
         $fkProp = $reflectionObj->getProperty('foreignKey');
         $fkProp->setAccessible(true);
 
-        foreach (Arr::wrap($fkProp->getValue($relationObj)) as $foreignKey) {
-            if (isset($this->nullableColumns[$foreignKey])) {
-                return true;
-            }
-
-            if (!in_array($foreignKey, $this->foreignKeyConstraintsColumns, true)) {
-                return true;
-            }
-        }
-
-        return false;
+        return isset($this->nullableColumns[$fkProp->getValue($relationObj)]);
     }
 
     /**
@@ -1662,19 +1638,6 @@ class ModelsCommand extends Command
             }
 
             $hookInstance->run($this, $model);
-        }
-    }
-
-    /**
-     * @param Builder $schema
-     * @param string $table
-     */
-    protected function setForeignKeys($schema, $table)
-    {
-        foreach ($schema->getForeignKeys($table) as $foreignKeyConstraint) {
-            foreach ($foreignKeyConstraint['columns'] as $columnName) {
-                $this->foreignKeyConstraintsColumns[] = $columnName;
-            }
         }
     }
 }
