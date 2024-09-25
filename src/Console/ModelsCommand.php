@@ -128,6 +128,8 @@ class ModelsCommand extends Command
      */
     protected $dateClass;
 
+    protected array $customTags = [];
+
     /**
      * @param Filesystem $files
      */
@@ -267,6 +269,8 @@ class ModelsCommand extends Command
 
             $this->properties = [];
             $this->methods = [];
+            $this->customTags = [];
+
             if (class_exists($name)) {
                 try {
                     // handle abstract classes, interfaces, ...
@@ -850,10 +854,9 @@ class ModelsCommand extends Command
     }
 
     /**
-     * @param string $class
-     * @return string
+     * @param class-string $class
      */
-    protected function createPhpDocs($class)
+    protected function createPhpDocs(string $class): string
     {
         $reflection = new ReflectionClass($class);
         $namespace = $reflection->getNamespaceName();
@@ -949,6 +952,10 @@ class ModelsCommand extends Command
             $phpdoc->appendTag(
                 Tag::createInstance('@noinspection PhpUnnecessaryFullyQualifiedNameInspection', $phpdoc)
             );
+        }
+
+        foreach ($this->customTags as $tag) {
+            $phpdoc->appendTag(Tag::createInstance($tag, $phpdoc));
         }
 
         $serializer = new DocBlockSerializer();
@@ -1639,5 +1646,13 @@ class ModelsCommand extends Command
 
             $hookInstance->run($this, $model);
         }
+    }
+
+    /**
+     * Add a custom tag to the model docblock. Can be used by model hooks.
+     */
+    public function addCustomTag(string $tag): void
+    {
+        $this->customTags[] = $tag;
     }
 }

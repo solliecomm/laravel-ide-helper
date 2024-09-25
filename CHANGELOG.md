@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Add support for intersection types
 - Add support for collection generics
+- Add ability for model hooks to add custom PHPdoc tags using the `addCustomTag` method
 
 2024-07-12, 3.1.0
 ------------------
