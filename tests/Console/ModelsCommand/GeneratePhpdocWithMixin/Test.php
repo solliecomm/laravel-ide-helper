@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithMixin;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithMixin;
 
-use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
+use Sollie\LaravelIdeHelper\Console\ModelsCommand;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
 
 class Test extends AbstractModelsCommand
 {

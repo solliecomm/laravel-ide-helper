@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations;
 
-use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
+use Sollie\LaravelIdeHelper\Console\ModelsCommand;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
 
 class Test extends AbstractModelsCommand
 {
@@ -18,9 +18,9 @@ class Test extends AbstractModelsCommand
         ]);
 
         $errors = [
-            'Error resolving relation model of Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations\Models\Dynamic:dynamicBelongsTo() : Attempt to read property "created_at" on null',
-            'Error resolving relation model of Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations\Models\Dynamic:dynamicHasMany() : Attempt to read property "created_at" on null',
-            'Error resolving relation model of Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations\Models\Dynamic:dynamicHasOne() : Attempt to read property "created_at" on null',
+            'Error resolving relation model of Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations\Models\Dynamic:dynamicBelongsTo() : Attempt to read property "created_at" on null',
+            'Error resolving relation model of Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations\Models\Dynamic:dynamicHasMany() : Attempt to read property "created_at" on null',
+            'Error resolving relation model of Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\DynamicRelations\Models\Dynamic:dynamicHasOne() : Attempt to read property "created_at" on null',
         ];
 
         $this->assertSame(0, $tester->getStatusCode());

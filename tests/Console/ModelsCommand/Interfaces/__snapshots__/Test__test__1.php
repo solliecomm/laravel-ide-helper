@@ -11,7 +11,7 @@
  */
 
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Interfaces\Models{
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Interfaces\Models{
 /**
  * 
  *

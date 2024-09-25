@@ -1,9 +1,9 @@
 <?php
 
-namespace Barryvdh\LaravelIdeHelper\Contracts;
+namespace Sollie\LaravelIdeHelper\Contracts;
 
-use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
 use Illuminate\Database\Eloquent\Model;
+use Sollie\LaravelIdeHelper\Console\ModelsCommand;
 
 interface ModelHookInterface
 {

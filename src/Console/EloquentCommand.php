@@ -9,11 +9,11 @@
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
-namespace Barryvdh\LaravelIdeHelper\Console;
+namespace Sollie\LaravelIdeHelper\Console;
 
-use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use Sollie\LaravelIdeHelper\Eloquent;
 
 /**
  * A command to add \Eloquent mixin to Eloquent\Model

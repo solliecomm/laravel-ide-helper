@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\IntersectionTypes\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\IntersectionTypes\Models;
 
 use Countable;
 use Illuminate\Database\Eloquent\Model;

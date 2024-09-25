@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace;
 
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models\ModelWithCustomNamespace;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models\ModelWithCustomNamespace;
 
 class ModelWithCustomNamespaceFactory extends Factory
 {

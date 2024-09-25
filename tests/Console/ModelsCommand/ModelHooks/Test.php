@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks;
 
-use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\CustomMethod;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\CustomProperty;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\CustomTags;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\UnsetMethod;
 use Illuminate\Filesystem\Filesystem;
 use Mockery;
+use Sollie\LaravelIdeHelper\Console\ModelsCommand;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\CustomMethod;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\CustomProperty;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\CustomTags;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Hooks\UnsetMethod;
 
 class Test extends AbstractModelsCommand
 {
@@ -68,7 +68,7 @@ class Test extends AbstractModelsCommand
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

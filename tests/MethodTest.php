@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests;
+namespace Sollie\LaravelIdeHelper\Tests;
 
-use Barryvdh\LaravelIdeHelper\Method;
 use Illuminate\Database\Eloquent\Builder;
 use PHPUnit\Framework\TestCase;
+use Sollie\LaravelIdeHelper\Method;
 
 class MethodTest extends TestCase
 {

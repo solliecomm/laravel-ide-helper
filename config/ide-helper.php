@@ -162,7 +162,7 @@ return [
     |
     | Define which hook classes you want to run for models to add custom information.
     |
-    | Hooks should implement Barryvdh\LaravelIdeHelper\Contracts\ModelHookInterface.
+    | Hooks should implement Sollie\LaravelIdeHelper\Contracts\ModelHookInterface.
     |
     */
 

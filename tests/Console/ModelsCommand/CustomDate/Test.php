@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\CustomDate;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\CustomDate;
 
-use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Date;
+use Sollie\LaravelIdeHelper\Console\ModelsCommand;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
 
 class Test extends AbstractModelsCommand
 {

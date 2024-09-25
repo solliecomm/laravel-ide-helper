@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\QueryScopes\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\QueryScopes\Models;
 
 class Post extends PostParent
 {

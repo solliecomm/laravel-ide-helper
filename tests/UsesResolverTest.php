@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests;
+namespace Sollie\LaravelIdeHelper\Tests;
 
-use Barryvdh\LaravelIdeHelper\UsesResolver;
 use PHPUnit\Framework\TestCase;
+use Sollie\LaravelIdeHelper\UsesResolver;
 
 class UsesResolverTest extends TestCase
 {
@@ -18,9 +18,9 @@ class UsesResolverTest extends TestCase
 
         $code = <<<'DOC'
 <?php
-namespace Barryvdh\LaravelIdeHelper\Tests;
+namespace Sollie\LaravelIdeHelper\Tests;
 
-use Barryvdh\LaravelIdeHelper\UsesResolver as MyUsesResolver;
+use Sollie\LaravelIdeHelper\UsesResolver as MyUsesResolver;
 use PHPUnit\Framework\TestCase;
 
 class UsesResolverTest extends TestCase
@@ -30,9 +30,9 @@ class UsesResolverTest extends TestCase
 DOC;
 
         $this->assertEquals(
-            $usesResolver->loadFromCode('Barryvdh\\LaravelIdeHelper\\Tests\\UsesResolverTest', $code),
+            $usesResolver->loadFromCode('Sollie\\LaravelIdeHelper\\Tests\\UsesResolverTest', $code),
             [
-                'MyUsesResolver' => '\\Barryvdh\\LaravelIdeHelper\\UsesResolver',
+                'MyUsesResolver' => '\\Sollie\\LaravelIdeHelper\\UsesResolver',
                 'TestCase' => '\\PHPUnit\Framework\TestCase',
             ]
         );
@@ -48,7 +48,7 @@ DOC;
         $this->assertEquals(
             $usesResolver->loadFromClass(self::class),
             [
-                'UsesResolver' => '\\Barryvdh\\LaravelIdeHelper\\UsesResolver',
+                'UsesResolver' => '\\Sollie\\LaravelIdeHelper\\UsesResolver',
                 'TestCase' => '\\PHPUnit\Framework\TestCase',
             ]
         );

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories;
 
-use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
 use Closure;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Sollie\LaravelIdeHelper\Console\ModelsCommand;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
 
 class Test extends AbstractModelsCommand
 {
@@ -33,7 +33,7 @@ class Test extends AbstractModelsCommand
         // This mimics the default resolver, but with adjusted test namespaces.
         // Illuminate\Database\Eloquent\Factories\Factory::resolveFactoryName
         return function (string $modelName): string {
-            $appNamespace = 'Barryvdh\\LaravelIdeHelper\\Tests\\Console\\ModelsCommand\\Factories\\';
+            $appNamespace = 'Sollie\\LaravelIdeHelper\\Tests\\Console\\ModelsCommand\\Factories\\';
 
             $modelName = Str::startsWith($modelName, $appNamespace . 'Models\\')
                 ? Str::after($modelName, $appNamespace . 'Models\\')

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand;
 
-use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
-use Barryvdh\LaravelIdeHelper\Tests\SnapshotPhpDriver;
-use Barryvdh\LaravelIdeHelper\Tests\TestCase;
+use Sollie\LaravelIdeHelper\IdeHelperServiceProvider;
+use Sollie\LaravelIdeHelper\Tests\SnapshotPhpDriver;
+use Sollie\LaravelIdeHelper\Tests\TestCase;
 
 abstract class AbstractModelsCommand extends TestCase
 {

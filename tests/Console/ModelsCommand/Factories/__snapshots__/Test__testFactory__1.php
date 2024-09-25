@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
 
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace\ModelWithCustomNamespaceFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace\ModelWithCustomNamespaceFactory;
 
 /**
  * 
  *
- * @method static \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace\ModelWithCustomNamespaceFactory factory($count = null, $state = [])
+ * @method static \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace\ModelWithCustomNamespaceFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithCustomNamespace newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithCustomNamespace newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithCustomNamespace query()
@@ -35,7 +35,7 @@ class ModelWithCustomNamespace extends Model
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -43,7 +43,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * 
  *
- * @method static \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories\ModelWithFactoryFactory factory($count = null, $state = [])
+ * @method static \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories\ModelWithFactoryFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithFactory newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithFactory newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithFactory query()
@@ -57,12 +57,12 @@ class ModelWithFactory extends Model
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
 
 /**
  * 
  *
- * @method static \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories\ModelWithNestedFactoryFactory factory($count = null, $state = [])
+ * @method static \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories\ModelWithNestedFactoryFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithNestedFactory newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithNestedFactory newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ModelWithNestedFactory query()
@@ -75,7 +75,7 @@ class ModelWithNestedFactory extends ModelWithFactory
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

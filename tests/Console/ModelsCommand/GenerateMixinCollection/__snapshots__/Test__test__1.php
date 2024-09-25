@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\Models;
 
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\CollectionModel;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\NonModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Collection as IntCollection;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\CollectionModel;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\NonModel;
 
 /**
  * @mixin IdeHelperWithCollection
@@ -65,13 +65,13 @@ class WithCollection extends Model
  */
 
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\Models{
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\Models{
 /**
  * 
  *
  * @property-read \Illuminate\Support\Collection<int, string> $collection
- * @property-read \Illuminate\Support\Collection<\Illuminate\Support\Collection, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\CollectionModel<\Illuminate\Support\Collection, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\CollectionModel<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\NonModel>>> $collection_with_nested_template
- * @property-read \Illuminate\Support\Collection<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\NonModel> $collection_with_non_model_template
+ * @property-read \Illuminate\Support\Collection<\Illuminate\Support\Collection, \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\CollectionModel<\Illuminate\Support\Collection, \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\CollectionModel<int, \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\NonModel>>> $collection_with_nested_template
+ * @property-read \Illuminate\Support\Collection<int, \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinCollection\NonModels\NonModel> $collection_with_non_model_template
  * @property-read \Illuminate\Support\Collection $collection_without_doc_block
  * @property-read \Illuminate\Support\Collection $collection_without_template
  * @method static \Illuminate\Database\Eloquent\Builder|WithCollection newModelQuery()

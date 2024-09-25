@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithExternalEloquentBuilderWithFqn\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithExternalEloquentBuilderWithFqn\Models;
 
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithExternalEloquentBuilderWithFqn\Builders\PostExternalQueryBuilder;
 use Illuminate\Database\Eloquent\Model;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithExternalEloquentBuilderWithFqn\Builders\PostExternalQueryBuilder;
 
 /**
  * 
@@ -162,11 +162,11 @@ use Illuminate\Database\Eloquent\Model;
  * @method static PostExternalQueryBuilder|Post withBoolDifferently(?bool $booleanVar)
  * @method static PostExternalQueryBuilder|Post withBoolTypeHinted(bool $booleanVar)
  * @method static PostExternalQueryBuilder|Post withMixedOption($option)
- * @method static PostExternalQueryBuilder|Post withNullAndAssignmentTestCommand(?\Barryvdh\LaravelIdeHelper\Console\ModelsCommand $testCommand = null)
- * @method static PostExternalQueryBuilder|Post withNullTestCommand(?\Barryvdh\LaravelIdeHelper\Console\ModelsCommand $testCommand)
+ * @method static PostExternalQueryBuilder|Post withNullAndAssignmentTestCommand(?\Sollie\LaravelIdeHelper\Console\ModelsCommand $testCommand = null)
+ * @method static PostExternalQueryBuilder|Post withNullTestCommand(?\Sollie\LaravelIdeHelper\Console\ModelsCommand $testCommand)
  * @method static PostExternalQueryBuilder|Post withNullTestCommandInDocBlock($testCommand)
  * @method static PostExternalQueryBuilder|Post withSomeone($someone)
- * @method static PostExternalQueryBuilder|Post withTestCommand(\Barryvdh\LaravelIdeHelper\Console\ModelsCommand $testCommand)
+ * @method static PostExternalQueryBuilder|Post withTestCommand(\Sollie\LaravelIdeHelper\Console\ModelsCommand $testCommand)
  * @method static PostExternalQueryBuilder|Post withTheNumber(?int $number)
  * @method static PostExternalQueryBuilder|Post withTheNumberDifferently(?int $number)
  * @mixin \Eloquent

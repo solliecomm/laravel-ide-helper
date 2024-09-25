@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\ArrayCastsWithComment\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ArrayCastsWithComment\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

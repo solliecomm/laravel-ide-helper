@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests;
+namespace Sollie\LaravelIdeHelper\Tests;
 
 use PHPUnit\Framework\Assert;
 use Spatie\Snapshots\Driver;

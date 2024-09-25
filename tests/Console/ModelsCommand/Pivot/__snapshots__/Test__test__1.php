@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models;
 
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models\Pivots\CustomPivot;
 use Illuminate\Database\Eloquent\Model;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models\Pivots\CustomPivot;
 
 /**
  * 
@@ -31,7 +31,7 @@ class ModelWithPivot extends Model
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models\Pivots;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models\Pivots;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 

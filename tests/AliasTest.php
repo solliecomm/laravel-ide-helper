@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests;
+namespace Sollie\LaravelIdeHelper\Tests;
 
-use Barryvdh\LaravelIdeHelper\Alias;
-use Barryvdh\LaravelIdeHelper\Macro;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Arr;
+use Sollie\LaravelIdeHelper\Alias;
+use Sollie\LaravelIdeHelper\Macro;
 
 /**
  * @internal
- * @coversDefaultClass \Barryvdh\LaravelIdeHelper\Alias
+ * @coversDefaultClass \Sollie\LaravelIdeHelper\Alias
  */
 class AliasTest extends TestCase
 {

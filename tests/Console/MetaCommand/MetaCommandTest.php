@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\MetaCommand;
+namespace Sollie\LaravelIdeHelper\Tests\Console\MetaCommand;
 
-use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
-use Barryvdh\LaravelIdeHelper\Tests\TestCase;
 use Illuminate\Filesystem\Filesystem;
 use Mockery\MockInterface;
+use Sollie\LaravelIdeHelper\IdeHelperServiceProvider;
+use Sollie\LaravelIdeHelper\Tests\TestCase;
 use stdClass;
 
 class MetaCommandTest extends TestCase

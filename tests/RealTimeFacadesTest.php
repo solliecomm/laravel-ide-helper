@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests;
+namespace Sollie\LaravelIdeHelper\Tests;
 
-use Barryvdh\LaravelIdeHelper\Generator;
-use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -13,6 +11,8 @@ use PhpParser\Lexer\Emulative;
 use PhpParser\Node\Stmt\Class_;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\Parser\Php7;
+use Sollie\LaravelIdeHelper\Generator;
+use Sollie\LaravelIdeHelper\IdeHelperServiceProvider;
 
 class RealTimeFacadesTest extends TestCase
 {

@@ -9,12 +9,12 @@
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
-namespace Barryvdh\LaravelIdeHelper\Console;
+namespace Sollie\LaravelIdeHelper\Console;
 
-use Barryvdh\LaravelIdeHelper\Eloquent;
-use Barryvdh\LaravelIdeHelper\Generator;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use Sollie\LaravelIdeHelper\Eloquent;
+use Sollie\LaravelIdeHelper\Generator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

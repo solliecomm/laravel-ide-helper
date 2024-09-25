@@ -1,6 +1,6 @@
 <?php
 
-namespace Barryvdh\LaravelIdeHelper\Listeners;
+namespace Sollie\LaravelIdeHelper\Listeners;
 
 use Illuminate\Console\Events\CommandFinished;
 use Illuminate\Contracts\Config\Repository as Config;

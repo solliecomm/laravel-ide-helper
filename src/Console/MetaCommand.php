@@ -9,11 +9,11 @@
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
-namespace Barryvdh\LaravelIdeHelper\Console;
+namespace Sollie\LaravelIdeHelper\Console;
 
-use Barryvdh\LaravelIdeHelper\Factories;
 use Illuminate\Console\Command;
 use RuntimeException;
+use Sollie\LaravelIdeHelper\Factories;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 

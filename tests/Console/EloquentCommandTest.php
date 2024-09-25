@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console;
+namespace Sollie\LaravelIdeHelper\Tests\Console;
 
-use Barryvdh\LaravelIdeHelper\Console\EloquentCommand;
-use Barryvdh\LaravelIdeHelper\Tests\TestCase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Filesystem\Filesystem;
 use Mockery;
 use ReflectionClass;
+use Sollie\LaravelIdeHelper\Console\EloquentCommand;
+use Sollie\LaravelIdeHelper\Tests\TestCase;
 
 class EloquentCommandTest extends TestCase
 {

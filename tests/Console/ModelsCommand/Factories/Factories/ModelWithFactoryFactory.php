@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories;
 
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models\ModelWithFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models\ModelWithFactory;
 
 class ModelWithFactoryFactory extends Factory
 {

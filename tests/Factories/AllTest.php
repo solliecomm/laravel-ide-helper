@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Factories;
+namespace Sollie\LaravelIdeHelper\Tests\Factories;
 
-use Barryvdh\LaravelIdeHelper\Factories;
 use PHPUnit\Framework\TestCase;
+use Sollie\LaravelIdeHelper\Factories;
 
 class AllTest extends TestCase
 {

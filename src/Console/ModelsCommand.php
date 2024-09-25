@@ -9,10 +9,8 @@
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
-namespace Barryvdh\LaravelIdeHelper\Console;
+namespace Sollie\LaravelIdeHelper\Console;
 
-use Barryvdh\LaravelIdeHelper\Contracts\ModelHookInterface;
-use Barryvdh\LaravelIdeHelper\Parsers\PhpDocReturnTypeParser;
 use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Context;
 use Barryvdh\Reflection\DocBlock\Serializer as DocBlockSerializer;
@@ -57,6 +55,8 @@ use ReflectionObject;
 use ReflectionType;
 use ReflectionUnionType;
 use Reflector;
+use Sollie\LaravelIdeHelper\Contracts\ModelHookInterface;
+use Sollie\LaravelIdeHelper\Parsers\PhpDocReturnTypeParser;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -1625,7 +1625,7 @@ class ModelsCommand extends Command
 
             if (!$hookInstance instanceof ModelHookInterface) {
                 throw new \RuntimeException(
-                    'Your IDE helper model hook must implement Barryvdh\LaravelIdeHelper\Contracts\ModelHookInterface'
+                    'Your IDE helper model hook must implement Sollie\LaravelIdeHelper\Contracts\ModelHookInterface'
                 );
             }
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Parsers;
+namespace Sollie\LaravelIdeHelper\Parsers;
 
 class PhpDocReturnTypeParser
 {

@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests;
+namespace Sollie\LaravelIdeHelper\Tests;
 
-use Barryvdh\LaravelIdeHelper\Macro;
 use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Tag;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
@@ -12,6 +11,7 @@ use Illuminate\Routing\UrlGenerator;
 use ReflectionClass;
 use ReflectionFunction;
 use ReflectionFunctionAbstract;
+use Sollie\LaravelIdeHelper\Macro;
 
 use function array_map;
 use function implode;
@@ -20,7 +20,7 @@ use const PHP_EOL;
 
 /**
  * @internal
- * @coversDefaultClass \Barryvdh\LaravelIdeHelper\Macro
+ * @coversDefaultClass \Sollie\LaravelIdeHelper\Macro
  */
 class MacroTest extends TestCase
 {
@@ -247,7 +247,7 @@ class MacroTest extends TestCase
  * @param string $foo
  * @param int $bar
  * @return string 
- * @see \Barryvdh\LaravelIdeHelper\Tests\UrlGeneratorMacroClass::__invoke()
+ * @see \Sollie\LaravelIdeHelper\Tests\UrlGeneratorMacroClass::__invoke()
  * @static 
  */
 DOC;

@@ -6,7 +6,7 @@
  * @author Charles A. Peterson <artistan@gmail.com>
  */
 
-namespace Barryvdh\LaravelIdeHelper;
+namespace Sollie\LaravelIdeHelper;
 
 use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Context;

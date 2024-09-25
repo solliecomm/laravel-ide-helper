@@ -1,5 +1,5 @@
 {
-    "name": "barryvdh/laravel-ide-helper",
+    "name": "solliecomm/laravel-ide-helper",
     "description": "Laravel IDE Helper, generates correct PHPDocs for all Facade classes, to improve auto-completion.",
     "license": "MIT",
     "keywords": [
@@ -17,6 +17,10 @@
         {
             "name": "Barry vd. Heuvel",
             "email": "barryvdh@gmail.com"
+        },
+        {
+            "name": "Mark Menzo",
+            "email": "mmenzo@sollie.nl"
         }
     ],
     "require": {
@@ -49,12 +53,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Barryvdh\\LaravelIdeHelper\\": "src"
+            "Sollie\\LaravelIdeHelper\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Barryvdh\\LaravelIdeHelper\\Tests\\": "tests"
+            "Sollie\\LaravelIdeHelper\\Tests\\": "tests"
         }
     },
     "config": {
@@ -69,7 +73,7 @@
         },
         "laravel": {
             "providers": [
-                "Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider"
+                "Sollie\\LaravelIdeHelper\\IdeHelperServiceProvider"
             ]
         }
     },

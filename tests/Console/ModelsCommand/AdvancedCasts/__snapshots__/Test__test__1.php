@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models;
 
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsCollection;
@@ -26,9 +26,9 @@ use Illuminate\Support\Collection;
  * @property array $cast_to_encrypted_json
  * @property object $cast_to_encrypted_object
  * @property Collection $cast_to_as_collection
- * @property Collection<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleCollection> $cast_to_as_collection_with_params
+ * @property Collection<int, \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleCollection> $cast_to_as_collection_with_params
  * @property Collection $cast_to_as_enum_collection
- * @property Collection<int, \Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleEnum> $cast_to_as_enum_collection_with_params
+ * @property Collection<int, \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleEnum> $cast_to_as_enum_collection_with_params
  * @property \Illuminate\Database\Eloquent\Casts\ArrayObject $cast_to_as_array_object
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdvancedCast newQuery()
@@ -68,12 +68,16 @@ class AdvancedCast extends Model
         'cast_to_encrypted_json' => 'encrypted:json',
         'cast_to_encrypted_object' => 'encrypted:object',
         'cast_to_as_collection' => AsCollection::class,
-        'cast_to_as_collection_with_params' => AsCollection::class.':'.ExampleCollection::class,
+        'cast_to_as_collection_with_params' => AsCollection::class . ':' . ExampleCollection::class,
         'cast_to_as_enum_collection' => AsEnumCollection::class,
-        'cast_to_as_enum_collection_with_params' => AsEnumCollection::class.':'.ExampleEnum::class,
+        'cast_to_as_enum_collection_with_params' => AsEnumCollection::class . ':' . ExampleEnum::class,
         'cast_to_as_array_object' => AsArrayObject::class,
     ];
 }
 
-class ExampleCollection extends Collection {}
-enum ExampleEnum: string {}
+class ExampleCollection extends Collection
+{
+}
+enum ExampleEnum: string
+{
+}

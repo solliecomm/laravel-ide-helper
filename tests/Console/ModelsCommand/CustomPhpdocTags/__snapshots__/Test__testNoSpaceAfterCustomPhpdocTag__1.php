@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\CustomPhpdocTags\Models;
+namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\CustomPhpdocTags\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

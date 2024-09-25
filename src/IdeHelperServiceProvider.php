@@ -9,13 +9,8 @@
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
-namespace Barryvdh\LaravelIdeHelper;
+namespace Sollie\LaravelIdeHelper;
 
-use Barryvdh\LaravelIdeHelper\Console\EloquentCommand;
-use Barryvdh\LaravelIdeHelper\Console\GeneratorCommand;
-use Barryvdh\LaravelIdeHelper\Console\MetaCommand;
-use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
-use Barryvdh\LaravelIdeHelper\Listeners\GenerateModelHelper;
 use Illuminate\Console\Events\CommandFinished;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Database\Events\MigrationsEnded;
@@ -24,6 +19,11 @@ use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Engines\PhpEngine;
 use Illuminate\View\Factory;
 use Illuminate\View\FileViewFinder;
+use Sollie\LaravelIdeHelper\Console\EloquentCommand;
+use Sollie\LaravelIdeHelper\Console\GeneratorCommand;
+use Sollie\LaravelIdeHelper\Console\MetaCommand;
+use Sollie\LaravelIdeHelper\Console\ModelsCommand;
+use Sollie\LaravelIdeHelper\Listeners\GenerateModelHelper;
 
 class IdeHelperServiceProvider extends ServiceProvider implements DeferrableProvider
 {
