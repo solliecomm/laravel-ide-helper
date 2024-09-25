@@ -91,12 +91,12 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationMorphMany
  * @property-read int|null $relation_morph_many_count
  * @property-read Simple|null $relationMorphOne
- * @property-read Model|\Eloquent $relationMorphTo
+ * @property-read Model|null $relationMorphTo
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationMorphedByMany
  * @property-read int|null $relation_morphed_by_many_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationSampleRelationType
  * @property-read int|null $relation_sample_relation_type_count
- * @property-read Model|\Eloquent $relationSampleToAnyMorphedRelationType
+ * @property-read Model|null $relationSampleToAnyMorphedRelationType
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationSampleToAnyRelationType
  * @property-read int|null $relation_sample_to_any_relation_type_count
  * @property-read Simple $relationSampleToBadlyNamedNotManyRelation

@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property int $relation_morph_to_id
  * @property string|null $nullable_relation_morph_to_type
  * @property int|null $nullable_relation_morph_to_id
- * @property-read Model|\Eloquent|null $nullableRelationMorphTo
- * @property-read Model|\Eloquent $relationMorphTo
+ * @property-read Model|null $nullableRelationMorphTo
+ * @property-read Model|null $relationMorphTo
  * @method static \Illuminate\Database\Eloquent\Builder|Morphs newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Morphs newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Morphs query()

@@ -717,11 +717,11 @@ class ModelsCommand extends Command
                                     // Model isn't specified because relation is polymorphic
                                     $this->setProperty(
                                         $method,
-                                        $this->getClassNameInDestinationFile($model, Model::class) . '|\Eloquent',
+                                        $this->getClassNameInDestinationFile($model, Model::class),
                                         true,
                                         null,
                                         $comment,
-                                        $this->isMorphToRelationNullable($relationObj)
+                                        true,
                                     );
                                 } else {
                                     //Single model is returned
@@ -770,42 +770,7 @@ class ModelsCommand extends Command
         return isset($this->nullableColumns[$fkProp->getValue($relationObj)]);
     }
 
-    /**
-     * Check if the morphTo relation is nullable
-     *
-     * @param Relation $relationObj
-     *
-     * @return bool
-     */
-    protected function isMorphToRelationNullable(Relation $relationObj): bool
-    {
-        $reflectionObj = new ReflectionObject($relationObj);
-
-        if (!$reflectionObj->hasProperty('foreignKey')) {
-            return false;
-        }
-
-        $fkProp = $reflectionObj->getProperty('foreignKey');
-        $fkProp->setAccessible(true);
-
-        foreach (Arr::wrap($fkProp->getValue($relationObj)) as $foreignKey) {
-            if (isset($this->nullableColumns[$foreignKey])) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * @param string      $name
-     * @param string|null $type
-     * @param bool|null   $read
-     * @param bool|null   $write
-     * @param string|null $comment
-     * @param bool        $nullable
-     */
-    public function setProperty($name, $type = null, $read = null, $write = null, $comment = '', $nullable = false)
+    public function setProperty(string $name, ?string $type = null, ?bool $read = null, ?bool $write = null, ?string $comment = null, bool $nullable = false)
     {
         if (!isset($this->properties[$name])) {
             $this->properties[$name] = [];
@@ -814,16 +779,20 @@ class ModelsCommand extends Command
             $this->properties[$name]['write'] = false;
             $this->properties[$name]['comment'] = (string) $comment;
         }
+
         if ($type !== null) {
             $newType = $this->getTypeOverride($type);
             if ($nullable) {
                 $newType .= '|null';
             }
+
             $this->properties[$name]['type'] = $newType;
         }
+
         if ($read !== null) {
             $this->properties[$name]['read'] = $read;
         }
+
         if ($write !== null) {
             $this->properties[$name]['write'] = $write;
         }
