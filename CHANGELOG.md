@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 - In some cases a union type was needed in the `type_overrides` config, now it always checks single types
 
 ### Changed
+- PHP 8.2 is now required
 - Casts without properties are now removed
 - `belongsTo` relationships pointing to a column that is not a foreign key will not always be marked as nullable anymore
 - Relationships pointing to a model that has global scopes will now always be marked as nullable.
