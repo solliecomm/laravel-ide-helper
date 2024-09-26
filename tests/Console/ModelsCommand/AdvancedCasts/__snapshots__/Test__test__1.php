@@ -21,9 +21,9 @@ use Illuminate\Support\Collection;
  * @property \Carbon\CarbonImmutable $cast_to_immutable_datetime
  * @property int $cast_to_timestamp
  * @property mixed $cast_to_encrypted
- * @property array $cast_to_encrypted_array
+ * @property array<mixed> $cast_to_encrypted_array
  * @property Collection $cast_to_encrypted_collection
- * @property array $cast_to_encrypted_json
+ * @property array<mixed> $cast_to_encrypted_json
  * @property object $cast_to_encrypted_object
  * @property Collection $cast_to_as_collection
  * @property Collection<int, \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\AdvancedCasts\Models\ExampleCollection> $cast_to_as_collection_with_params

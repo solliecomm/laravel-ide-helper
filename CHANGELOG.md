@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-[Next release](https://github.com/barryvdh/laravel-ide-helper/compare/v3.1.0...master)
+[Next release](https://github.com/barryvdh/laravel-ide-helper/compare/v4.0.2...master)
 --------------
 
 2024-09-26, 4.0.2

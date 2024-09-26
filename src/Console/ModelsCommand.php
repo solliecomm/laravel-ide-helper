@@ -391,7 +391,7 @@ class ModelsCommand extends Command
             'encrypted' => $params[0] ?? 'mixed',
             'boolean', 'bool' => 'bool',
             'decimal', 'string', 'hashed' => 'string',
-            'array', 'json' => 'array',
+            'array', 'json' => 'array<mixed>',
             'object' => 'object',
             'int', 'integer', 'timestamp' => 'int',
             'real', 'double', 'float' => 'float',

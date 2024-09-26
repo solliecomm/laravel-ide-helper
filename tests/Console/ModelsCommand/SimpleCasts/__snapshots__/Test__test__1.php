@@ -19,8 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool $cast_to_bool
  * @property bool $cast_to_boolean
  * @property object $cast_to_object
- * @property array $cast_to_array
- * @property array $cast_to_json
+ * @property array<mixed> $cast_to_array
+ * @property array<mixed> $cast_to_json
  * @property \Illuminate\Support\Collection $cast_to_collection
  * @property \Illuminate\Support\Carbon $cast_to_date
  * @property \Illuminate\Support\Carbon $cast_to_datetime
@@ -34,9 +34,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\CarbonImmutable $cast_to_immutable_datetime_serialization
  * @property int $cast_to_timestamp
  * @property mixed $cast_to_encrypted
- * @property array $cast_to_encrypted_array
+ * @property array<mixed> $cast_to_encrypted_array
  * @property \Illuminate\Support\Collection $cast_to_encrypted_collection
- * @property array $cast_to_encrypted_json
+ * @property array<mixed> $cast_to_encrypted_json
  * @property object $cast_to_encrypted_object
  * @method static \Illuminate\Database\Eloquent\Builder<SimpleCast> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<SimpleCast> newQuery()
