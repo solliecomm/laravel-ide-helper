@@ -13,11 +13,11 @@ use Iterator;
  * 
  *
  * @property-read (\Iterator&\Countable) $foo
- * @method static \Illuminate\Database\Eloquent\Builder|IntersectionTypeModel newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|IntersectionTypeModel newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|IntersectionTypeModel query()
- * @method static \Illuminate\Database\Eloquent\Builder|IntersectionTypeModel withIntersectionTypeParameter((\Iterator&\Countable) $bar)
- * @method static \Illuminate\Database\Eloquent\Builder|IntersectionTypeModel withNullableIntersectionTypeParameter(?(\Iterator&\Countable) $bar)
+ * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> query()
+ * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> withIntersectionTypeParameter((\Iterator&\Countable) $bar)
+ * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> withNullableIntersectionTypeParameter(?(\Iterator&\Countable) $bar)
  * @mixin \Eloquent
  */
 class IntersectionTypeModel extends Model

@@ -16,10 +16,10 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\CustomCollection\Collect
  * @property-read int|null $relation_has_many_count
  * @method static SimpleCollection<int, static> all($columns = ['*'])
  * @method static SimpleCollection<int, static> get($columns = ['*'])
- * @method static \Illuminate\Database\Eloquent\Builder|Simple newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Simple newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Simple query()
- * @method static \Illuminate\Database\Eloquent\Builder|Simple whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> query()
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> whereId($value)
  * @mixin \Eloquent
  */
 class Simple extends Model

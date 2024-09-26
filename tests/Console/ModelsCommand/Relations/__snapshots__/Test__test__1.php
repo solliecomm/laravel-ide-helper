@@ -19,14 +19,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read BelongsToVariation $notNullColumnWithNoForeignKeyConstraint
  * @property-read BelongsToVariation|null $nullableColumnWithForeignKeyConstraint
  * @property-read BelongsToVariation|null $nullableColumnWithNoForeignKeyConstraint
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation query()
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation whereNotNullColumnWithForeignKeyConstraint($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation whereNotNullColumnWithNoForeignKeyConstraint($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation whereNullableColumnWithForeignKeyConstraint($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BelongsToVariation whereNullableColumnWithNoForeignKeyConstraint($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> query()
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereNotNullColumnWithForeignKeyConstraint($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereNotNullColumnWithNoForeignKeyConstraint($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereNullableColumnWithForeignKeyConstraint($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereNullableColumnWithNoForeignKeyConstraint($value)
  * @mixin \Eloquent
  */
 class BelongsToVariation extends Model
@@ -101,10 +101,10 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\Traits\HasTest
  * @property-read int|null $relation_sample_to_any_relation_type_count
  * @property-read Simple $relationSampleToBadlyNamedNotManyRelation
  * @property-read Simple $relationSampleToManyRelationType
- * @method static \Illuminate\Database\Eloquent\Builder|Simple newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Simple newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Simple query()
- * @method static \Illuminate\Database\Eloquent\Builder|Simple whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> query()
+ * @method static \Illuminate\Database\Eloquent\Builder<Simple> whereId($value)
  * @mixin \Eloquent
  */
 class Simple extends Model

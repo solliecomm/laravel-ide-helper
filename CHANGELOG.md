@@ -5,12 +5,14 @@ All notable changes to this project will be documented in this file.
 [Next release](https://github.com/barryvdh/laravel-ide-helper/compare/v3.1.0...master)
 --------------
 
-2024-09-25, 4.0.2
+2024-09-26, 4.0.2
 ------------------
 
 ### Changed
 - Ignore errors when running model hooks. This prevents compatability issues with other packages that define model hooks for the upstream package, such as [staudenmeir/belongs-to-through](https://github.com/staudenmeir/belongs-to-through). 
-- Drop support for Laravel 10.x
+- Increase minimum Laravel Framework version to v11.24.1
+- Drop support for `use_generics_annotations`
+- Improve generics for better compatability with the latest PHPstan version
 
 2024-09-25, 4.0.1
 ------------------

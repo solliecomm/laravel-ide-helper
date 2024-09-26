@@ -15,9 +15,9 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Interfaces\Models{
 /**
  * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|User query()
+ * @method static \Illuminate\Database\Eloquent\Builder<User> newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<User> newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<User> query()
  */
 	class User extends \Eloquent implements \Illuminate\Contracts\Auth\Authenticatable {}
 }
