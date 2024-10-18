@@ -1572,15 +1572,14 @@ class ModelsCommand extends Command
      */
     protected function extractReflectionTypes(ReflectionType $reflectionType): array
     {
+        $types = [];
         if ($reflectionType instanceof ReflectionIntersectionType) {
-            $types = [];
             foreach ($reflectionType->getTypes() as $t) {
                 $types = array_merge($types, $this->extractReflectionTypes($t));
             }
 
             return ['(' . implode('&', $types) . ')'];
         } elseif ($reflectionType instanceof ReflectionUnionType) {
-            $types = [];
             foreach ($reflectionType->getTypes() as $t) {
                 $types = array_merge($types, $this->extractReflectionTypes($t));
             }
