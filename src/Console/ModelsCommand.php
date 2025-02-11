@@ -16,6 +16,7 @@ use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Context;
 use Barryvdh\Reflection\DocBlock\Serializer as DocBlockSerializer;
 use Barryvdh\Reflection\DocBlock\Tag;
+use Barryvdh\Reflection\DocBlock\ContextFactory;
 use Carbon\CarbonImmutable;
 use Composer\ClassMapGenerator\ClassMapGenerator;
 use Illuminate\Console\Command;
@@ -46,7 +47,6 @@ use Illuminate\Database\Schema\Builder;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use phpDocumentor\Reflection\Types\ContextFactory;
 use ReflectionClass;
 use ReflectionFunction;
 use ReflectionIntersectionType;
@@ -1460,7 +1460,9 @@ class ModelsCommand extends Command
      */
     protected function getUsedClassNames(ReflectionClass $reflection): array
     {
-        $namespaceAliases = array_flip((new ContextFactory())->createFromReflector($reflection)->getNamespaceAliases());
+        $namespaceAliases = array_flip(array_map(function ($alias) {
+            return ltrim($alias, '\\');
+        }, (new ContextFactory())->createFromReflector($reflection)->getNamespaceAliases()));
         $namespaceAliases[$reflection->getName()] = $reflection->getShortName();
 
         return $namespaceAliases;

@@ -31,9 +31,7 @@
         "illuminate/console": "^11.24.1",
         "illuminate/database": "^11.24.1",
         "illuminate/filesystem": "^11.24.1",
-        "illuminate/support": "^11.24.1",
-        "nikic/php-parser": "^4.18 || ^5",
-        "phpdocumentor/type-resolver": "^1.8.0"
+        "illuminate/support": "^11.24.1"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",

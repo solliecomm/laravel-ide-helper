@@ -17,10 +17,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
-use PhpParser\Lexer\Emulative;
-use PhpParser\Node\Stmt\Class_;
-use PhpParser\Node\Stmt\Namespace_;
-use PhpParser\Parser\Php7;
 use ReflectionClass;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -187,8 +183,10 @@ class Generator
         foreach ($realTimeFacadeFiles as $file) {
             try {
                 $name = $this->getFullyQualifiedClassNameInFile($file);
-                $facades[$name] = $name;
-            } catch (\Exception $e) {
+                if ($name) {
+                    $facades[$name] = $name;
+                }
+            } catch (\Throwable $e) {
                 continue;
             }
         }
@@ -200,26 +198,17 @@ class Generator
     {
         $contents = file_get_contents($path);
 
-        $parsers = new Php7(new Emulative());
+        // Match namespace
+        preg_match('/namespace\s+([^;]+);/', $contents, $namespaceMatch);
+        $namespace = $namespaceMatch[1] ?? '';
 
-        $parsed = collect($parsers->parse($contents) ?: []);
+        // Match class name
+        preg_match('/class\s+([a-zA-Z0-9_]+)/', $contents, $classMatch);
+        $className = $classMatch[1] ?? '';
 
-        $namespace = $parsed->first(function ($node) {
-            return $node instanceof Namespace_;
-        });
-
-        if ($namespace) {
-            $name = $namespace->name->toString();
-
-            $class = collect($namespace->stmts)->first(function ($node) {
-                return $node instanceof Class_;
-            });
-
-            if ($class) {
-                $name .= '\\'.$class->name->toString();
-            }
-
-            return $name;
+        // Combine namespace and class name
+        if ($namespace && $className) {
+            return $namespace.'\\'.$className;
         }
     }
 

@@ -16,6 +16,7 @@ use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Context;
 use Barryvdh\Reflection\DocBlock\Serializer as DocBlockSerializer;
 use Barryvdh\Reflection\DocBlock\Tag\MethodTag;
+use Barryvdh\Reflection\DocBlock\ContextFactory;
 use Closure;
 use Illuminate\Config\Repository as ConfigRepository;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
@@ -85,7 +86,7 @@ class Alias
         $this->detectExtendsNamespace();
 
         if (! empty($this->namespace)) {
-            $this->classAliases = (new UsesResolver())->loadFromClass($this->root);
+            $this->classAliases = (new ContextFactory())->createFromReflector(new ReflectionClass($this->root))->getNamespaceAliases();
 
             // Create a DocBlock and serializer instance
             $this->phpdoc = new DocBlock(new ReflectionClass($alias), new Context($this->namespace, $this->classAliases));
