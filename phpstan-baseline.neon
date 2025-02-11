@@ -656,11 +656,6 @@ parameters:
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: "#^Undefined variable\\: \\$types$#"
-			count: 1
-			path: src/Console/ModelsCommand.php
-
-		-
 			message: "#^Variable \\$docComment on left side of \\?\\? always exists and is not nullable\\.$#"
 			count: 1
 			path: src/Console/ModelsCommand.php
@@ -684,16 +679,6 @@ parameters:
 			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Factories\\:\\:isLaravelSevenOrLower\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Factories.php
-
-		-
-			message: "#^Access to an undefined property PhpParser\\\\Node\\\\Stmt\\:\\:\\$name\\.$#"
-			count: 1
-			path: src/Generator.php
-
-		-
-			message: "#^Access to an undefined property PhpParser\\\\Node\\\\Stmt\\:\\:\\$stmts\\.$#"
-			count: 1
-			path: src/Generator.php
 
 		-
 			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
@@ -751,11 +736,6 @@ parameters:
 			path: src/Generator.php
 
 		-
-			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getFullyQualifiedClassNameInFile\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Generator.php
-
-		-
 			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getMacroableClasses\\(\\) has parameter \\$aliases with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Generator.php
@@ -777,11 +757,6 @@ parameters:
 
 		-
 			message: "#^PHPDoc tag @return has invalid value \\(string;\\)\\: Unexpected token \";\", expected TOKEN_HORIZONTAL_WS at offset 74 on line 4$#"
-			count: 1
-			path: src/Generator.php
-
-		-
-			message: "#^Parameter \\#1 \\$code of method PhpParser\\\\ParserAbstract\\:\\:parse\\(\\) expects string, string\\|false given\\.$#"
 			count: 1
 			path: src/Generator.php
 
@@ -817,16 +792,6 @@ parameters:
 
 		-
 			message: "#^Unable to resolve the template type TGroupKey in call to method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:groupBy\\(\\)$#"
-			count: 1
-			path: src/Generator.php
-
-		-
-			message: "#^Unable to resolve the template type TKey in call to function collect$#"
-			count: 1
-			path: src/Generator.php
-
-		-
-			message: "#^Unable to resolve the template type TValue in call to function collect$#"
 			count: 1
 			path: src/Generator.php
 
@@ -1054,53 +1019,3 @@ parameters:
 			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Parsers\\\\PhpDocReturnTypeParser\\:\\:\\$namespaceAliases type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Parsers/PhpDocReturnTypeParser.php
-
-		-
-			message: "#^Argument of an invalid type array\\<PhpParser\\\\Node\\\\Stmt\\>\\|null supplied for foreach, only iterables are supported\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Cannot call method toCodeString\\(\\) on PhpParser\\\\Node\\\\Name\\|null\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:classBasename\\(\\) should return string but returns string\\|null\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromClass\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromCode\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromFile\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Parameter \\#1 \\$objectOrClass of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Parameter \\#1 \\$string of function rtrim expects string, string\\|null given\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Parameter \\#2 \\$code of method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromCode\\(\\) expects string, string\\|false given\\.$#"
-			count: 1
-			path: src/UsesResolver.php
-
-		-
-			message: "#^Parameter \\#2 \\$filename of method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromFile\\(\\) expects string, string\\|false given\\.$#"
-			count: 1
-			path: src/UsesResolver.php

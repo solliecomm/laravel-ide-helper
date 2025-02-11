@@ -194,9 +194,12 @@ class Generator
         return $facades;
     }
 
-    protected function getFullyQualifiedClassNameInFile(string $path)
+    protected function getFullyQualifiedClassNameInFile(string $path): ?string
     {
         $contents = file_get_contents($path);
+        if (! $contents) {
+            return null;
+        }
 
         // Match namespace
         preg_match('/namespace\s+([^;]+);/', $contents, $namespaceMatch);
@@ -210,6 +213,8 @@ class Generator
         if ($namespace && $className) {
             return $namespace.'\\'.$className;
         }
+
+        return null;
     }
 
     /**
