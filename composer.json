@@ -77,9 +77,9 @@
         }
     },
     "scripts": {
-        "pint": "pint",
         "phpstan": "phpstan analyse --memory-limit=2G",
         "phpstan-generate-baseline": "phpstan analyse --memory-limit=2G -b",
+        "pint": "pint",
         "test": "phpunit",
         "test-ci": "phpunit -d --without-creating-snapshots",
         "test-regenerate": "phpunit -d --update-snapshots"
