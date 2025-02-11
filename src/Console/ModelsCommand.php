@@ -536,13 +536,19 @@ class ModelsCommand extends Command
             // Filter out private methods because they can't be used to generate magic properties and HasAttributes'
             // methods that resemble mutators but aren't.
             $reflections = array_filter($reflections, function (ReflectionMethod $methodReflection) {
-                return !$methodReflection->isPrivate() && !(
-                    $methodReflection->getDeclaringClass()->getName() === Model::class && (
-                        $methodReflection->getName() === 'setClassCastableAttribute' ||
-                        $methodReflection->getName() === 'setEnumCastableAttribute'
-                    )
-                );
+                if ($methodReflection->isPrivate()) {
+                    return false;
+                }
+
+                if ($methodReflection->getDeclaringClass()->getName() === Model::class && (
+                    $methodReflection->getName() === 'setClassCastableAttribute' ||
+                    $methodReflection->getName() === 'setEnumCastableAttribute')) {
+                    return false;
+                }
+
+                return $methodReflection->getName() !== 'getUseFactoryAttribute';
             });
+
             sort($reflections);
             foreach ($reflections as $reflection) {
                 $type = $this->getReturnTypeFromReflection($reflection);
