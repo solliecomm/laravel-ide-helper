@@ -1,0 +1,1106 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:__construct\\(\\) has parameter \\$interfaces with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:__construct\\(\\) has parameter \\$magicMethods with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:addClass\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:addClass\\(\\) has parameter \\$classes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:addMagicMethods\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:detectClassType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:detectExtendsNamespace\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:detectFake\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:detectMethods\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:detectNamespace\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:detectRoot\\(\\) should return bool\\|string but empty return statement found\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:detectRoot\\(\\) should return bool\\|string but return statement is missing\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:getDocComment\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:getDocComment\\(\\) has parameter \\$prefix with no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:getMacroFunction\\(\\) has parameter \\$macro_func with no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:getShortName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Parameter \\#1 \\$class of function class_exists expects string, class\\-string\\|false given\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Parameter \\#1 \\$classes of method Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:addClass\\(\\) expects array\\|string, class\\-string\\|false given\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Parameter \\#1 \\$docblock of class Barryvdh\\\\Reflection\\\\DocBlock constructor expects Reflector\\|string, string\\|false given\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Parameter \\#1 \\$interface of function interface_exists expects string, class\\-string\\|false given\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Parameter \\#1 \\$objectOrClass of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$alias has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$classAliases has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$classType has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$classes has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$extends has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$extendsClass has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$extendsNamespace has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$facade \\(class\\-string\\) does not accept string\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$interfaces has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$magicMethods has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$methods has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$namespace has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$phpdoc has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$root has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$short has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$usedMethods has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Alias\\:\\:\\$valid has no type specified\\.$#"
+			count: 1
+			path: src/Alias.php
+
+		-
+			message: "#^Binary operation \"\\.\\=\" between array\\|bool\\|string\\|null and '\\.php' results in an error\\.$#"
+			count: 1
+			path: src/Console/GeneratorCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\GeneratorCommand\\:\\:getArguments\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/GeneratorCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\GeneratorCommand\\:\\:getOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/GeneratorCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\GeneratorCommand\\:\\:useMemoryDriver\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/GeneratorCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function substr expects string, array\\|bool\\|string\\|null given\\.$#"
+			count: 1
+			path: src/Console/GeneratorCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\GeneratorCommand\\:\\:\\$onlyExtend has no type specified\\.$#"
+			count: 1
+			path: src/Console/GeneratorCommand.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Contracts\\\\Foundation\\\\Application\\:\\:getBindings\\(\\)\\.$#"
+			count: 1
+			path: src/Console/MetaCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\MetaCommand\\:\\:getAbstracts\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/MetaCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\MetaCommand\\:\\:getOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/MetaCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of method Illuminate\\\\Contracts\\\\Filesystem\\\\Filesystem\\:\\:put\\(\\) expects string, array\\|bool\\|string\\|null given\\.$#"
+			count: 1
+			path: src/Console/MetaCommand.php
+
+		-
+			message: "#^Part \\$filename \\(array\\|bool\\|string\\|null\\) of encapsed string cannot be cast to string\\.$#"
+			count: 2
+			path: src/Console/MetaCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\MetaCommand\\:\\:\\$methods has no type specified\\.$#"
+			count: 1
+			path: src/Console/MetaCommand.php
+
+		-
+			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Call to an undefined method Barryvdh\\\\Reflection\\\\DocBlock\\\\Tag\\:\\:getMethodName\\(\\)\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Call to an undefined method Barryvdh\\\\Reflection\\\\DocBlock\\\\Tag\\:\\:getType\\(\\)\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Call to an undefined method Barryvdh\\\\Reflection\\\\DocBlock\\\\Tag\\:\\:getVariableName\\(\\)\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Support\\\\Optional\\:\\:getNumberOfParameters\\(\\)\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Support\\\\Optional\\:\\:getParameters\\(\\)\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Call to an undefined static method Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:newFactory\\(\\)\\.$#"
+			count: 2
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Call to function is_object\\(\\) with string will always evaluate to false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Cannot access offset 'config' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
+			count: 12
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Cannot call method getInterfaceNames\\(\\) on ReflectionClass\\|false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 2
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Illuminate\\\\Support\\\\Collection\\<\\*NEVER\\*, \\*NEVER\\*\\> does not accept ReflectionType\\|string\\|null\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Illuminate\\\\Support\\\\Collection\\<\\*NEVER\\*, \\*NEVER\\*\\> does not accept null\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Instanceof between \\*NEVER\\* and ReflectionIntersectionType will always evaluate to false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Instanceof between \\*NEVER\\* and ReflectionNamedType will always evaluate to false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Instanceof between \\*NEVER\\* and ReflectionType will always evaluate to false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Instanceof between \\*NEVER\\* and ReflectionUnionType will always evaluate to false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:castPropertyType\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:checkForCastableCasts\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:checkForCollectionGenerics\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:checkForCustomLaravelCasts\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:generateDocs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:generateDocs\\(\\) has parameter \\$ignore with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:generateDocs\\(\\) has parameter \\$loadModels with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getArguments\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getAttributeTypes\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getClassKeyword\\(\\) has parameter \\$reflection with generic class ReflectionClass but does not specify its types\\: T$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getCollectionMethods\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getFactoryMethods\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getMethodType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getParameters\\(\\) has parameter \\$method with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getParameters\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getPropertiesFromMethods\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getRelationReturnTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getRelationTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getSoftDeleteMethods\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getUsedClassNames\\(\\) has parameter \\$reflection with generic class ReflectionClass but does not specify its types\\: T$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:isRelationNullable\\(\\) has parameter \\$relationObj with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\Relation but does not specify its types\\: TRelatedModel, TDeclaringModel, TResult$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:loadModels\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:setMethod\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:setMethod\\(\\) has parameter \\$arguments with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:setMethod\\(\\) has parameter \\$comment with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:setMethod\\(\\) has parameter \\$name with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:setMethod\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:setProperty\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:unsetMethod\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:unsetMethod\\(\\) has parameter \\$name with no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func expects callable\\(\\)\\: mixed, array\\{class\\-string, 'castUsing'\\} given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$collectionClassNameInModel of method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getCollectionTypeHint\\(\\) expects class\\-string, string given\\.$#"
+			count: 2
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$collectionClassNameInModel of method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getCollectionTypeHint\\(\\) expects class\\-string, string\\|null given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$filename of class SplFileObject constructor expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$function of class ReflectionFunction constructor expects Closure\\|string, callable\\(\\)\\: mixed given\\.$#"
+			count: 3
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$model of method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:castPropertyTypes\\(\\) expects Illuminate\\\\Database\\\\Eloquent\\\\Model, class\\-string\\|object given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$object_or_class of function is_a expects object\\|string, string\\|null given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of method Illuminate\\\\Filesystem\\\\Filesystem\\:\\:get\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of method Illuminate\\\\Filesystem\\\\Filesystem\\:\\:put\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$search of function str_replace expects array\\|string, string\\|null given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function trim expects string, class\\-string\\|false given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#2 \\$offset of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#2 \\$relatedModel of method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getCollectionTypeHint\\(\\) expects class\\-string\\|null, string given\\.$#"
+			count: 2
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#2 \\$relatedModel of method Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:getCollectionTypeHint\\(\\) expects class\\-string\\|null, string\\|null given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#2 \\$replace of function str_replace expects array\\|string, string\\|null given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$arrays of function array_merge expects array, array\\|bool\\|string\\|null given\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$customTags type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$dirs has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$methods has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$phpstorm_noinspections has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$properties has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$reset has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$write has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$write_mixin has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$write_model_external_builder_methods has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$write_model_magic_where has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Console\\\\ModelsCommand\\:\\:\\$write_model_relation_count_properties has no type specified\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Result of \\|\\| is always false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between \\*NEVER\\* and null will always evaluate to false\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			count: 2
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Undefined variable\\: \\$types$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Variable \\$docComment on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Variable \\$mixinClassName might not be defined\\.$#"
+			count: 1
+			path: src/Console/ModelsCommand.php
+
+		-
+			message: "#^Class Illuminate\\\\Database\\\\Eloquent\\\\Factory not found\\.$#"
+			count: 2
+			path: src/Factories.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Factories\\:\\:all\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Factories.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Factories\\:\\:isLaravelSevenOrLower\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Factories.php
+
+		-
+			message: "#^Access to an undefined property PhpParser\\\\Node\\\\Stmt\\:\\:\\$name\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Access to an undefined property PhpParser\\\\Node\\\\Stmt\\:\\:\\$stmts\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Constructor of class Sollie\\\\LaravelIdeHelper\\\\Generator has an unused parameter \\$output\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Illuminate\\\\Support\\\\Collection\\<\\*NEVER\\*, \\*NEVER\\*\\> does not accept Sollie\\\\LaravelIdeHelper\\\\Alias\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:addMacroableClasses\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:addMacroableClasses\\(\\) has parameter \\$aliases with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:detectDrivers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:generate\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getAliases\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getAliasesByAliasNamespace\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getAliasesByExtendsNamespace\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getFullyQualifiedClassNameInFile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getMacroableClasses\\(\\) has parameter \\$aliases with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getMacroableClasses\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getRealTimeFacades\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:getValidAliases\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^PHPDoc tag @return has invalid value \\(string;\\)\\: Unexpected token \";\", expected TOKEN_HORIZONTAL_WS at offset 74 on line 4$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Parameter \\#1 \\$code of method PhpParser\\\\ParserAbstract\\:\\:parse\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Parameter \\#1 \\$groupBy of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:groupBy\\(\\) expects array\\|\\(callable\\(mixed, int\\|string\\)\\: \\(int\\|string\\)\\)\\|string, Closure\\(Sollie\\\\LaravelIdeHelper\\\\Alias\\)\\: \\(string\\|null\\) given\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Parameter \\#1 \\$object_or_class of function is_subclass_of expects object\\|string, string\\|null given\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:\\$extra has no type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:\\$helpers has no type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:\\$interfaces has no type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Generator\\:\\:\\$magic has no type specified\\.$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Unable to resolve the template type TGroupKey in call to method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:groupBy\\(\\)$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			count: 1
+			path: src/Generator.php
+
+		-
+			message: "#^Cannot access offset 'config' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
+			count: 1
+			path: src/IdeHelperServiceProvider.php
+
+		-
+			message: "#^Cannot access offset 'events' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
+			count: 3
+			path: src/IdeHelperServiceProvider.php
+
+		-
+			message: "#^Cannot access offset 'files' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
+			count: 2
+			path: src/IdeHelperServiceProvider.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\IdeHelperServiceProvider\\:\\:provides\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/IdeHelperServiceProvider.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Listeners\\\\GenerateModelHelper\\:\\:handle\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Listeners/GenerateModelHelper.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Support\\\\HigherOrderCollectionProxy\\<\\(int\\|string\\), ReflectionType\\|null\\>\\:\\:getName\\(\\)\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Cannot call method allowsNull\\(\\) on ReflectionType\\|null\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Cannot call method getName\\(\\) on ReflectionType\\|null\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Macro\\:\\:__construct\\(\\) has parameter \\$class with generic class ReflectionClass but does not specify its types\\: T$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Macro\\:\\:__construct\\(\\) has parameter \\$classAliases with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Macro\\:\\:__construct\\(\\) has parameter \\$interfaces with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Macro\\:\\:addLocationToPhpDoc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Macro\\:\\:initClassDefinedProperties\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Macro\\:\\:initClassDefinedProperties\\(\\) has parameter \\$class with generic class ReflectionClass but does not specify its types\\: T$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Macro\\:\\:initPhpDoc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Macro.php
+
+		-
+			message: "#^Call to an undefined method ReflectionFunctionAbstract\\:\\:getDeclaringClass\\(\\)\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Constructor of class Sollie\\\\LaravelIdeHelper\\\\Method has an unused parameter \\$alias\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:__construct\\(\\) has parameter \\$class with generic class ReflectionClass but does not specify its types\\: T$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:__construct\\(\\) has parameter \\$classAliases with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:__construct\\(\\) has parameter \\$interfaces with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:initClassDefinedProperties\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:initClassDefinedProperties\\(\\) has parameter \\$class with generic class ReflectionClass but does not specify its types\\: T$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:initPhpDoc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:normalizeDescription\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:normalizeParams\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:normalizeReturn\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Parameter \\#1 \\$method of method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:getParameters\\(\\) expects ReflectionMethod, ReflectionFunctionAbstract given\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Parameter \\#1 \\$method of method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:initClassDefinedProperties\\(\\) expects ReflectionMethod, ReflectionFunctionAbstract given\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Parameter \\#1 \\$method of method Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:initPhpDoc\\(\\) expects ReflectionMethod, ReflectionFunctionAbstract given\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$classAliases has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$declaringClassName has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$interfaces has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$method \\(ReflectionMethod\\) does not accept ReflectionFunctionAbstract\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$name has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$namespace has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$output has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$params has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$params_with_default has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$real_name has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$return has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Method\\:\\:\\$root has no type specified\\.$#"
+			count: 1
+			path: src/Method.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\Parsers\\\\PhpDocReturnTypeParser\\:\\:__construct\\(\\) has parameter \\$namespaceAliases with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Parsers/PhpDocReturnTypeParser.php
+
+		-
+			message: "#^Property Sollie\\\\LaravelIdeHelper\\\\Parsers\\\\PhpDocReturnTypeParser\\:\\:\\$namespaceAliases type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Parsers/PhpDocReturnTypeParser.php
+
+		-
+			message: "#^Argument of an invalid type array\\<PhpParser\\\\Node\\\\Stmt\\>\\|null supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Cannot call method toCodeString\\(\\) on PhpParser\\\\Node\\\\Name\\|null\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:classBasename\\(\\) should return string but returns string\\|null\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromClass\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromCode\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromFile\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Parameter \\#1 \\$objectOrClass of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function rtrim expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Parameter \\#2 \\$code of method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromCode\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/UsesResolver.php
+
+		-
+			message: "#^Parameter \\#2 \\$filename of method Sollie\\\\LaravelIdeHelper\\\\UsesResolver\\:\\:loadFromFile\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/UsesResolver.php

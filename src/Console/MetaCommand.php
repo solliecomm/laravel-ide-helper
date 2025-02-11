@@ -6,6 +6,7 @@
  * @author    Barry vd. Heuvel <barryvdh@gmail.com>
  * @copyright 2015 Barry vd. Heuvel / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -48,24 +49,23 @@ class MetaCommand extends Command
     protected $config;
 
     protected $methods = [
-      'new \Illuminate\Contracts\Container\Container',
-      '\Illuminate\Container\Container::makeWith(0)',
-      '\Illuminate\Contracts\Container\Container::get(0)',
-      '\Illuminate\Contracts\Container\Container::make(0)',
-      '\Illuminate\Contracts\Container\Container::makeWith(0)',
-      '\App::get(0)',
-      '\App::make(0)',
-      '\App::makeWith(0)',
-      '\app(0)',
-      '\resolve(0)',
-      '\Psr\Container\ContainerInterface::get(0)',
+        'new \Illuminate\Contracts\Container\Container',
+        '\Illuminate\Container\Container::makeWith(0)',
+        '\Illuminate\Contracts\Container\Container::get(0)',
+        '\Illuminate\Contracts\Container\Container::make(0)',
+        '\Illuminate\Contracts\Container\Container::makeWith(0)',
+        '\App::get(0)',
+        '\App::make(0)',
+        '\App::makeWith(0)',
+        '\app(0)',
+        '\resolve(0)',
+        '\Psr\Container\ContainerInterface::get(0)',
     ];
 
     /**
-     *
-     * @param \Illuminate\Contracts\Filesystem\Filesystem $files
-     * @param \Illuminate\Contracts\View\Factory $view
-     * @param \Illuminate\Contracts\Config\Repository $config
+     * @param  \Illuminate\Contracts\Filesystem\Filesystem  $files
+     * @param  \Illuminate\Contracts\View\Factory  $view
+     * @param  \Illuminate\Contracts\Config\Repository  $config
      */
     public function __construct($files, $view, $config)
     {
@@ -102,12 +102,12 @@ class MetaCommand extends Command
                 }
 
                 $reflectionClass = new \ReflectionClass($concrete);
-                if (is_object($concrete) && !$reflectionClass->isAnonymous()) {
+                if (is_object($concrete) && ! $reflectionClass->isAnonymous()) {
                     $bindings[$abstract] = get_class($concrete);
                 }
             } catch (\Throwable $e) {
                 if ($this->output->getVerbosity() >= OutputInterface::VERBOSITY_VERBOSE) {
-                    $this->comment("Cannot make '$abstract': " . $e->getMessage());
+                    $this->comment("Cannot make '$abstract': ".$e->getMessage());
                 }
             }
         }
@@ -115,9 +115,9 @@ class MetaCommand extends Command
         $this->unregisterClassAutoloadExceptions($ourAutoloader);
 
         $content = $this->view->make('meta', [
-          'bindings' => $bindings,
-          'methods' => $this->methods,
-          'factories' => $factories,
+            'bindings' => $bindings,
+            'methods' => $this->methods,
+            'factories' => $factories,
         ])->render();
 
         $filename = $this->option('filename');
@@ -149,8 +149,6 @@ class MetaCommand extends Command
 
     /**
      * Register an autoloader the throws exceptions when a class is not found.
-     *
-     * @return callable
      */
     protected function registerClassAutoloadExceptions(): callable
     {
@@ -158,6 +156,7 @@ class MetaCommand extends Command
             throw new \ReflectionException("Class '$class' not found.");
         };
         spl_autoload_register($autoloader);
+
         return $autoloader;
     }
 
@@ -177,8 +176,6 @@ class MetaCommand extends Command
 
     /**
      * Remove our custom autoloader that we pushed onto the autoload stack
-     *
-     * @param callable $ourAutoloader
      */
     private function unregisterClassAutoloadExceptions(callable $ourAutoloader): void
     {

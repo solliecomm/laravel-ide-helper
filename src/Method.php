@@ -6,6 +6,7 @@
  * @author    Barry vd. Heuvel <barryvdh@gmail.com>
  * @copyright 2014 Barry vd. Heuvel / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -22,10 +23,10 @@ use Illuminate\Support\Str;
 
 class Method
 {
-    /** @var DocBlock  */
+    /** @var DocBlock */
     protected $phpdoc;
 
-    /** @var \ReflectionMethod  */
+    /** @var \ReflectionMethod */
     protected $method;
 
     protected $output = '';
@@ -41,12 +42,11 @@ class Method
     protected $classAliases;
 
     /**
-     * @param \ReflectionMethod|\ReflectionFunctionAbstract $method
-     * @param string $alias
-     * @param \ReflectionClass $class
-     * @param string|null $methodName
-     * @param array $interfaces
-     * @param array $classAliases
+     * @param  \ReflectionMethod|\ReflectionFunctionAbstract  $method
+     * @param  string  $alias
+     * @param  \ReflectionClass  $class
+     * @param  string|null  $methodName
+     * @param  array  $interfaces
      */
     public function __construct($method, $alias, $class, $methodName = null, $interfaces = [], array $classAliases = [])
     {
@@ -57,13 +57,13 @@ class Method
         $this->real_name = $method->isClosure() ? $this->name : $method->name;
         $this->initClassDefinedProperties($method, $class);
 
-        //Reference the 'real' function in the declaring class
-        $this->root = '\\' . ltrim($method->name === '__invoke' ? $method->getDeclaringClass()->getName() : $class->getName(), '\\');
+        // Reference the 'real' function in the declaring class
+        $this->root = '\\'.ltrim($method->name === '__invoke' ? $method->getDeclaringClass()->getName() : $class->getName(), '\\');
 
-        //Create a DocBlock and serializer instance
+        // Create a DocBlock and serializer instance
         $this->initPhpDoc($method);
 
-        //Normalize the description and inherit the docs from parents/interfaces
+        // Normalize the description and inherit the docs from parents/interfaces
         try {
             $this->normalizeParams($this->phpdoc);
             $this->normalizeReturn($this->phpdoc);
@@ -71,15 +71,15 @@ class Method
         } catch (\Exception $e) {
         }
 
-        //Get the parameters, including formatted default values
+        // Get the parameters, including formatted default values
         $this->getParameters($method);
 
-        //Make the method static
+        // Make the method static
         $this->phpdoc->appendTag(Tag::createInstance('@static', $this->phpdoc));
     }
 
     /**
-     * @param \ReflectionMethod $method
+     * @param  \ReflectionMethod  $method
      */
     protected function initPhpDoc($method)
     {
@@ -87,14 +87,13 @@ class Method
     }
 
     /**
-     * @param \ReflectionMethod $method
-     * @param \ReflectionClass $class
+     * @param  \ReflectionMethod  $method
      */
     protected function initClassDefinedProperties($method, \ReflectionClass $class)
     {
         $declaringClass = $method->getDeclaringClass();
         $this->namespace = $declaringClass->getNamespaceName();
-        $this->declaringClassName = '\\' . ltrim($declaringClass->name, '\\');
+        $this->declaringClassName = '\\'.ltrim($declaringClass->name, '\\');
     }
 
     /**
@@ -122,7 +121,7 @@ class Method
      */
     public function isInstanceCall()
     {
-        return !($this->method->isClosure() || $this->method->isStatic());
+        return ! ($this->method->isClosure() || $this->method->isStatic());
     }
 
     /**
@@ -140,12 +139,13 @@ class Method
     /**
      * Get the docblock for this method
      *
-     * @param string $prefix
+     * @param  string  $prefix
      * @return mixed
      */
     public function getDocComment($prefix = "\t\t")
     {
         $serializer = new DocBlockSerializer(1, $prefix);
+
         return $serializer->getDocComment($this->phpdoc);
     }
 
@@ -172,7 +172,7 @@ class Method
     /**
      * Get the parameters for this method
      *
-     * @param bool $implode Wether to implode the array or not
+     * @param  bool  $implode  Wether to implode the array or not
      * @return string
      */
     public function getParams($implode = true)
@@ -183,7 +183,7 @@ class Method
     /**
      * Get the parameters for this method including default values
      *
-     * @param bool $implode Wether to implode the array or not
+     * @param  bool  $implode  Wether to implode the array or not
      * @return string
      */
     public function getParamsWithDefault($implode = true)
@@ -193,15 +193,13 @@ class Method
 
     /**
      * Get the description and get the inherited docs.
-     *
-     * @param DocBlock $phpdoc
      */
     protected function normalizeDescription(DocBlock $phpdoc)
     {
-        //Get the short + long description from the DocBlock
+        // Get the short + long description from the DocBlock
         $description = $phpdoc->getText();
 
-        //Loop through parents/interfaces, to fill in {@inheritdoc}
+        // Loop through parents/interfaces, to fill in {@inheritdoc}
         if (strpos($description, '{@inheritdoc}') !== false) {
             $inheritdoc = $this->getInheritDoc($this->method);
             $inheritDescription = $inheritdoc->getText();
@@ -212,7 +210,7 @@ class Method
             $this->normalizeParams($inheritdoc);
             $this->normalizeReturn($inheritdoc);
 
-            //Add the tags that are inherited
+            // Add the tags that are inherited
             $inheritTags = $inheritdoc->getTags();
             if ($inheritTags) {
                 /** @var Tag $tag */
@@ -226,12 +224,10 @@ class Method
 
     /**
      * Normalize the parameters
-     *
-     * @param DocBlock $phpdoc
      */
     protected function normalizeParams(DocBlock $phpdoc)
     {
-        //Get the return type and adjust them for beter autocomplete
+        // Get the return type and adjust them for beter autocomplete
         $paramTags = $phpdoc->getTagsByName('param');
         if ($paramTags) {
             /** @var ParamTag $tag */
@@ -241,7 +237,7 @@ class Method
                 $tag->setContent($content);
 
                 // Get the expanded type and re-set the content
-                $content = $tag->getType() . ' ' . $tag->getVariableName() . ' ' . $tag->getDescription();
+                $content = $tag->getType().' '.$tag->getVariableName().' '.$tag->getDescription();
                 $tag->setContent(trim($content));
             }
         }
@@ -249,16 +245,15 @@ class Method
 
     /**
      * Normalize the return tag (make full namespace, replace interfaces)
-     *
-     * @param DocBlock $phpdoc
      */
     protected function normalizeReturn(DocBlock $phpdoc)
     {
-        //Get the return type and adjust them for better autocomplete
+        // Get the return type and adjust them for better autocomplete
         $returnTags = $phpdoc->getTagsByName('return');
 
         if (count($returnTags) === 0) {
             $this->return = null;
+
             return;
         }
 
@@ -273,12 +268,12 @@ class Method
         }
 
         // Set the changed content
-        $tag->setContent($returnValue . ' ' . $tag->getDescription());
+        $tag->setContent($returnValue.' '.$tag->getDescription());
         $this->return = $returnValue;
 
         if ($tag->getType() === '$this') {
             Str::contains($this->root, Builder::class)
-                ? $tag->setType($this->root . '|static')
+                ? $tag->setType($this->root.'|static')
                 : $tag->setType($this->root);
         }
     }
@@ -286,7 +281,7 @@ class Method
     /**
      * Convert keywords that are incorrect.
      *
-     * @param  string $string
+     * @param  string  $string
      * @return string
      */
     protected function convertKeywords($string)
@@ -315,18 +310,18 @@ class Method
     /**
      * Get the parameters and format them correctly
      *
-     * @param  \ReflectionMethod $method
+     * @param  \ReflectionMethod  $method
      * @return void
      */
     public function getParameters($method)
     {
-        //Loop through the default values for parameters, and make the correct output string
+        // Loop through the default values for parameters, and make the correct output string
         $params = [];
         $paramsWithDefault = [];
         foreach ($method->getParameters() as $param) {
-            $paramStr = $param->isVariadic() ? '...$' . $param->getName() : '$' . $param->getName();
+            $paramStr = $param->isVariadic() ? '...$'.$param->getName() : '$'.$param->getName();
             $params[] = $paramStr;
-            if ($param->isOptional() && !$param->isVariadic()) {
+            if ($param->isOptional() && ! $param->isVariadic()) {
                 $default = $param->isDefaultValueAvailable() ? $param->getDefaultValue() : null;
                 if (is_bool($default)) {
                     $default = $default ? 'true' : 'false';
@@ -335,9 +330,9 @@ class Method
                 } elseif (is_null($default)) {
                     $default = 'null';
                 } elseif (is_int($default)) {
-                    //$default = $default;
+                    // $default = $default;
                 } elseif (is_resource($default)) {
-                    //skip to not fail
+                    // skip to not fail
                 } else {
                     $default = var_export($default, true);
                 }
@@ -351,14 +346,14 @@ class Method
     }
 
     /**
-     * @param \ReflectionMethod $reflectionMethod
+     * @param  \ReflectionMethod  $reflectionMethod
      * @return DocBlock
      */
     protected function getInheritDoc($reflectionMethod)
     {
         $parentClass = $reflectionMethod->getDeclaringClass()->getParentClass();
 
-        //Get either a parent or the interface
+        // Get either a parent or the interface
         if ($parentClass) {
             $method = $parentClass->getMethod($reflectionMethod->getName());
         } else {
@@ -369,7 +364,7 @@ class Method
             $phpdoc = new DocBlock($method, new Context($namespace, $this->classAliases));
 
             if (strpos($phpdoc->getText(), '{@inheritdoc}') !== false) {
-                //Not at the end yet, try another parent/interface..
+                // Not at the end yet, try another parent/interface..
                 return $this->getInheritDoc($method);
             }
 

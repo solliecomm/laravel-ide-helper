@@ -6,6 +6,7 @@
  * @author    Barry vd. Heuvel <barryvdh@gmail.com>
  * @copyright 2014 Barry vd. Heuvel / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -19,10 +20,6 @@ use PhpParser\ParserFactory;
 
 class UsesResolver
 {
-    /**
-     * @param string $classFQN
-     * @return array
-     */
     public function loadFromClass(string $classFQN): array
     {
         return $this->loadFromFile(
@@ -31,11 +28,6 @@ class UsesResolver
         );
     }
 
-    /**
-     * @param string $classFQN
-     * @param string $filename
-     * @return array
-     */
     public function loadFromFile(string $classFQN, string $filename): array
     {
         return $this->loadFromCode(
@@ -46,11 +38,6 @@ class UsesResolver
         );
     }
 
-    /**
-     * @param string $classFQN
-     * @param string $code
-     * @return array
-     */
     public function loadFromCode(string $classFQN, string $code): array
     {
         $classFQN = ltrim($classFQN, '\\');
@@ -79,7 +66,6 @@ class UsesResolver
         }
 
         /** @var Namespace_ $namespaceData */
-
         $aliases = [];
 
         foreach ($namespaceData->stmts as $stmt) {
@@ -90,22 +76,20 @@ class UsesResolver
 
                 foreach ($stmt->uses as $use) {
                     /** @var UseUse $use */
-
                     $alias = $use->alias ?
                         $use->alias->name :
                         self::classBasename($use->name->toCodeString());
 
-                    $aliases[$alias] = '\\' . $use->name->toCodeString();
+                    $aliases[$alias] = '\\'.$use->name->toCodeString();
                 }
             } elseif ($stmt instanceof GroupUse) {
                 foreach ($stmt->uses as $use) {
                     /** @var UseUse $use */
-
                     $alias = $use->alias ?
                         $use->alias->name :
                         self::classBasename($use->name->toCodeString());
 
-                    $aliases[$alias] = '\\' . $stmt->prefix->toCodeString() . '\\' . $use->name->toCodeString();
+                    $aliases[$alias] = '\\'.$stmt->prefix->toCodeString().'\\'.$use->name->toCodeString();
                 }
             }
         }
@@ -113,10 +97,6 @@ class UsesResolver
         return $aliases;
     }
 
-    /**
-     * @param string $classFQN
-     * @return string
-     */
     protected static function classBasename(string $classFQN): string
     {
         return preg_replace('/^.*\\\\([^\\\\]+)$/', '$1', $classFQN);

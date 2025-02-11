@@ -6,6 +6,7 @@
  * @author    Barry vd. Heuvel <barryvdh@gmail.com>
  * @copyright 2014 Barry vd. Heuvel / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -40,17 +41,16 @@ class Generator
     protected $helpers;
 
     /**
-     * @param \Illuminate\Config\Repository $config
-     * @param \Illuminate\View\Factory $view
-     * @param OutputInterface $output
-     * @param string $helpers
+     * @param  \Illuminate\Config\Repository  $config
+     * @param  \Illuminate\View\Factory  $view
+     * @param  string  $helpers
      */
     public function __construct(
-        /*ConfigRepository */
+        /* ConfigRepository */
         $config,
         /* Illuminate\View\Factory */
         $view,
-        OutputInterface $output = null,
+        ?OutputInterface $output = null,
         $helpers = ''
     ) {
         $this->config = $config;
@@ -64,7 +64,7 @@ class Generator
         $this->interfaces = array_merge($this->interfaces, $this->config->get('ide-helper.interfaces'), []);
         // Make all interface classes absolute
         foreach ($this->interfaces as &$interface) {
-            $interface = '\\' . ltrim($interface, '\\');
+            $interface = '\\'.ltrim($interface, '\\');
         }
         $this->helpers = $helpers;
     }
@@ -77,6 +77,7 @@ class Generator
     public function generate()
     {
         $app = app();
+
         return $this->view->make('helper')
             ->with('namespaces_by_extends_ns', $this->getAliasesByExtendsNamespace())
             ->with('namespaces_by_alias_ns', $this->getAliasesByAliasNamespace())
@@ -155,19 +156,19 @@ class Generator
         // Get all aliases
         foreach ($this->getAliases() as $name => $facade) {
             // Skip the Redis facade, if not available (otherwise Fatal PHP Error)
-            if ($facade == 'Illuminate\Support\Facades\Redis' && $name == 'Redis' && !class_exists('Predis\Client')) {
+            if ($facade == 'Illuminate\Support\Facades\Redis' && $name == 'Redis' && ! class_exists('Predis\Client')) {
                 continue;
             }
 
             // Skip the swoole
-            if ($facade == 'SwooleTW\Http\Server\Facades\Server' && $name == 'Server' && !class_exists('Swoole\Http\Server')) {
+            if ($facade == 'SwooleTW\Http\Server\Facades\Server' && $name == 'Server' && ! class_exists('Swoole\Http\Server')) {
                 continue;
             }
 
             $magicMethods = array_key_exists($name, $this->magic) ? $this->magic[$name] : [];
             $alias = new Alias($this->config, $name, $facade, $magicMethods, $this->interfaces);
             if ($alias->isValid()) {
-                //Add extra methods, from other classes (magic static calls)
+                // Add extra methods, from other classes (magic static calls)
                 if (array_key_exists($name, $this->extra)) {
                     $alias->addClass($this->extra[$name]);
                 }
@@ -215,14 +216,12 @@ class Generator
             });
 
             if ($class) {
-                $name .= '\\' . $class->name->toString();
+                $name .= '\\'.$class->name->toString();
             }
 
             return $name;
         }
     }
-
-
 
     /**
      * Regroup aliases by namespace of extended classes
@@ -262,24 +261,24 @@ class Generator
         }
 
         $facades = [
-          'App' => 'Illuminate\Support\Facades\App',
-          'Auth' => 'Illuminate\Support\Facades\Auth',
-          'Bus' => 'Illuminate\Support\Facades\Bus',
-          'DB' => 'Illuminate\Support\Facades\DB',
-          'Cache' => 'Illuminate\Support\Facades\Cache',
-          'Cookie' => 'Illuminate\Support\Facades\Cookie',
-          'Crypt' => 'Illuminate\Support\Facades\Crypt',
-          'Event' => 'Illuminate\Support\Facades\Event',
-          'Hash' => 'Illuminate\Support\Facades\Hash',
-          'Log' => 'Illuminate\Support\Facades\Log',
-          'Mail' => 'Illuminate\Support\Facades\Mail',
-          'Queue' => 'Illuminate\Support\Facades\Queue',
-          'Request' => 'Illuminate\Support\Facades\Request',
-          'Schema' => 'Illuminate\Support\Facades\Schema',
-          'Session' => 'Illuminate\Support\Facades\Session',
-          'Storage' => 'Illuminate\Support\Facades\Storage',
-          'Validator' => 'Illuminate\Support\Facades\Validator',
-          'Gate' => 'Illuminate\Support\Facades\Gate',
+            'App' => 'Illuminate\Support\Facades\App',
+            'Auth' => 'Illuminate\Support\Facades\Auth',
+            'Bus' => 'Illuminate\Support\Facades\Bus',
+            'DB' => 'Illuminate\Support\Facades\DB',
+            'Cache' => 'Illuminate\Support\Facades\Cache',
+            'Cookie' => 'Illuminate\Support\Facades\Cookie',
+            'Crypt' => 'Illuminate\Support\Facades\Crypt',
+            'Event' => 'Illuminate\Support\Facades\Event',
+            'Hash' => 'Illuminate\Support\Facades\Hash',
+            'Log' => 'Illuminate\Support\Facades\Log',
+            'Mail' => 'Illuminate\Support\Facades\Mail',
+            'Queue' => 'Illuminate\Support\Facades\Queue',
+            'Request' => 'Illuminate\Support\Facades\Request',
+            'Schema' => 'Illuminate\Support\Facades\Schema',
+            'Session' => 'Illuminate\Support\Facades\Session',
+            'Storage' => 'Illuminate\Support\Facades\Storage',
+            'Validator' => 'Illuminate\Support\Facades\Validator',
+            'Gate' => 'Illuminate\Support\Facades\Gate',
         ];
 
         $facades = array_merge($facades, $this->config->get('app.aliases', []));
@@ -305,14 +304,12 @@ class Generator
         if ($this->output) {
             $this->output->writeln("<error>$string</error>");
         } else {
-            echo $string . "\r\n";
+            echo $string."\r\n";
         }
     }
 
     /**
      * Add all macroable classes which are not already loaded as an alias and have defined macros.
-     *
-     * @param Collection $aliases
      */
     protected function addMacroableClasses(Collection $aliases)
     {
@@ -321,7 +318,7 @@ class Generator
         foreach ($macroable as $class) {
             $reflection = new ReflectionClass($class);
 
-            if (!$reflection->getStaticProperties()['macros']) {
+            if (! $reflection->getStaticProperties()['macros']) {
                 continue;
             }
 
@@ -332,7 +329,6 @@ class Generator
     /**
      * Get all loaded macroable classes which are not loaded as an alias.
      *
-     * @param Collection $aliases
      * @return Collection
      */
     protected function getMacroableClasses(Collection $aliases)
@@ -342,7 +338,7 @@ class Generator
                 $reflection = new ReflectionClass($class);
 
                 // Filter out internal classes and class aliases
-                return !$reflection->isInternal() && $reflection->getName() === $class;
+                return ! $reflection->isInternal() && $reflection->getName() === $class;
             })
             ->filter(function ($class) {
                 $traits = class_uses_recursive($class);
@@ -354,7 +350,7 @@ class Generator
                 $class = Str::start($class, '\\');
 
                 // Filter out aliases
-                return !$aliases->first(function (Alias $alias) use ($class) {
+                return ! $aliases->first(function (Alias $alias) use ($class) {
                     return $alias->getExtends() === $class;
                 });
             });

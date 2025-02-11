@@ -12,23 +12,23 @@ namespace PHPSTORM_META {
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
     */
-<?php foreach ($methods as $method) : ?>
+<?php foreach ($methods as $method) { ?>
     override(<?= $method ?>, map([
         '' => '@',
-    <?php foreach ($bindings as $abstract => $class) : ?>
+    <?php foreach ($bindings as $abstract => $class) { ?>
         '<?= $abstract ?>' => \<?= $class ?>::class,
-    <?php endforeach; ?>
+    <?php } ?>
     ]));
-<?php endforeach; ?>
+<?php } ?>
 
-<?php if (count($factories)) : ?>
+<?php if (count($factories)) { ?>
     override(\factory(0), map([
         '' => '@FactoryBuilder',
-    <?php foreach ($factories as $factory) : ?>
+    <?php foreach ($factories as $factory) { ?>
         '<?= $factory->getName() ?>' => \<?= $factory->getName() ?>FactoryBuilder::class,
-    <?php endforeach; ?>
+    <?php } ?>
     ]));
-<?php endif; ?>
+<?php } ?>
 
     override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::mock(0), map(["" => "@&\Mockery\MockInterface"]));
     override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::partialMock(0), map(["" => "@&\Mockery\MockInterface"]));

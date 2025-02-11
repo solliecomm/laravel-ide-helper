@@ -6,30 +6,16 @@ namespace Sollie\LaravelIdeHelper\Parsers;
 
 class PhpDocReturnTypeParser
 {
-    /**
-     * @var string
-     */
     private string $typeAlias;
-
-    /**
-     * @var array
-     */
     private array $namespaceAliases;
 
-    /**
-     * @param string $typeAlias
-     * @param array $namespaceAliases
-     */
     public function __construct(string $typeAlias, array $namespaceAliases)
     {
         $this->typeAlias = $typeAlias;
         $this->namespaceAliases = $namespaceAliases;
     }
 
-    /**
-     * @return string|null
-     */
-    public function parse(): string|null
+    public function parse(): ?string
     {
         $matches = [];
         preg_match('/(\w+)(<.*>)/', $this->typeAlias, $matches);
@@ -43,16 +29,12 @@ class PhpDocReturnTypeParser
             return null;
         }
 
-        return $this->namespaceAliases[$matches[1]] . $this->parseTemplate($matches[2] ?? null);
+        return $this->namespaceAliases[$matches[1]].$this->parseTemplate($matches[2] ?? null);
     }
 
-    /**
-     * @param string|null $template
-     * @return string
-     */
-    private function parseTemplate(string|null $template): string
+    private function parseTemplate(?string $template): string
     {
-        if ($template  === null || $template === '') {
+        if ($template === null || $template === '') {
             return '';
         }
 
@@ -62,7 +44,7 @@ class PhpDocReturnTypeParser
         foreach (str_split($template) as $char) {
             $match = preg_match('/[A-z]/', $char);
 
-            if (!$match) {
+            if (! $match) {
                 $type = $this->namespaceAliases[$type] ?? $type;
                 $result .= $type;
                 $result .= $char;

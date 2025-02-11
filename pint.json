@@ -1,0 +1,20 @@
+{
+    "rules": {
+        "class_attributes_separation": {
+            "elements": {
+                "const": "none",
+                "method": "one",
+                "property": "none",
+                "trait_import": "none",
+                "case": "none"
+            }
+        },
+        "new_with_parentheses": {
+            "anonymous_class": true,
+            "named_class": true
+        }
+    },
+    "exclude": [
+        "tests/"
+    ]
+}

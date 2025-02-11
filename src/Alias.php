@@ -6,6 +6,7 @@
  * @author    Barry vd. Heuvel <barryvdh@gmail.com>
  * @copyright 2014 Barry vd. Heuvel / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -25,8 +26,10 @@ use Throwable;
 class Alias
 {
     protected $alias;
+
     /** @psalm-var class-string $facade */
     protected $facade;
+
     protected $extends = null;
     protected $extendsClass = null;
     protected $extendsNamespace = null;
@@ -43,16 +46,18 @@ class Alias
     protected $phpdoc = null;
     protected $classAliases = [];
 
-    /** @var ConfigRepository  */
+    /** @var ConfigRepository */
     protected $config;
 
     /**
-     * @param ConfigRepository $config
-     * @param string           $alias
+     * @param  ConfigRepository  $config
+     * @param  string  $alias
+     *
      * @psalm-param class-string $facade
-     * @param string           $facade
-     * @param array            $magicMethods
-     * @param array            $interfaces
+     *
+     * @param  string  $facade
+     * @param  array  $magicMethods
+     * @param  array  $interfaces
      */
     public function __construct($config, $alias, $facade, $magicMethods = [], $interfaces = [])
     {
@@ -62,12 +67,12 @@ class Alias
         $this->config = $config;
 
         // Make the class absolute
-        $facade = '\\' . ltrim($facade, '\\');
+        $facade = '\\'.ltrim($facade, '\\');
         $this->facade = $facade;
 
         $this->detectRoot();
 
-        if (!$this->root || $this->isTrait()) {
+        if (! $this->root || $this->isTrait()) {
             return;
         }
 
@@ -79,10 +84,10 @@ class Alias
         $this->detectClassType();
         $this->detectExtendsNamespace();
 
-        if (!empty($this->namespace)) {
+        if (! empty($this->namespace)) {
             $this->classAliases = (new UsesResolver())->loadFromClass($this->root);
 
-            //Create a DocBlock and serializer instance
+            // Create a DocBlock and serializer instance
             $this->phpdoc = new DocBlock(new ReflectionClass($alias), new Context($this->namespace, $this->classAliases));
         }
 
@@ -94,11 +99,11 @@ class Alias
     /**
      * Add one or more classes to analyze
      *
-     * @param array|string $classes
+     * @param  array|string  $classes
      */
     public function addClass($classes)
     {
-        $classes = (array)$classes;
+        $classes = (array) $classes;
         foreach ($classes as $class) {
             if (class_exists($class) || interface_exists($class)) {
                 $this->classes[] = $class;
@@ -110,6 +115,7 @@ class Alias
 
     /**
      * Check if this class is valid to process.
+     *
      * @return bool
      */
     public function isValid()
@@ -174,6 +180,7 @@ class Alias
     {
         return $this->short;
     }
+
     /**
      * Get the namespace from the alias
      *
@@ -197,6 +204,7 @@ class Alias
 
         $this->addMagicMethods();
         $this->detectMethods();
+
         return $this->methods;
     }
 
@@ -207,11 +215,11 @@ class Alias
     {
         $facade = $this->facade;
 
-        if (!is_subclass_of($facade, Facade::class)) {
+        if (! is_subclass_of($facade, Facade::class)) {
             return;
         }
 
-        if (!method_exists($facade, 'fake')) {
+        if (! method_exists($facade, 'fake')) {
             return;
         }
 
@@ -259,7 +267,7 @@ class Alias
      */
     protected function detectClassType()
     {
-        //Some classes extend the facade
+        // Some classes extend the facade
         if (interface_exists($this->facade)) {
             $this->classType = 'interface';
             $this->extends = $this->facade;
@@ -281,29 +289,29 @@ class Alias
         $facade = $this->facade;
 
         try {
-            //If possible, get the facade root
+            // If possible, get the facade root
             if (method_exists($facade, 'getFacadeRoot')) {
                 $root = get_class($facade::getFacadeRoot());
             } else {
                 $root = $facade;
             }
 
-            //If it doesn't exist, skip it
-            if (!class_exists($root) && !interface_exists($root)) {
+            // If it doesn't exist, skip it
+            if (! class_exists($root) && ! interface_exists($root)) {
                 return;
             }
 
             $this->root = $root;
 
-            //When the database connection is not set, some classes will be skipped
+            // When the database connection is not set, some classes will be skipped
         } catch (\PDOException $e) {
             $this->error(
-                'PDOException: ' . $e->getMessage() .
-                "\nPlease configure your database connection correctly, or use the sqlite memory driver (-M)." .
+                'PDOException: '.$e->getMessage().
+                "\nPlease configure your database connection correctly, or use the sqlite memory driver (-M).".
                 " Skipping $facade."
             );
         } catch (Throwable $e) {
-            $this->error('Exception: ' . $e->getMessage() . "\nSkipping $facade.");
+            $this->error('Exception: '.$e->getMessage()."\nSkipping $facade.");
         }
     }
 
@@ -325,13 +333,13 @@ class Alias
     {
         foreach ($this->magicMethods as $magic => $real) {
             [$className, $name] = explode('::', $real);
-            if ((!class_exists($className) && !interface_exists($className)) || !method_exists($className, $name)) {
+            if ((! class_exists($className) && ! interface_exists($className)) || ! method_exists($className, $name)) {
                 continue;
             }
             $method = new \ReflectionMethod($className, $name);
             $class = new ReflectionClass($className);
 
-            if (!in_array($magic, $this->usedMethods)) {
+            if (! in_array($magic, $this->usedMethods)) {
                 if ($class !== $this->root) {
                     $this->methods[] = new Method($method, $this->alias, $class, $magic, $this->interfaces, $this->classAliases);
                 }
@@ -353,7 +361,7 @@ class Alias
             $methods = $reflection->getMethods(\ReflectionMethod::IS_PUBLIC);
             if ($methods) {
                 foreach ($methods as $method) {
-                    if (!in_array($method->name, $this->usedMethods)) {
+                    if (! in_array($method->name, $this->usedMethods)) {
                         // Only add the methods to the output when the root is not the same as the class.
                         // And don't add the __*() methods
                         if ($this->extends !== $class && substr($method->name, 0, 2) !== '__') {
@@ -378,7 +386,7 @@ class Alias
                 $properties = $reflection->getStaticProperties();
                 $macros = isset($properties['macros']) ? $properties['macros'] : [];
                 foreach ($macros as $macro_name => $macro_func) {
-                    if (!in_array($macro_name, $this->usedMethods)) {
+                    if (! in_array($macro_name, $this->usedMethods)) {
                         // Add macros
                         $this->methods[] = new Macro(
                             $this->getMacroFunction($macro_func),
@@ -396,9 +404,8 @@ class Alias
     }
 
     /**
-     * @param $macro_func
-     *
      * @return \ReflectionFunctionAbstract
+     *
      * @throws \ReflectionException
      */
     protected function getMacroFunction($macro_func)
@@ -407,7 +414,7 @@ class Alias
             return new \ReflectionMethod($macro_func[0], $macro_func[1]);
         }
 
-        if (is_object($macro_func) && is_callable($macro_func) && !$macro_func instanceof Closure) {
+        if (is_object($macro_func) && is_callable($macro_func) && ! $macro_func instanceof Closure) {
             return new \ReflectionMethod($macro_func, '__invoke');
         }
 
@@ -424,7 +431,7 @@ class Alias
     {
         $serializer = new DocBlockSerializer(1, $prefix);
 
-        if (!$this->phpdoc) {
+        if (! $this->phpdoc) {
             return '';
         }
 
@@ -439,6 +446,7 @@ class Alias
         }
 
         $this->removeDuplicateMethodsFromPhpDoc();
+
         return $serializer->getDocComment($this->phpdoc);
     }
 
@@ -469,6 +477,6 @@ class Alias
      */
     protected function error($string)
     {
-        echo $string . "\r\n";
+        echo $string."\r\n";
     }
 }

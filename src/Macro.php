@@ -12,12 +12,12 @@ class Macro extends Method
     /**
      * Macro constructor.
      *
-     * @param \ReflectionFunctionAbstract $method
-     * @param string              $alias
-     * @param \ReflectionClass    $class
-     * @param null                $methodName
-     * @param array               $interfaces
-     * @param array               $classAliases
+     * @param  \ReflectionFunctionAbstract  $method
+     * @param  string  $alias
+     * @param  \ReflectionClass  $class
+     * @param  null  $methodName
+     * @param  array  $interfaces
+     * @param  array  $classAliases
      */
     public function __construct(
         $method,
@@ -31,7 +31,7 @@ class Macro extends Method
     }
 
     /**
-     * @param \ReflectionFunctionAbstract $method
+     * @param  \ReflectionFunctionAbstract  $method
      */
     protected function initPhpDoc($method)
     {
@@ -40,35 +40,35 @@ class Macro extends Method
         $this->addLocationToPhpDoc();
 
         // Add macro parameters if they are missed in original docblock
-        if (!$this->phpdoc->hasTag('param')) {
+        if (! $this->phpdoc->hasTag('param')) {
             foreach ($method->getParameters() as $parameter) {
                 $reflectionType = $parameter->getType();
 
                 $type = $this->concatReflectionTypes($reflectionType);
 
                 /** @psalm-suppress UndefinedClass */
-                if ($reflectionType && !$reflectionType instanceof \ReflectionUnionType && $reflectionType->allowsNull()) {
+                if ($reflectionType && ! $reflectionType instanceof \ReflectionUnionType && $reflectionType->allowsNull()) {
                     $type .= '|null';
                 }
 
                 $type = $type ?: 'mixed';
 
                 $name = $parameter->isVariadic() ? '...' : '';
-                $name .= '$' . $parameter->getName();
+                $name .= '$'.$parameter->getName();
 
                 $this->phpdoc->appendTag(Tag::createInstance("@param {$type} {$name}"));
             }
         }
 
         // Add macro return type if it missed in original docblock
-        if ($method->hasReturnType() && !$this->phpdoc->hasTag('return')) {
+        if ($method->hasReturnType() && ! $this->phpdoc->hasTag('return')) {
             $builder = EloquentBuilder::class;
             $return = $method->getReturnType();
 
             $type = $this->concatReflectionTypes($return);
 
             /** @psalm-suppress UndefinedClass */
-            if (!$return instanceof \ReflectionUnionType) {
+            if (! $return instanceof \ReflectionUnionType) {
                 $type .= $this->root === "\\{$builder}" && $return->getName() === $builder ? '|static' : '';
                 $type .= $return->allowsNull() ? '|null' : '';
             }
@@ -98,7 +98,7 @@ class Macro extends Method
             $enclosingClass = $this->method->getClosureScopeClass();
         }
 
-        if (!$enclosingClass) {
+        if (! $enclosingClass) {
             return;
         }
         /** @var \ReflectionMethod $enclosingMethod */
@@ -110,18 +110,17 @@ class Macro extends Method
 
         if ($enclosingMethod) {
             $this->phpdoc->appendTag(Tag::createInstance(
-                '@see \\' . $enclosingClass->getName() . '::' . $enclosingMethod->getName() . '()'
+                '@see \\'.$enclosingClass->getName().'::'.$enclosingMethod->getName().'()'
             ));
         }
     }
 
     /**
-     * @param \ReflectionFunctionAbstract $method
-     * @param \ReflectionClass $class
+     * @param  \ReflectionFunctionAbstract  $method
      */
     protected function initClassDefinedProperties($method, \ReflectionClass $class)
     {
         $this->namespace = $class->getNamespaceName();
-        $this->declaringClassName = '\\' . ltrim($class->name, '\\');
+        $this->declaringClassName = '\\'.ltrim($class->name, '\\');
     }
 }

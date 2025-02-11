@@ -6,6 +6,7 @@
  * @author    Charles A. Peterson <artistan@gmail.com>
  * @copyright 2017 Charles A. Peterson / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -30,7 +31,7 @@ class EloquentCommand extends Command
     protected $name = 'ide-helper:eloquent';
 
     /**
-     * @var Filesystem $files
+     * @var Filesystem
      */
     protected $files;
 
@@ -41,9 +42,6 @@ class EloquentCommand extends Command
      */
     protected $description = 'Add \Eloquent helper to \Eloquent\Model';
 
-    /**
-     * @param Filesystem $files
-     */
     public function __construct(Filesystem $files)
     {
         parent::__construct();

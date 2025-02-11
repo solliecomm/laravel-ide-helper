@@ -22,10 +22,6 @@ class GenerateModelHelper
     /** @var Config */
     protected $config;
 
-    /**
-     * @param  Artisan  $artisan
-     * @param  Config  $config
-     */
     public function __construct(Artisan $artisan, Config $config)
     {
         $this->artisan = $artisan;
@@ -34,12 +30,10 @@ class GenerateModelHelper
 
     /**
      * Handle the event.
-     *
-     * @param  CommandFinished  $event
      */
     public function handle(CommandFinished $event)
     {
-        if (!self::$shouldRun) {
+        if (! self::$shouldRun) {
             return;
         }
 

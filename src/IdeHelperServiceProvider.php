@@ -6,6 +6,7 @@
  * @author    Barry vd. Heuvel <barryvdh@gmail.com>
  * @copyright 2014 Barry vd. Heuvel / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -34,7 +35,7 @@ class IdeHelperServiceProvider extends ServiceProvider implements DeferrableProv
      */
     public function boot()
     {
-        if (!$this->app->runningUnitTests() && $this->app['config']->get('ide-helper.post_migrate', [])) {
+        if (! $this->app->runningUnitTests() && $this->app['config']->get('ide-helper.post_migrate', [])) {
             $this->app['events']->listen(CommandFinished::class, GenerateModelHelper::class);
             $this->app['events']->listen(MigrationsEnded::class, function () {
                 GenerateModelHelper::$shouldRun = true;
@@ -42,11 +43,11 @@ class IdeHelperServiceProvider extends ServiceProvider implements DeferrableProv
         }
 
         if ($this->app->has('view')) {
-            $viewPath = __DIR__ . '/../resources/views';
+            $viewPath = __DIR__.'/../resources/views';
             $this->loadViewsFrom($viewPath, 'ide-helper');
         }
 
-        $configPath = __DIR__ . '/../config/ide-helper.php';
+        $configPath = __DIR__.'/../config/ide-helper.php';
         if (function_exists('config_path')) {
             $publishPath = config_path('ide-helper.php');
         } else {
@@ -62,7 +63,7 @@ class IdeHelperServiceProvider extends ServiceProvider implements DeferrableProv
      */
     public function register()
     {
-        $configPath = __DIR__ . '/../config/ide-helper.php';
+        $configPath = __DIR__.'/../config/ide-helper.php';
         $this->mergeConfigFrom($configPath, 'ide-helper');
         $localViewFactory = $this->createLocalViewFactory();
 
@@ -121,7 +122,7 @@ class IdeHelperServiceProvider extends ServiceProvider implements DeferrableProv
         $resolver->register('php', function () {
             return new PhpEngine($this->app['files']);
         });
-        $finder = new FileViewFinder($this->app['files'], [__DIR__ . '/../resources/views']);
+        $finder = new FileViewFinder($this->app['files'], [__DIR__.'/../resources/views']);
         $factory = new Factory($resolver, $finder, $this->app['events']);
         $factory->addExtension('php', 'php');
 

@@ -6,6 +6,7 @@
  * @author    Barry vd. Heuvel <barryvdh@gmail.com>
  * @copyright 2014 Barry vd. Heuvel / Fruitcake Studio (http://www.fruitcakestudio.nl)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ *
  * @link      https://github.com/barryvdh/laravel-ide-helper
  */
 
@@ -50,15 +51,12 @@ class GeneratorCommand extends Command
 
     protected $onlyExtend;
 
-
     /**
-     *
-     * @param \Illuminate\Config\Repository $config
-     * @param Filesystem $files
-     * @param \Illuminate\View\Factory $view
+     * @param  \Illuminate\Config\Repository  $config
+     * @param  \Illuminate\View\Factory  $view
      */
     public function __construct(
-        /*ConfigRepository */
+        /* ConfigRepository */
         $config,
         Filesystem $files,
         /* Illuminate\View\Factory */
@@ -78,13 +76,14 @@ class GeneratorCommand extends Command
     public function handle()
     {
         if (
-            file_exists(base_path() . '/vendor/compiled.php') ||
-            file_exists(base_path() . '/bootstrap/cache/compiled.php') ||
-            file_exists(base_path() . '/storage/framework/compiled.php')
+            file_exists(base_path().'/vendor/compiled.php') ||
+            file_exists(base_path().'/bootstrap/cache/compiled.php') ||
+            file_exists(base_path().'/storage/framework/compiled.php')
         ) {
             $this->error(
                 'Error generating IDE Helper: first delete your compiled file (php artisan clear-compiled)'
             );
+
             return;
         }
 
@@ -99,7 +98,6 @@ class GeneratorCommand extends Command
         if ($this->option('memory')) {
             $this->useMemoryDriver();
         }
-
 
         $helpers = '';
         if ($this->option('helpers') || ($this->config->get('ide-helper.include_helpers'))) {
@@ -129,7 +127,7 @@ class GeneratorCommand extends Command
 
     protected function useMemoryDriver()
     {
-        //Use a sqlite database in memory, to avoid connection errors on Database facades
+        // Use a sqlite database in memory, to avoid connection errors on Database facades
         $this->config->set(
             'database.connections.sqlite',
             [
