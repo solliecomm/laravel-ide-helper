@@ -14,9 +14,9 @@ namespace Sollie\LaravelIdeHelper;
 
 use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Context;
+use Barryvdh\Reflection\DocBlock\ContextFactory;
 use Barryvdh\Reflection\DocBlock\Serializer as DocBlockSerializer;
 use Barryvdh\Reflection\DocBlock\Tag\MethodTag;
-use Barryvdh\Reflection\DocBlock\ContextFactory;
 use Closure;
 use Illuminate\Config\Repository as ConfigRepository;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;

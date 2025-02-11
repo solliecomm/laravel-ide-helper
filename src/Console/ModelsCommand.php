@@ -14,9 +14,9 @@ namespace Sollie\LaravelIdeHelper\Console;
 
 use Barryvdh\Reflection\DocBlock;
 use Barryvdh\Reflection\DocBlock\Context;
+use Barryvdh\Reflection\DocBlock\ContextFactory;
 use Barryvdh\Reflection\DocBlock\Serializer as DocBlockSerializer;
 use Barryvdh\Reflection\DocBlock\Tag;
-use Barryvdh\Reflection\DocBlock\ContextFactory;
 use Carbon\CarbonImmutable;
 use Composer\ClassMapGenerator\ClassMapGenerator;
 use Illuminate\Console\Command;
