@@ -24,10 +24,10 @@ jobs:
       - name: Install dependencies
         run: composer update --prefer-dist --no-progress
 
-      - run: composer fix-style
+      - run: composer pint
         continue-on-error: true
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: composer fix-style
+          commit_message: composer pint
           commit_author: laravel-ide-helper <laravel-ide-helper@users.noreply.github.com>
