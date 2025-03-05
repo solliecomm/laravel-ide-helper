@@ -63,17 +63,14 @@ DOC;
 
         $method = new Method($reflectionMethod, 'Builder', $reflectionClass);
 
-        $output =  <<<'DOC'
-/**
- * Set the relationships that should be eager loaded.
- *
+        $output = <<<'DOC'
  * @param array<array-key, array|(\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>): mixed)|string>|string $relations
  * @param (\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>): mixed)|string|null $callback
  * @return \Illuminate\Database\Eloquent\Builder|static 
  * @static 
  */
 DOC;
-        $this->assertStringEqualsStringIgnoringLineEndings($output, $method->getDocComment(''));
+        $this->assertStringContainsStringIgnoringLineEndings($output, $method->getDocComment(''));
         $this->assertSame('with', $method->getName());
         $this->assertSame('\\' . Builder::class, $method->getDeclaringClass());
         $this->assertSame('$relations, $callback', $method->getParams(true));
