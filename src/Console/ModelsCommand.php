@@ -504,7 +504,7 @@ class ModelsCommand extends Command
                 $name,
                 $this->getTypeInModel($model, $type),
                 true,
-                true,
+                $column['generation'] === null,
                 $column['comment'],
                 $column['nullable']
             );
