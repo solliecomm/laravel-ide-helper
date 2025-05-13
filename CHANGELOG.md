@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 --------------
 
+2025-05-13, 5.0.1
+------------------
+
+### Changed
+
+- Generated columns will now be marked as read-only
+
 2025-03-03, 5.0.0
 ------------------
 
