@@ -25,7 +25,7 @@ class PostExternalQueryBuilder extends Builder
     }
 
     /**
-     * @param int|null $number
+     * @param  int|null  $number
      * @return $this
      */
     public function withTheNumber($number): self
@@ -34,7 +34,7 @@ class PostExternalQueryBuilder extends Builder
     }
 
     /**
-     * @param integer|null $number
+     * @param  int|null  $number
      * @return $this
      */
     public function withTheNumberDifferently($number): self
@@ -43,7 +43,7 @@ class PostExternalQueryBuilder extends Builder
     }
 
     /**
-     * @param bool|null $number
+     * @param  bool|null  $booleanVar
      * @return $this
      */
     public function withBool($booleanVar): self
@@ -52,7 +52,7 @@ class PostExternalQueryBuilder extends Builder
     }
 
     /**
-     * @param bool|null $number
+     * @param  bool|null  $booleanVar
      * @return $this
      */
     public function withBoolDifferently($booleanVar): self
@@ -66,7 +66,7 @@ class PostExternalQueryBuilder extends Builder
     }
 
     /**
-     * @param int|string $someone
+     * @param  int|string  $someone
      * @return $this
      */
     public function withSomeone($someone): self
@@ -75,7 +75,7 @@ class PostExternalQueryBuilder extends Builder
     }
 
     /**
-     * @param mixed $option
+     * @param  mixed  $option
      * @return $this
      */
     public function withMixedOption($option): self
@@ -99,7 +99,7 @@ class PostExternalQueryBuilder extends Builder
     }
 
     /**
-     * @param ModelsCommand $testCommand
+     * @param  ModelsCommand  $testCommand
      * @return $this
      */
     public function withNullTestCommandInDocBlock($testCommand): self

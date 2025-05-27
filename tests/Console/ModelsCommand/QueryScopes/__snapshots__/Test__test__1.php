@@ -82,6 +82,11 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\QueryScopes\Models
  * @method static \Illuminate\Database\Eloquent\Builder<Post> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Post> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Post> public()
+ * @method static \Illuminate\Database\Eloquent\Builder<Post> publicArg($arg)
+ * @method static \Illuminate\Database\Eloquent\Builder<Post> publicTypedArg(int $arg)
+ * @method static \Illuminate\Database\Eloquent\Builder<Post> publicTypedArrayArg(array $arg)
+ * @method static \Illuminate\Database\Eloquent\Builder<Post> publicTypedArrayGenericsArg(array<int> $arg)
+ * @method static \Illuminate\Database\Eloquent\Builder<Post> publicTypedNullableArg(?int $arg)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> query()
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereBigIntegerNotNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereBigIntegerNullable($value)
@@ -159,6 +164,34 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\QueryScopes\Models
 class Post extends PostParent
 {
     public function scopePublic($query)
+    {
+        return $query;
+    }
+
+    public function scopePublicArg($query, $arg)
+    {
+        return $query;
+    }
+
+    public function scopePublicTypedArg($query, int $arg)
+    {
+        return $query;
+    }
+
+    public function scopePublicTypedNullableArg($query, ?int $arg)
+    {
+        return $query;
+    }
+
+    public function scopePublicTypedArrayArg($query, array $arg)
+    {
+        return $query;
+    }
+
+    /**
+     * @param  array<int>  $arg
+     */
+    public function scopePublicTypedArrayGenericsArg($query, array $arg)
     {
         return $query;
     }

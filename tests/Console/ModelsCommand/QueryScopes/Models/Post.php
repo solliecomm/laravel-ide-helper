@@ -10,4 +10,32 @@ class Post extends PostParent
     {
         return $query;
     }
+
+    public function scopePublicArg($query, $arg)
+    {
+        return $query;
+    }
+
+    public function scopePublicTypedArg($query, int $arg)
+    {
+        return $query;
+    }
+
+    public function scopePublicTypedNullableArg($query, ?int $arg)
+    {
+        return $query;
+    }
+
+    public function scopePublicTypedArrayArg($query, array $arg)
+    {
+        return $query;
+    }
+
+    /**
+     * @param  array<int>  $arg
+     */
+    public function scopePublicTypedArrayGenericsArg($query, array $arg)
+    {
+        return $query;
+    }
 }

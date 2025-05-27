@@ -17,6 +17,7 @@ use Barryvdh\Reflection\DocBlock\Context;
 use Barryvdh\Reflection\DocBlock\ContextFactory;
 use Barryvdh\Reflection\DocBlock\Serializer as DocBlockSerializer;
 use Barryvdh\Reflection\DocBlock\Tag;
+use Barryvdh\Reflection\DocBlock\Tag\ParamTag;
 use Carbon\CarbonImmutable;
 use Composer\ClassMapGenerator\ClassMapGenerator;
 use Illuminate\Console\Command;
@@ -45,6 +46,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Schema\Builder;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use ReflectionClass;
@@ -53,6 +55,7 @@ use ReflectionIntersectionType;
 use ReflectionMethod;
 use ReflectionNamedType;
 use ReflectionObject;
+use ReflectionParameter;
 use ReflectionType;
 use ReflectionUnionType;
 use Reflector;
@@ -525,10 +528,7 @@ class ModelsCommand extends Command
         }
     }
 
-    /**
-     * @param  Model  $model
-     */
-    public function getPropertiesFromMethods($model)
+    public function getPropertiesFromMethods(Model $model): void
     {
         $reflectionClass = new ReflectionClass($model);
         $reflections = $reflectionClass->getMethods();
@@ -587,7 +587,7 @@ class ModelsCommand extends Command
                         $this->setProperty($name, null, null, true, $comment);
                     }
                 } elseif (Str::startsWith($method, 'scope') && $method !== 'scopeQuery' && $method !== 'scope' && $method !== 'scopes') {
-                    // Magic scope<name>Attribute
+                    // Magic scope<name> method
                     $name = Str::camel(substr($method, 5));
                     if (! empty($name)) {
                         $comment = $this->getCommentFromDocBlock($reflection);
@@ -1012,11 +1012,9 @@ class ModelsCommand extends Command
     /**
      * Get the parameters and format them correctly
      *
-     * @return array
-     *
      * @throws \ReflectionException
      */
-    public function getParameters($method)
+    public function getParameters(ReflectionMethod $method): array
     {
         // Loop through the default values for parameters, and make the correct output string
         $paramsWithDefault = [];
@@ -1024,7 +1022,7 @@ class ModelsCommand extends Command
         foreach ($method->getParameters() as $param) {
             $paramStr = $param->isVariadic() ? '...$'.$param->getName() : '$'.$param->getName();
 
-            if ($paramType = $this->getParamType($method, $param)) {
+            if ($paramType = $this->getParameterTypes($method, $param)) {
                 $paramStr = $paramType.' '.$paramStr;
             }
 
@@ -1057,11 +1055,8 @@ class ModelsCommand extends Command
      * Determine a model classes' collection type.
      *
      * @see http://laravel.com/docs/eloquent-collections#custom-collections
-     *
-     * @param  string  $className
-     * @return string
      */
-    protected function getCollectionClass($className)
+    protected function getCollectionClass(string $className): string
     {
         // Return something in the very very unlikely scenario the model doesn't
         // have a newCollection() method.
@@ -1108,17 +1103,11 @@ class ModelsCommand extends Command
         return $this->laravel['config']->get('ide-helper.additional_relation_return_types', []);
     }
 
-    /**
-     * @return bool
-     */
-    protected function hasCamelCaseModelProperties()
+    protected function hasCamelCaseModelProperties(): bool
     {
         return $this->laravel['config']->get('ide-helper.model_camel_case_properties', false);
     }
 
-    /**
-     * @psalm-suppress NoValue
-     */
     protected function getAttributeTypes(Model $model, ReflectionMethod $reflectionMethod): Collection
     {
         /** @var Attribute $attribute */
@@ -1189,11 +1178,8 @@ class ModelsCommand extends Command
 
     /**
      * Get method comment based on it DocBlock comment
-     *
-     *
-     * @return null|string
      */
-    protected function getCommentFromDocBlock(ReflectionMethod $reflection)
+    protected function getCommentFromDocBlock(ReflectionMethod $reflection): ?string
     {
         $phpDocContext = (new ContextFactory())->createFromReflector($reflection);
         $context = new Context(
@@ -1498,86 +1484,62 @@ class ModelsCommand extends Command
         }
     }
 
-    protected function getParamType(ReflectionMethod $method, \ReflectionParameter $parameter): ?string
+    protected function getParameterTypes(ReflectionMethod $method, ReflectionParameter $parameter): ?string
     {
-        if ($paramType = $parameter->getType()) {
-            $types = $this->extractReflectionTypes($paramType);
-
-            $type = implode('|', $types);
-
-            if ($paramType->allowsNull()) {
-                if (count($types) == 1) {
-                    $type = '?'.$type;
-                } else {
-                    $type .= '|null';
-                }
-            }
-
-            return $type;
+        $docblockTypes = $this->getParameterTypesFromDocblock($method, $parameter);
+        if ($docblockTypes) {
+            return $docblockTypes;
         }
 
-        $docComment = $method->getDocComment();
+        return $this->getParameterTypesFromTypeHint($method, $parameter);
+    }
 
-        if (! $docComment) {
+    protected function getParameterTypesFromTypeHint(ReflectionMethod $method, ReflectionParameter $parameter): ?string
+    {
+        $parameterTypes = $parameter->getType();
+        if (! $parameterTypes) {
             return null;
         }
 
-        preg_match(
-            '/@param ((?:(?:[\w?|\\\\<>])+(?:\[])?)+)/',
-            $docComment ?? '',
-            $matches
-        );
-        $type = $matches[1] ?? '';
+        $types = $this->extractReflectionTypes($parameterTypes);
+        $type = implode('|', $types);
 
-        if (strpos($type, '|') !== false) {
-            $types = explode('|', $type);
-
-            // if we have more than 2 types
-            // we return null as we cannot use unions in php yet
-            if (count($types) > 2) {
-                return null;
+        if ($parameterTypes->allowsNull()) {
+            if (count($types) == 1) {
+                $type = '?'.$type;
+            } else {
+                $type .= '|null';
             }
-
-            $hasNull = false;
-
-            foreach ($types as $currentType) {
-                if ($currentType === 'null') {
-                    $hasNull = true;
-
-                    continue;
-                }
-
-                // if we didn't find null assign the current type to the type we want
-                $type = $currentType;
-            }
-
-            // if we haven't found null type set
-            // we return null as we cannot use unions with different types yet
-            if (! $hasNull) {
-                return null;
-            }
-
-            $type = '?'.$type;
         }
 
-        // convert to proper type hint types in php
-        $type = str_replace(['boolean', 'integer'], ['bool', 'int'], $type);
-
-        $allowedTypes = [
-            'int',
-            'bool',
-            'string',
-            'float',
-        ];
-
-        // we replace the ? with an empty string so we can check the actual type
-        if (! in_array(str_replace('?', '', $type), $allowedTypes)) {
-            return null;
-        }
-
-        // if we have a match on index 1
-        // then we have found the type of the variable if not we return null
         return $type;
+    }
+
+    protected function getParameterTypesFromDocblock(ReflectionMethod $method, ReflectionParameter $parameter): ?string
+    {
+        $docblock = $method->getDocComment();
+        if (! $docblock) {
+            return null;
+        }
+
+        $phpDocContext = (new ContextFactory())->createFromReflector($method);
+        $context = new Context($phpDocContext->getNamespace(), $phpDocContext->getNamespaceAliases());
+
+        $phpdoc = new DocBlock($docblock, $context);
+
+        /** @var ?ParamTag $tag */
+        $tag = Arr::first(
+            $phpdoc->getTagsByName('param'),
+            function (Tag $tag) use ($parameter) {
+                if (! $tag instanceof ParamTag) {
+                    return false;
+                }
+
+                return $tag->getVariableName() === '$'.$parameter->getName();
+            }
+        );
+
+        return $tag?->getType();
     }
 
     /**
