@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Support array generics in magic scope<Name> method parameters (using docblocks)
+- Support array generics in magic scope<Name> method parameters (using docblocks).
 
 2025-05-13, 5.0.1
 ------------------
