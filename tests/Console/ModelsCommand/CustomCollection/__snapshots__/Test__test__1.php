@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\CustomCollection\Collections\SimpleCollection;
 
 /**
- * 
- *
  * @property int $id
  * @property-read SimpleCollection<int, Simple> $relationHasMany
  * @property-read int|null $relation_has_many_count

@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @property int $id
  * @method static Builder<Simple> newModelQuery()
  * @method static Builder<Simple> newQuery()

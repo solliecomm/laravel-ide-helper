@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\QueryScopes\Models;
 
 /**
- * 
- *
  * @property int $id
  * @property string|null $char_nullable
  * @property string $char_not_nullable
@@ -205,8 +203,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\QueryScopes\Models
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @method static \Illuminate\Database\Eloquent\Builder<PostParent> active()
  * @method static \Illuminate\Database\Eloquent\Builder<PostParent> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<PostParent> newQuery()

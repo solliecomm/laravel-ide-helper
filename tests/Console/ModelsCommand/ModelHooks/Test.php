@@ -41,7 +41,7 @@ class Test extends AbstractModelsCommand
         $mockFilesystem = Mockery::mock(Filesystem::class);
         $mockFilesystem
             ->shouldReceive('get')
-            ->andReturn(file_get_contents(__DIR__ . '/Models/Simple.php'))
+            ->andReturn(file_get_contents(__DIR__.'/Models/Simple.php'))
             ->once();
         $mockFilesystem
             ->shouldReceive('put')
@@ -73,8 +73,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\ModelHooks\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @property int $id
  * @property-read string $custom
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> custom($custom)

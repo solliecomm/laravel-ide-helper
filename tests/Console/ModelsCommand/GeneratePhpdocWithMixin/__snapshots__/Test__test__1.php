@@ -45,8 +45,6 @@ class Post extends Model
 
 namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithMixin\Models{
 /**
- * 
- *
  * @property $someProp
  * @method someMethod(string $method)
  * @method static \Illuminate\Database\Eloquent\Builder<FinalPost> newModelQuery()
@@ -60,8 +58,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWith
 
 namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithMixin\Models{
 /**
- * 
- *
  * @property $someProp
  * @method someMethod(string $method)
  * @property int $id

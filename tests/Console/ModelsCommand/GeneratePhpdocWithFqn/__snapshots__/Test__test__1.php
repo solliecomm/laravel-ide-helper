@@ -15,8 +15,6 @@ use Illuminate\Support\Carbon;
 use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithFqn\Casts\CastType;
 
 /**
- * 
- *
  * @property int $id
  * @property string|null $char_nullable
  * @property CastType $char_not_nullable

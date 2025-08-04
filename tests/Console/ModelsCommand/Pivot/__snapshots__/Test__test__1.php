@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models\Pivots\CustomPivot;
 
 /**
- * 
- *
  * @property-read CustomPivot $customAccessor
  * @property-read \Illuminate\Database\Eloquent\Collection<int, ModelWithPivot> $relationWithCustomPivot
  * @property-read int|null $relation_with_custom_pivot_count
@@ -36,8 +34,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models\Pivot
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
 /**
- * 
- *
  * @method static \Illuminate\Database\Eloquent\Builder<CustomPivot> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<CustomPivot> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<CustomPivot> query()

@@ -7,8 +7,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\PHPStormNoInspecti
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @property int $id
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()

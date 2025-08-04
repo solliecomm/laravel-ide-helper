@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace\ModelWithCustomNamespaceFactory;
 
 /**
- * 
- *
  * @method static \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\CustomSpace\ModelWithCustomNamespaceFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithCustomNamespace> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithCustomNamespace> newQuery()
@@ -41,8 +39,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @method static \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories\ModelWithFactoryFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithFactory> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithFactory> newQuery()
@@ -60,8 +56,6 @@ declare(strict_types=1);
 namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Models;
 
 /**
- * 
- *
  * @method static \Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Factories\Factories\ModelWithNestedFactoryFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithNestedFactory> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithNestedFactory> newQuery()
@@ -81,8 +75,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithoutFactory> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithoutFactory> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithoutFactory> query()

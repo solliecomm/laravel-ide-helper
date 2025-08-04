@@ -14,5 +14,8 @@ trim_trailing_whitespace = true
 [tests/**.php]
 trim_trailing_whitespace = false
 
+[tests/**.txt]
+insert_final_newline = false
+
 [*.md]
 trim_trailing_whitespace = false

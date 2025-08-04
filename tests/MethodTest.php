@@ -13,7 +13,7 @@ class MethodTest extends TestCase
     /**
      * Test that we can actually instantiate the class
      */
-    public function testCanInstantiate()
+    public function test_can_instantiate(): void
     {
         $reflectionClass = new \ReflectionClass(ExampleClass::class);
         $reflectionMethod = $reflectionClass->getMethod('setName');
@@ -26,7 +26,7 @@ class MethodTest extends TestCase
     /**
      * Test the output of a class
      */
-    public function testOutput()
+    public function test_output(): void
     {
         $reflectionClass = new \ReflectionClass(ExampleClass::class);
         $reflectionMethod = $reflectionClass->getMethod('setName');
@@ -35,17 +35,15 @@ class MethodTest extends TestCase
 
         $output = <<<'DOC'
 /**
- * 
- *
  * @param string $last
  * @param string $first
  * @param string $middle
- * @static 
+ * @static
  */
 DOC;
         $this->assertStringEqualsStringIgnoringLineEndings($output, $method->getDocComment(''));
         $this->assertSame('setName', $method->getName());
-        $this->assertSame('\\' . ExampleClass::class, $method->getDeclaringClass());
+        $this->assertSame('\\'.ExampleClass::class, $method->getDeclaringClass());
         $this->assertSame('$last, $first, ...$middle', $method->getParams(true));
         $this->assertSame(['$last', '$first', '...$middle'], $method->getParams(false));
         $this->assertSame('$last, $first = \'Barry\', ...$middle', $method->getParamsWithDefault(true));
@@ -56,7 +54,7 @@ DOC;
     /**
      * Test the output of a class
      */
-    public function testEloquentBuilderOutput()
+    public function test_eloquent_builder_output(): void
     {
         $reflectionClass = new \ReflectionClass(Builder::class);
         $reflectionMethod = $reflectionClass->getMethod('with');
@@ -66,13 +64,13 @@ DOC;
         $output = <<<'DOC'
  * @param array<array-key, array|(\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>): mixed)|string>|string $relations
  * @param (\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>): mixed)|string|null $callback
- * @return \Illuminate\Database\Eloquent\Builder|static 
- * @static 
+ * @return \Illuminate\Database\Eloquent\Builder|static
+ * @static
  */
 DOC;
         $this->assertStringContainsStringIgnoringLineEndings($output, $method->getDocComment(''));
         $this->assertSame('with', $method->getName());
-        $this->assertSame('\\' . Builder::class, $method->getDeclaringClass());
+        $this->assertSame('\\'.Builder::class, $method->getDeclaringClass());
         $this->assertSame('$relations, $callback', $method->getParams(true));
         $this->assertSame(['$relations', '$callback'], $method->getParams(false));
         $this->assertSame('$relations, $callback = null', $method->getParamsWithDefault(true));
@@ -83,7 +81,7 @@ DOC;
     /**
      * Test special characters in methods default values
      */
-    public function testDefaultSpecialChars()
+    public function test_default_special_chars(): void
     {
         $reflectionClass = new \ReflectionClass(ExampleClass::class);
         $reflectionMethod = $reflectionClass->getMethod('setSpecialChars');
@@ -98,7 +96,7 @@ DOC;
     /**
      * Test the output of a class when using class aliases for it
      */
-    public function testClassAliases()
+    public function test_class_aliases(): void
     {
         $reflectionClass = new \ReflectionClass(ExampleClass::class);
         $reflectionMethod = $reflectionClass->getMethod('getApplication');
@@ -109,16 +107,14 @@ DOC;
 
         $output = <<<'DOC'
 /**
- * 
- *
- * @return \Illuminate\Foundation\Application 
- * @static 
+ * @return \Illuminate\Foundation\Application
+ * @static
  */
 DOC;
 
         $this->assertStringContainsStringIgnoringLineEndings($output, $method->getDocComment(''));
         $this->assertSame('getApplication', $method->getName());
-        $this->assertSame('\\' . ExampleClass::class, $method->getDeclaringClass());
+        $this->assertSame('\\'.ExampleClass::class, $method->getDeclaringClass());
         $this->assertSame('', $method->getParams(true));
         $this->assertSame([], $method->getParams(false));
         $this->assertSame('', $method->getParamsWithDefault(true));
@@ -130,25 +126,16 @@ DOC;
 class ExampleClass
 {
     /**
-     * @param string $last
-     * @param string $first
-     * @param string $middle
+     * @param  string  $last
+     * @param  string  $first
+     * @param  string  $middle
      */
-    public function setName($last, $first = 'Barry', ...$middle)
-    {
-        return;
-    }
+    public function setName($last, $first = 'Barry', ...$middle) {}
 
-    public function setSpecialChars($chars = "\$'\\")
-    {
-        return;
-    }
+    public function setSpecialChars($chars = "\$'\\") {}
 
     /**
      * @return Application
      */
-    public function getApplication()
-    {
-        return;
-    }
+    public function getApplication() {}
 }

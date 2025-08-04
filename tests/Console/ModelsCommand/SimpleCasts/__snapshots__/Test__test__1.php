@@ -7,8 +7,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\SimpleCasts\Models
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @property int $cast_to_int
  * @property int $cast_to_integer
  * @property float $cast_to_real

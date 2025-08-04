@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateBasicPhpDocWithEnumDefaults\Enums\PostStatus;
 
 /**
- * 
- *
  * @property int $id
  * @property string|null $char_nullable
  * @property string $char_not_nullable

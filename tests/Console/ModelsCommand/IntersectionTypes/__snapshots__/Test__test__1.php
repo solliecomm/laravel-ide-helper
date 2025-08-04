@@ -10,8 +10,6 @@ use Illuminate\Database\Query\Builder;
 use Iterator;
 
 /**
- * 
- *
  * @property-read (\Iterator&\Countable) $foo
  * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> newQuery()

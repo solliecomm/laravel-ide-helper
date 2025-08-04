@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * 
- *
  * @property int $id
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()

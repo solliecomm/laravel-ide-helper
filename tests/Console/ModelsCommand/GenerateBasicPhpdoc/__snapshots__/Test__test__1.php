@@ -7,8 +7,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateBasicPhpdo
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @property int $id
  * @property string|null $char_nullable
  * @property string $char_not_nullable

@@ -11,8 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
 /**
- * 
- *
  * @property \Illuminate\Support\Carbon $cast_to_date_serialization
  * @property \Illuminate\Support\Carbon $cast_to_datetime_serialization
  * @property \Illuminate\Support\Carbon $cast_to_custom_datetime

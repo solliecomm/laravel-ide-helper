@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @property int $id
  * @property string|null $name
  * @property string|null $name_read
@@ -86,8 +84,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
- *
  * @property int $id
  * @property-read array<int, self>|null $array_generics_in_docblock
  * @property-read Carbon|null $classes_as_return_type
