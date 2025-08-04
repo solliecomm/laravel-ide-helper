@@ -53,12 +53,11 @@ class Alias
     /**
      * @param  ConfigRepository  $config
      * @param  string  $alias
-     *
-     * @psalm-param class-string $facade
-     *
      * @param  string  $facade
      * @param  array  $magicMethods
      * @param  array  $interfaces
+     *
+     * @psalm-param class-string $facade
      */
     public function __construct($config, $alias, $facade, $magicMethods = [], $interfaces = [])
     {
