@@ -765,7 +765,6 @@ class ModelsCommand extends Command
 
         if (in_array($relation, ['hasOne', 'hasOneThrough', 'morphOne'], true)) {
             $defaultProp = $reflectionObj->getProperty('withDefault');
-            $defaultProp->setAccessible(true);
 
             return ! $defaultProp->getValue($relationObj);
         }
@@ -775,7 +774,6 @@ class ModelsCommand extends Command
         }
 
         $fkProp = $reflectionObj->getProperty('foreignKey');
-        $fkProp->setAccessible(true);
 
         return isset($this->nullableColumns[$fkProp->getValue($relationObj)]);
     }
