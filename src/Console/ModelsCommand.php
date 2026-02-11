@@ -44,7 +44,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Database\Schema\Builder;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -774,8 +773,14 @@ class ModelsCommand extends Command
         }
 
         $fkProp = $reflectionObj->getProperty('foreignKey');
+        $foreignKey = $fkProp->getValue($relationObj);
 
-        return isset($this->nullableColumns[$fkProp->getValue($relationObj)]);
+        if (str_contains($foreignKey, '->')) {
+            // JSON relations (from staudenmeir/eloquent-json-relations) are always nullable
+            return true;
+        }
+
+        return isset($this->nullableColumns[$foreignKey]);
     }
 
     public function setProperty(string $name, ?string $type = null, ?bool $read = null, ?bool $write = null, ?string $comment = null, bool $nullable = false)
