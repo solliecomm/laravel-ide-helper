@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 --------------
 
+2026-02-11, 5.0.3
+------------------
+
+### Changed
+
+- JSON relationships from
+  the [staudenmeir/eloquent-json-relations](https://github.com/staudenmeir/eloquent-json-relations) package are now
+  always marked as nullable.
+
 2025-05-27, 5.0.2
 ------------------
 
