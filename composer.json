@@ -81,7 +81,7 @@
         "phpstan-generate-baseline": "phpstan analyse --memory-limit=2G -b",
         "pint": "pint",
         "test": "phpunit",
-        "test-ci": "phpunit -d --without-creating-snapshots",
+        "test-ci": "phpunit",
         "test-regenerate": "phpunit -d --update-snapshots"
     }
 }
