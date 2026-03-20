@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 --------------
 
+2026-03-20, 6.0.0
+------------------
+
+### Changed
+
+- Dropped support for Laravel 11
+- Dropped support for PHP 8.2 and PHP 8.3
+- Support Laravel 13
+- Support PHP 8.5
+
 2026-02-11, 5.0.3
 ------------------
 

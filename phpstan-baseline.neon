@@ -1,1213 +1,1207 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:__construct\(\) has parameter \$interfaces with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::__construct() has parameter $interfaces with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:__construct\(\) has parameter \$magicMethods with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::__construct() has parameter $magicMethods with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:addClass\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::addClass() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:addClass\(\) has parameter \$classes with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::addClass() has parameter $classes with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:addMagicMethods\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::addMagicMethods() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:detectClassType\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::detectClassType() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:detectExtendsNamespace\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::detectExtendsNamespace() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:detectFake\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::detectFake() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:detectMethods\(\) should return string but return statement is missing\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::detectMethods() should return string but return statement is missing.'
 			identifier: return.missing
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:detectNamespace\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::detectNamespace() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:detectRoot\(\) should return bool\|string but empty return statement found\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::detectRoot() should return bool|string but empty return statement found.'
 			identifier: return.empty
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:detectRoot\(\) should return bool\|string but return statement is missing\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::detectRoot() should return bool|string but return statement is missing.'
 			identifier: return.missing
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:getDocComment\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::getDocComment() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:getDocComment\(\) has parameter \$prefix with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::getDocComment() has parameter $prefix with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:getMacroFunction\(\) has parameter \$macro_func with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::getMacroFunction() has parameter $macro_func with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Alias\:\:getShortName\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Alias::getShortName() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Parameter \#1 \$class of function class_exists expects string, class\-string\|false given\.$#'
+			rawMessage: 'Parameter #1 $class of function class_exists expects string, class-string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Parameter \#1 \$classes of method Sollie\\LaravelIdeHelper\\Alias\:\:addClass\(\) expects array\|string, class\-string\|false given\.$#'
+			rawMessage: 'Parameter #1 $classes of method Sollie\LaravelIdeHelper\Alias::addClass() expects array|string, class-string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Parameter \#1 \$docblock of class Barryvdh\\Reflection\\DocBlock constructor expects Reflector\|string, string\|false given\.$#'
+			rawMessage: 'Parameter #1 $docblock of class Barryvdh\Reflection\DocBlock constructor expects Reflector|string, string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Parameter \#1 \$interface of function interface_exists expects string, class\-string\|false given\.$#'
+			rawMessage: 'Parameter #1 $interface of function interface_exists expects string, class-string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Parameter \#1 \$objectOrClass of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, string given\.$#'
+			rawMessage: 'Parameter #1 $objectOrClass of class ReflectionClass constructor expects class-string<T of object>|T of object, string given.'
 			identifier: argument.type
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$alias has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$alias has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$classAliases has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$classAliases has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$classType has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$classType has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$classes has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$classes has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$extends has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$extends has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$extendsClass has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$extendsClass has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$extendsNamespace has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$extendsNamespace has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$facade \(class\-string\) does not accept string\.$#'
+			rawMessage: 'Property Sollie\LaravelIdeHelper\Alias::$facade (class-string) does not accept string.'
 			identifier: assign.propertyType
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$interfaces has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$interfaces has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$magicMethods has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$magicMethods has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$methods has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$methods has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$namespace has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$namespace has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$phpdoc has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$phpdoc has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$root has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$root has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$short has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$short has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$usedMethods has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$usedMethods has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Alias\:\:\$valid has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Alias::$valid has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Alias.php
 
 		-
-			message: '#^Binary operation "\.\=" between array\|bool\|string\|null and ''\.php'' results in an error\.$#'
+			rawMessage: 'Binary operation ".=" between array|bool|float|int|string|null and ''.php'' results in an error.'
 			identifier: assignOp.invalid
 			count: 1
 			path: src/Console/GeneratorCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\GeneratorCommand\:\:getArguments\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\GeneratorCommand::getArguments() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/GeneratorCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\GeneratorCommand\:\:getOptions\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\GeneratorCommand::getOptions() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/GeneratorCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\GeneratorCommand\:\:useMemoryDriver\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\GeneratorCommand::useMemoryDriver() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/GeneratorCommand.php
 
 		-
-			message: '#^Parameter \#1 \$string of function substr expects string, array\|bool\|string\|null given\.$#'
+			rawMessage: 'Parameter #1 $string of function substr expects string, array|bool|float|int|string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/GeneratorCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\GeneratorCommand\:\:\$onlyExtend has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\GeneratorCommand::$onlyExtend has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/GeneratorCommand.php
 
 		-
-			message: '#^Call to an undefined method Illuminate\\Contracts\\Foundation\\Application\:\:getBindings\(\)\.$#'
+			rawMessage: 'Call to an undefined method Illuminate\Contracts\Foundation\Application::getBindings().'
 			identifier: method.notFound
 			count: 1
 			path: src/Console/MetaCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\MetaCommand\:\:getAbstracts\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\MetaCommand::getAbstracts() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/MetaCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\MetaCommand\:\:getOptions\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\MetaCommand::getOptions() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/MetaCommand.php
 
 		-
-			message: '#^Parameter \#1 \$path of method Illuminate\\Contracts\\Filesystem\\Filesystem\:\:put\(\) expects string, array\|bool\|string\|null given\.$#'
+			rawMessage: 'Parameter #1 $path of method Illuminate\Contracts\Filesystem\Filesystem::put() expects string, array|bool|float|int|string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/MetaCommand.php
 
 		-
-			message: '#^Part \$filename \(array\|bool\|string\|null\) of encapsed string cannot be cast to string\.$#'
+			rawMessage: 'Part $filename (array|bool|float|int|string|null) of encapsed string cannot be cast to string.'
 			identifier: encapsedStringPart.nonString
 			count: 2
 			path: src/Console/MetaCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\MetaCommand\:\:\$methods has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\MetaCommand::$methods has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/MetaCommand.php
 
 		-
-			message: '#^Unreachable statement \- code above always terminates\.$#'
-			identifier: deadCode.unreachable
-			count: 1
-			path: src/Console/MetaCommand.php
-
-		-
-			message: '#^Argument of an invalid type list\<string\>\|false supplied for foreach, only iterables are supported\.$#'
+			rawMessage: 'Argument of an invalid type list<string>|false supplied for foreach, only iterables are supported.'
 			identifier: foreach.nonIterable
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Call to an undefined method Barryvdh\\Reflection\\DocBlock\\Tag\:\:getMethodName\(\)\.$#'
+			rawMessage: 'Call to an undefined method Barryvdh\Reflection\DocBlock\Tag::getMethodName().'
 			identifier: method.notFound
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Call to an undefined method Barryvdh\\Reflection\\DocBlock\\Tag\:\:getType\(\)\.$#'
+			rawMessage: 'Call to an undefined method Barryvdh\Reflection\DocBlock\Tag::getType().'
 			identifier: method.notFound
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Call to an undefined method Barryvdh\\Reflection\\DocBlock\\Tag\:\:getVariableName\(\)\.$#'
+			rawMessage: 'Call to an undefined method Barryvdh\Reflection\DocBlock\Tag::getVariableName().'
 			identifier: method.notFound
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Call to an undefined method Illuminate\\Support\\Optional\:\:getNumberOfParameters\(\)\.$#'
+			rawMessage: 'Call to an undefined method Illuminate\Support\Optional::getNumberOfParameters().'
 			identifier: method.notFound
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Call to an undefined method Illuminate\\Support\\Optional\:\:getParameters\(\)\.$#'
+			rawMessage: 'Call to an undefined method Illuminate\Support\Optional::getParameters().'
 			identifier: method.notFound
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Call to an undefined static method Illuminate\\Database\\Eloquent\\Model\:\:newFactory\(\)\.$#'
+			rawMessage: 'Call to an undefined static method Illuminate\Database\Eloquent\Model::newFactory().'
 			identifier: staticMethod.notFound
 			count: 2
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Call to function is_object\(\) with string will always evaluate to false\.$#'
+			rawMessage: 'Call to function is_object() with string will always evaluate to false.'
 			identifier: function.impossibleType
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Cannot access offset ''config'' on Illuminate\\Contracts\\Foundation\\Application\.$#'
+			rawMessage: Cannot access offset 'config' on Illuminate\Contracts\Foundation\Application.
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 12
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Cannot call method getInterfaceNames\(\) on ReflectionClass\|false\.$#'
+			rawMessage: 'Cannot call method getInterfaceNames() on ReflectionClass|false.'
 			identifier: method.nonObject
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^If condition is always true\.$#'
+			rawMessage: If condition is always true.
 			identifier: if.alwaysTrue
 			count: 2
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Illuminate\\Support\\Collection\<\*NEVER\*, \*NEVER\*\> does not accept ReflectionType\|string\|null\.$#'
+			rawMessage: 'Illuminate\Support\Collection<*NEVER*, *NEVER*> does not accept ReflectionType|string|null.'
 			identifier: offsetAssign.valueType
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Illuminate\\Support\\Collection\<\*NEVER\*, \*NEVER\*\> does not accept null\.$#'
+			rawMessage: 'Illuminate\Support\Collection<*NEVER*, *NEVER*> does not accept null.'
 			identifier: offsetAssign.valueType
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Instanceof between \*NEVER\* and ReflectionIntersectionType will always evaluate to false\.$#'
+			rawMessage: Instanceof between *NEVER* and ReflectionIntersectionType will always evaluate to false.
 			identifier: instanceof.alwaysFalse
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Instanceof between \*NEVER\* and ReflectionNamedType will always evaluate to false\.$#'
+			rawMessage: Instanceof between *NEVER* and ReflectionNamedType will always evaluate to false.
 			identifier: instanceof.alwaysFalse
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Instanceof between \*NEVER\* and ReflectionType will always evaluate to false\.$#'
+			rawMessage: Instanceof between *NEVER* and ReflectionType will always evaluate to false.
 			identifier: instanceof.alwaysFalse
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Instanceof between \*NEVER\* and ReflectionUnionType will always evaluate to false\.$#'
+			rawMessage: Instanceof between *NEVER* and ReflectionUnionType will always evaluate to false.
 			identifier: instanceof.alwaysFalse
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:castPropertyType\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::castPropertyType() has parameter $params with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:checkForCastableCasts\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::checkForCastableCasts() has parameter $params with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:checkForCollectionGenerics\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::checkForCollectionGenerics() has parameter $params with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:checkForCustomLaravelCasts\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::checkForCustomLaravelCasts() has parameter $params with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:generateDocs\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::generateDocs() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:generateDocs\(\) has parameter \$ignore with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::generateDocs() has parameter $ignore with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:generateDocs\(\) has parameter \$loadModels with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::generateDocs() has parameter $loadModels with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getArguments\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getArguments() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getAttributeTypes\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getAttributeTypes() return type with generic class Illuminate\Support\Collection does not specify its types: TKey, TValue'
 			identifier: missingType.generics
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getClassKeyword\(\) has parameter \$reflection with generic class ReflectionClass but does not specify its types\: T$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getClassKeyword() has parameter $reflection with generic class ReflectionClass but does not specify its types: T'
 			identifier: missingType.generics
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getCollectionMethods\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getCollectionMethods() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getFactoryMethods\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getFactoryMethods() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getMethodType\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getMethodType() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getOptions\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getOptions() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getParameters\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getParameters() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getRelationReturnTypes\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getRelationReturnTypes() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getRelationTypes\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getRelationTypes() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getSoftDeleteMethods\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getSoftDeleteMethods() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getUsedClassNames\(\) has parameter \$reflection with generic class ReflectionClass but does not specify its types\: T$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::getUsedClassNames() has parameter $reflection with generic class ReflectionClass but does not specify its types: T'
 			identifier: missingType.generics
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:isRelationNullable\(\) has parameter \$relationObj with generic class Illuminate\\Database\\Eloquent\\Relations\\Relation but does not specify its types\: TRelatedModel, TDeclaringModel, TResult$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::isRelationNullable() has parameter $relationObj with generic class Illuminate\Database\Eloquent\Relations\Relation but does not specify its types: TRelatedModel, TDeclaringModel, TResult'
 			identifier: missingType.generics
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:loadModels\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::loadModels() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:setMethod\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::setMethod() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:setMethod\(\) has parameter \$arguments with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::setMethod() has parameter $arguments with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:setMethod\(\) has parameter \$comment with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::setMethod() has parameter $comment with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:setMethod\(\) has parameter \$name with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::setMethod() has parameter $name with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:setMethod\(\) has parameter \$type with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::setMethod() has parameter $type with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:setProperty\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::setProperty() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:unsetMethod\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::unsetMethod() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:unsetMethod\(\) has parameter \$name with no type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Console\ModelsCommand::unsetMethod() has parameter $name with no type specified.'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array\{class\-string, ''castUsing''\} given\.$#'
+			rawMessage: 'Parameter #1 $callback of function call_user_func expects callable(): mixed, array{class-string, ''castUsing''} given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$collectionClassNameInModel of method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getCollectionTypeHint\(\) expects class\-string, string given\.$#'
+			rawMessage: 'Parameter #1 $collectionClassNameInModel of method Sollie\LaravelIdeHelper\Console\ModelsCommand::getCollectionTypeHint() expects class-string, string given.'
 			identifier: argument.type
 			count: 2
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$collectionClassNameInModel of method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getCollectionTypeHint\(\) expects class\-string, string\|null given\.$#'
+			rawMessage: 'Parameter #1 $collectionClassNameInModel of method Sollie\LaravelIdeHelper\Console\ModelsCommand::getCollectionTypeHint() expects class-string, string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$filename of class SplFileObject constructor expects string, string\|false given\.$#'
+			rawMessage: 'Parameter #1 $filename of class SplFileObject constructor expects string, string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$function of class ReflectionFunction constructor expects Closure\|string, callable\(\)\: mixed given\.$#'
+			rawMessage: 'Parameter #1 $function of class ReflectionFunction constructor expects Closure|string, callable(): mixed given.'
 			identifier: argument.type
 			count: 3
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$model of method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:castPropertyTypes\(\) expects Illuminate\\Database\\Eloquent\\Model, class\-string\|object given\.$#'
+			rawMessage: 'Parameter #1 $model of method Sollie\LaravelIdeHelper\Console\ModelsCommand::castPropertyTypes() expects Illuminate\Database\Eloquent\Model, class-string|object given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$object_or_class of function is_a expects object\|string, string\|null given\.$#'
+			rawMessage: 'Parameter #1 $object_or_class of function is_a expects object|string, string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$path of method Illuminate\\Filesystem\\Filesystem\:\:get\(\) expects string, string\|false given\.$#'
+			rawMessage: 'Parameter #1 $path of method Illuminate\Filesystem\Filesystem::get() expects string, string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$path of method Illuminate\\Filesystem\\Filesystem\:\:put\(\) expects string, string\|false given\.$#'
+			rawMessage: 'Parameter #1 $path of method Illuminate\Filesystem\Filesystem::put() expects string, string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$search of function str_replace expects array\<string\>\|string, string\|null given\.$#'
+			rawMessage: 'Parameter #1 $search of function str_replace expects array<string>|string, string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#1 \$string of function trim expects string, class\-string\|false given\.$#'
+			rawMessage: 'Parameter #1 $string of function trim expects string, class-string|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#2 \$offset of function substr expects int, int\<0, max\>\|false given\.$#'
+			rawMessage: 'Parameter #2 $offset of function substr expects int, int<0, max>|false given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#2 \$relatedModel of method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getCollectionTypeHint\(\) expects class\-string\|null, string given\.$#'
+			rawMessage: 'Parameter #2 $relatedModel of method Sollie\LaravelIdeHelper\Console\ModelsCommand::getCollectionTypeHint() expects class-string|null, string given.'
 			identifier: argument.type
 			count: 2
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#2 \$relatedModel of method Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:getCollectionTypeHint\(\) expects class\-string\|null, string\|null given\.$#'
+			rawMessage: 'Parameter #2 $relatedModel of method Sollie\LaravelIdeHelper\Console\ModelsCommand::getCollectionTypeHint() expects class-string|null, string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#2 \$replace of function str_replace expects array\<string\>\|string, string\|null given\.$#'
+			rawMessage: 'Parameter #2 $replace of function str_replace expects array<string>|string, string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#2 \$string of function explode expects string, string\|null given\.$#'
+			rawMessage: 'Parameter #2 $string of function explode expects string, string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Parameter \#2 \.\.\.\$arrays of function array_merge expects array, array\|bool\|string\|null given\.$#'
+			rawMessage: 'Parameter #2 ...$arrays of function array_merge expects array, array|bool|float|int|string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$customTags type has no value type specified in iterable type array\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$customTags type has no value type specified in iterable type array.
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$dirs has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$dirs has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$methods has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$methods has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$phpstorm_noinspections has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$phpstorm_noinspections has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$properties has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$properties has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$reset has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$reset has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$write has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$write has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$write_mixin has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$write_mixin has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$write_model_external_builder_methods has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$write_model_external_builder_methods has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$write_model_magic_where has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$write_model_magic_where has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Console\\ModelsCommand\:\:\$write_model_relation_count_properties has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Console\ModelsCommand::$write_model_relation_count_properties has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Result of && is always false\.$#'
+			rawMessage: Result of && is always false.
 			identifier: booleanAnd.alwaysFalse
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Result of \|\| is always false\.$#'
+			rawMessage: Result of || is always false.
 			identifier: booleanOr.alwaysFalse
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Strict comparison using \=\=\= between \*NEVER\* and null will always evaluate to false\.$#'
+			rawMessage: 'Strict comparison using === between *NEVER* and null will always evaluate to false.'
 			identifier: identical.alwaysFalse
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			rawMessage: Unable to resolve the template type TKey in call to function collect
 			identifier: argument.templateType
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			rawMessage: Unable to resolve the template type TValue in call to function collect
 			identifier: argument.templateType
 			count: 2
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Variable \$mixinClassName might not be defined\.$#'
+			rawMessage: Variable $mixinClassName might not be defined.
 			identifier: variable.undefined
 			count: 1
 			path: src/Console/ModelsCommand.php
 
 		-
-			message: '#^Class Illuminate\\Database\\Eloquent\\Factory not found\.$#'
+			rawMessage: Class Illuminate\Database\Eloquent\Factory not found.
 			identifier: class.notFound
 			count: 2
 			path: src/Factories.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Factories\:\:all\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Factories::all() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Factories.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Factories\:\:isLaravelSevenOrLower\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Factories::isLaravelSevenOrLower() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Factories.php
 
 		-
-			message: '#^Argument of an invalid type list\<string\>\|false supplied for foreach, only iterables are supported\.$#'
+			rawMessage: 'Argument of an invalid type list<string>|false supplied for foreach, only iterables are supported.'
 			identifier: foreach.nonIterable
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Constructor of class Sollie\\LaravelIdeHelper\\Generator has an unused parameter \$output\.$#'
+			rawMessage: Constructor of class Sollie\LaravelIdeHelper\Generator has an unused parameter $output.
 			identifier: constructor.unusedParameter
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^If condition is always true\.$#'
+			rawMessage: If condition is always true.
 			identifier: if.alwaysTrue
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Illuminate\\Support\\Collection\<\*NEVER\*, \*NEVER\*\> does not accept Sollie\\LaravelIdeHelper\\Alias\.$#'
+			rawMessage: 'Illuminate\Support\Collection<*NEVER*, *NEVER*> does not accept Sollie\LaravelIdeHelper\Alias.'
 			identifier: offsetAssign.valueType
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:addMacroableClasses\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::addMacroableClasses() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:addMacroableClasses\(\) has parameter \$aliases with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::addMacroableClasses() has parameter $aliases with generic class Illuminate\Support\Collection but does not specify its types: TKey, TValue'
 			identifier: missingType.generics
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:detectDrivers\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::detectDrivers() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:generate\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::generate() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:getAliases\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::getAliases() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:getAliasesByAliasNamespace\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::getAliasesByAliasNamespace() return type with generic class Illuminate\Support\Collection does not specify its types: TKey, TValue'
 			identifier: missingType.generics
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:getAliasesByExtendsNamespace\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::getAliasesByExtendsNamespace() return type with generic class Illuminate\Support\Collection does not specify its types: TKey, TValue'
 			identifier: missingType.generics
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:getMacroableClasses\(\) has parameter \$aliases with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::getMacroableClasses() has parameter $aliases with generic class Illuminate\Support\Collection but does not specify its types: TKey, TValue'
 			identifier: missingType.generics
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:getMacroableClasses\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::getMacroableClasses() return type with generic class Illuminate\Support\Collection does not specify its types: TKey, TValue'
 			identifier: missingType.generics
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:getRealTimeFacades\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::getRealTimeFacades() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Generator\:\:getValidAliases\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Generator::getValidAliases() return type with generic class Illuminate\Support\Collection does not specify its types: TKey, TValue'
 			identifier: missingType.generics
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^PHPDoc tag @return has invalid value \(string;\)\: Unexpected token ";", expected TOKEN_HORIZONTAL_WS at offset 74 on line 4$#'
+			rawMessage: 'PHPDoc tag @return has invalid value (string;): Unexpected token ";", expected TOKEN_HORIZONTAL_WS at offset 74 on line 4'
 			identifier: phpDoc.parseError
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Parameter \#1 \$groupBy of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:groupBy\(\) expects array\|\(callable\(mixed, int\|string\)\: \(int\|string\)\)\|string, Closure\(Sollie\\LaravelIdeHelper\\Alias\)\: \(string\|null\) given\.$#'
+			rawMessage: 'Parameter #1 $groupBy of method Illuminate\Support\Collection<(int|string),mixed>::groupBy() expects array|(callable(mixed, int|string): string)|string, Closure(Sollie\LaravelIdeHelper\Alias): (string|null) given.'
 			identifier: argument.type
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Parameter \#1 \$object_or_class of function is_subclass_of expects object\|string, string\|null given\.$#'
+			rawMessage: 'Parameter #1 $object_or_class of function is_subclass_of expects object|string, string|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Generator\:\:\$extra has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Generator::$extra has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Generator\:\:\$helpers has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Generator::$helpers has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Generator\:\:\$interfaces has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Generator::$interfaces has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Generator\:\:\$magic has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Generator::$magic has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Generator.php
 
 		-
-			message: '#^Unable to resolve the template type TGroupKey in call to method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:groupBy\(\)$#'
-			identifier: argument.templateType
-			count: 1
-			path: src/Generator.php
-
-		-
-			message: '#^Cannot access offset ''config'' on Illuminate\\Contracts\\Foundation\\Application\.$#'
+			rawMessage: Cannot access offset 'config' on Illuminate\Contracts\Foundation\Application.
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: src/IdeHelperServiceProvider.php
 
 		-
-			message: '#^Cannot access offset ''events'' on Illuminate\\Contracts\\Foundation\\Application\.$#'
+			rawMessage: Cannot access offset 'events' on Illuminate\Contracts\Foundation\Application.
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 3
 			path: src/IdeHelperServiceProvider.php
 
 		-
-			message: '#^Cannot access offset ''files'' on Illuminate\\Contracts\\Foundation\\Application\.$#'
+			rawMessage: Cannot access offset 'files' on Illuminate\Contracts\Foundation\Application.
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
 			path: src/IdeHelperServiceProvider.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\IdeHelperServiceProvider\:\:provides\(\) return type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\IdeHelperServiceProvider::provides() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/IdeHelperServiceProvider.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Listeners\\GenerateModelHelper\:\:handle\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Listeners\GenerateModelHelper::handle() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Listeners/GenerateModelHelper.php
 
 		-
-			message: '#^Call to an undefined method Illuminate\\Support\\HigherOrderCollectionProxy\<\(int\|string\), ReflectionType\|null\>\:\:getName\(\)\.$#'
+			rawMessage: 'Call to an undefined method Illuminate\Support\HigherOrderCollectionProxy<(int|string), ReflectionType|null>::getName().'
 			identifier: method.notFound
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Cannot call method allowsNull\(\) on ReflectionType\|null\.$#'
-			identifier: method.nonObject
+			rawMessage: 'Call to an undefined method ReflectionType::getName().'
+			identifier: method.notFound
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Cannot call method getName\(\) on ReflectionType\|null\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: src/Macro.php
-
-		-
-			message: '#^If condition is always true\.$#'
+			rawMessage: If condition is always true.
 			identifier: if.alwaysTrue
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Macro\:\:__construct\(\) has parameter \$class with generic class ReflectionClass but does not specify its types\: T$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Macro::__construct() has parameter $class with generic class ReflectionClass but does not specify its types: T'
 			identifier: missingType.generics
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Macro\:\:__construct\(\) has parameter \$classAliases with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Macro::__construct() has parameter $classAliases with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Macro\:\:__construct\(\) has parameter \$interfaces with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Macro::__construct() has parameter $interfaces with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Macro\:\:addLocationToPhpDoc\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Macro::addLocationToPhpDoc() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Macro\:\:initClassDefinedProperties\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Macro::initClassDefinedProperties() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Macro\:\:initClassDefinedProperties\(\) has parameter \$class with generic class ReflectionClass but does not specify its types\: T$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Macro::initClassDefinedProperties() has parameter $class with generic class ReflectionClass but does not specify its types: T'
 			identifier: missingType.generics
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Macro\:\:initPhpDoc\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Macro::initPhpDoc() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Macro.php
 
 		-
-			message: '#^Call to an undefined method ReflectionFunctionAbstract\:\:getDeclaringClass\(\)\.$#'
+			rawMessage: 'Call to an undefined method ReflectionFunctionAbstract::getDeclaringClass().'
 			identifier: method.notFound
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Constructor of class Sollie\\LaravelIdeHelper\\Method has an unused parameter \$alias\.$#'
+			rawMessage: Constructor of class Sollie\LaravelIdeHelper\Method has an unused parameter $alias.
 			identifier: constructor.unusedParameter
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^If condition is always true\.$#'
+			rawMessage: If condition is always true.
 			identifier: if.alwaysTrue
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:__construct\(\) has parameter \$class with generic class ReflectionClass but does not specify its types\: T$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::__construct() has parameter $class with generic class ReflectionClass but does not specify its types: T'
 			identifier: missingType.generics
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:__construct\(\) has parameter \$classAliases with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::__construct() has parameter $classAliases with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:__construct\(\) has parameter \$interfaces with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::__construct() has parameter $interfaces with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:initClassDefinedProperties\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::initClassDefinedProperties() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:initClassDefinedProperties\(\) has parameter \$class with generic class ReflectionClass but does not specify its types\: T$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::initClassDefinedProperties() has parameter $class with generic class ReflectionClass but does not specify its types: T'
 			identifier: missingType.generics
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:initPhpDoc\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::initPhpDoc() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:normalizeDescription\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::normalizeDescription() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:normalizeParams\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::normalizeParams() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Method\:\:normalizeReturn\(\) has no return type specified\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Method::normalizeReturn() has no return type specified.'
 			identifier: missingType.return
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Parameter \#1 \$method of method Sollie\\LaravelIdeHelper\\Method\:\:getParameters\(\) expects ReflectionMethod, ReflectionFunctionAbstract given\.$#'
+			rawMessage: 'Parameter #1 $method of method Sollie\LaravelIdeHelper\Method::getParameters() expects ReflectionMethod, ReflectionFunctionAbstract given.'
 			identifier: argument.type
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Parameter \#1 \$method of method Sollie\\LaravelIdeHelper\\Method\:\:initClassDefinedProperties\(\) expects ReflectionMethod, ReflectionFunctionAbstract given\.$#'
+			rawMessage: 'Parameter #1 $method of method Sollie\LaravelIdeHelper\Method::initClassDefinedProperties() expects ReflectionMethod, ReflectionFunctionAbstract given.'
 			identifier: argument.type
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Parameter \#1 \$method of method Sollie\\LaravelIdeHelper\\Method\:\:initPhpDoc\(\) expects ReflectionMethod, ReflectionFunctionAbstract given\.$#'
+			rawMessage: 'Parameter #1 $method of method Sollie\LaravelIdeHelper\Method::initPhpDoc() expects ReflectionMethod, ReflectionFunctionAbstract given.'
 			identifier: argument.type
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$classAliases has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$classAliases has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$declaringClassName has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$declaringClassName has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$interfaces has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$interfaces has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$method \(ReflectionMethod\) does not accept ReflectionFunctionAbstract\.$#'
+			rawMessage: 'Property Sollie\LaravelIdeHelper\Method::$method (ReflectionMethod) does not accept ReflectionFunctionAbstract.'
 			identifier: assign.propertyType
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$name has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$name has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$namespace has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$namespace has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$output has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$output has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$params has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$params has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$params_with_default has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$params_with_default has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$real_name has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$real_name has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$return has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$return has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Method\:\:\$root has no type specified\.$#'
+			rawMessage: Property Sollie\LaravelIdeHelper\Method::$root has no type specified.
 			identifier: missingType.property
 			count: 1
 			path: src/Method.php
 
 		-
-			message: '#^Method Sollie\\LaravelIdeHelper\\Parsers\\PhpDocReturnTypeParser\:\:__construct\(\) has parameter \$namespaceAliases with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method Sollie\LaravelIdeHelper\Parsers\PhpDocReturnTypeParser::__construct() has parameter $namespaceAliases with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Parsers/PhpDocReturnTypeParser.php
 
 		-
-			message: '#^Property Sollie\\LaravelIdeHelper\\Parsers\\PhpDocReturnTypeParser\:\:\$namespaceAliases type has no value type specified in iterable type array\.$#'
+			rawMessage: 'Offset 2 on array{non-falsy-string, non-empty-string, non-falsy-string} on left side of ?? always exists and is not nullable.'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Parsers/PhpDocReturnTypeParser.php
+
+		-
+			rawMessage: Property Sollie\LaravelIdeHelper\Parsers\PhpDocReturnTypeParser::$namespaceAliases type has no value type specified in iterable type array.
 			identifier: missingType.iterableValue
+			count: 1
+			path: src/Parsers/PhpDocReturnTypeParser.php
+
+		-
+			rawMessage: 'Strict comparison using === between 3 and 1 will always evaluate to false.'
+			identifier: identical.alwaysFalse
 			count: 1
 			path: src/Parsers/PhpDocReturnTypeParser.php
