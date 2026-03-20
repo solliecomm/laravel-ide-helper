@@ -12,7 +12,7 @@ on:
 
 jobs:
     php-laravel-integration-tests:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-24.04
         timeout-minutes: 15
         env:
             COMPOSER_NO_INTERACTION: 1
@@ -25,7 +25,7 @@ jobs:
         name: P${{ matrix.php }} - Laravel${{ matrix.laravel }}
         steps:
             -   name: Checkout code
-                uses: actions/checkout@v4
+                uses: actions/checkout@v6
                 with:
                     path: src
 
