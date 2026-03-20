@@ -21,9 +21,11 @@ use Barryvdh\Reflection\DocBlock\Tag\ParamTag;
 use Carbon\CarbonImmutable;
 use Composer\ClassMapGenerator\ClassMapGenerator;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Contracts\Database\Eloquent\CastsInboundAttributes;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\ArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsCollection;
@@ -47,6 +49,7 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Str;
 use ReflectionClass;
 use ReflectionFunction;
@@ -178,8 +181,8 @@ class ModelsCommand extends Command
             }
         }
 
-        $this->dateClass = class_exists(\Illuminate\Support\Facades\Date::class)
-            ? '\\'.get_class(\Illuminate\Support\Facades\Date::now())
+        $this->dateClass = class_exists(Date::class)
+            ? '\\'.get_class(Date::now())
             : '\Illuminate\Support\Carbon';
 
         $content = $this->generateDocs($model, $ignore);
@@ -1021,7 +1024,7 @@ class ModelsCommand extends Command
     {
         // Loop through the default values for parameters, and make the correct output string
         $paramsWithDefault = [];
-        /** @var \ReflectionParameter $param */
+        /** @var ReflectionParameter $param */
         foreach ($method->getParameters() as $param) {
             $paramStr = $param->isVariadic() ? '...$'.$param->getName() : '$'.$param->getName();
 
@@ -1254,7 +1257,7 @@ class ModelsCommand extends Command
         $traits = class_uses_recursive($model);
         if (in_array('Illuminate\\Database\\Eloquent\\SoftDeletes', $traits)) {
             $modelName = $this->getClassNameInDestinationFile($model, get_class($model));
-            $builder = $this->getClassNameInDestinationFile($model, \Illuminate\Database\Eloquent\Builder::class);
+            $builder = $this->getClassNameInDestinationFile($model, Builder::class);
             $this->setMethod('withTrashed', $builder.'<'.$modelName.'>', []);
             $this->setMethod('withoutTrashed', $builder.'<'.$modelName.'>', []);
             $this->setMethod('onlyTrashed', $builder.'<'.$modelName.'>', []);
@@ -1587,7 +1590,7 @@ class ModelsCommand extends Command
     /**
      * @param  Model  $model
      *
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws BindingResolutionException
      * @throws \RuntimeException
      */
     protected function runModelHooks($model): void

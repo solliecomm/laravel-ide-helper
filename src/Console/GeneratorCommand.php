@@ -12,8 +12,10 @@
 
 namespace Sollie\LaravelIdeHelper\Console;
 
+use Illuminate\Config\Repository;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\View\Factory;
 use Sollie\LaravelIdeHelper\Eloquent;
 use Sollie\LaravelIdeHelper\Generator;
 use Symfony\Component\Console\Input\InputArgument;
@@ -40,20 +42,20 @@ class GeneratorCommand extends Command
      */
     protected $description = 'Generate a new IDE Helper file.';
 
-    /** @var \Illuminate\Config\Repository */
+    /** @var Repository */
     protected $config;
 
     /** @var Filesystem */
     protected $files;
 
-    /** @var \Illuminate\View\Factory */
+    /** @var Factory */
     protected $view;
 
     protected $onlyExtend;
 
     /**
-     * @param  \Illuminate\Config\Repository  $config
-     * @param  \Illuminate\View\Factory  $view
+     * @param  Repository  $config
+     * @param  Factory  $view
      */
     public function __construct(
         /* ConfigRepository */

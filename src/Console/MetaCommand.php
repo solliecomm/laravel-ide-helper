@@ -13,6 +13,9 @@
 namespace Sollie\LaravelIdeHelper\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Contracts\View\Factory;
 use RuntimeException;
 use Sollie\LaravelIdeHelper\Factories;
 use Symfony\Component\Console\Input\InputOption;
@@ -39,13 +42,13 @@ class MetaCommand extends Command
      */
     protected $description = 'Generate metadata for PhpStorm';
 
-    /** @var \Illuminate\Contracts\Filesystem\Filesystem */
+    /** @var Filesystem */
     protected $files;
 
-    /** @var \Illuminate\Contracts\View\Factory */
+    /** @var Factory */
     protected $view;
 
-    /** @var \Illuminate\Contracts\Config\Repository */
+    /** @var Repository */
     protected $config;
 
     protected $methods = [
@@ -63,9 +66,9 @@ class MetaCommand extends Command
     ];
 
     /**
-     * @param  \Illuminate\Contracts\Filesystem\Filesystem  $files
-     * @param  \Illuminate\Contracts\View\Factory  $view
-     * @param  \Illuminate\Contracts\Config\Repository  $config
+     * @param  Filesystem  $files
+     * @param  Factory  $view
+     * @param  Repository  $config
      */
     public function __construct($files, $view, $config)
     {

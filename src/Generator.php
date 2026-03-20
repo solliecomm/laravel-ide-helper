@@ -12,20 +12,22 @@
 
 namespace Sollie\LaravelIdeHelper;
 
+use Illuminate\Config\Repository;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
+use Illuminate\View\Factory;
 use ReflectionClass;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Generator
 {
-    /** @var \Illuminate\Config\Repository */
+    /** @var Repository */
     protected $config;
 
-    /** @var \Illuminate\View\Factory */
+    /** @var Factory */
     protected $view;
 
     /** @var OutputInterface */
@@ -37,8 +39,8 @@ class Generator
     protected $helpers;
 
     /**
-     * @param  \Illuminate\Config\Repository  $config
-     * @param  \Illuminate\View\Factory  $view
+     * @param  Repository  $config
+     * @param  Factory  $view
      * @param  string  $helpers
      */
     public function __construct(

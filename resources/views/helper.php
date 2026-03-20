@@ -1,8 +1,12 @@
-<?= '<?php' ?>
+<?php
+
+use Sollie\LaravelIdeHelper\Alias;
+
+?><?= '<?php' ?>
 <?php
 /**
- * @var \Sollie\LaravelIdeHelper\Alias[][] $namespaces_by_alias_ns
- * @var \Sollie\LaravelIdeHelper\Alias[][] $namespaces_by_extends_ns
+ * @var Alias[][] $namespaces_by_alias_ns
+ * @var Alias[][] $namespaces_by_extends_ns
  * @var bool $include_fluent
  * @var string $helpers
  */
