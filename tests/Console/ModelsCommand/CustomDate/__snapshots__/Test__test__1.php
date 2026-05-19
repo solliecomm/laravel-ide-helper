@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<CustomDate> query()
  * @method static \Illuminate\Database\Eloquent\Builder<CustomDate> whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<CustomDate> whereUpdatedAt($value)
- * @mixin \Eloquent
  */
 class CustomDate extends Model
 {

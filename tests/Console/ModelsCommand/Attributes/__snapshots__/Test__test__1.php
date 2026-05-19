@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<BackedAttribute> whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder<BackedAttribute> whereNameRead($value)
  * @method static \Illuminate\Database\Eloquent\Builder<BackedAttribute> whereNameWrite($value)
- * @mixin \Eloquent
  */
 class BackedAttribute extends Model
 {
@@ -100,7 +99,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> query()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> whereId($value)
- * @mixin \Eloquent
  */
 class Simple extends Model
 {

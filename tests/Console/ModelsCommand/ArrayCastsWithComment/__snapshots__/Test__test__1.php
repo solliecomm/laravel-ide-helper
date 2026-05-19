@@ -68,7 +68,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<ArrayCastsWithComment> whereCastToReal($value)
  * @method static \Illuminate\Database\Eloquent\Builder<ArrayCastsWithComment> whereCastToString($value)
  * @method static \Illuminate\Database\Eloquent\Builder<ArrayCastsWithComment> whereCastToTimestamp($value)
- * @mixin \Eloquent
  */
 class ArrayCastsWithComment extends Model
 {

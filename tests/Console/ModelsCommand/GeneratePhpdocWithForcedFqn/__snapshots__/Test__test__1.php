@@ -160,7 +160,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder<\Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithForcedFqn\Models\Post> whereYearNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<\Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithForcedFqn\Models\Post> withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<\Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithForcedFqn\Models\Post> withoutTrashed()
- * @mixin \Eloquent
  */
 class Post extends Model
 {

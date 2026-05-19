@@ -167,7 +167,6 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithExtern
  * @method static PostExternalQueryBuilder<Post> withTestCommand(\Sollie\LaravelIdeHelper\Console\ModelsCommand $testCommand)
  * @method static PostExternalQueryBuilder<Post> withTheNumber(int|null $number)
  * @method static PostExternalQueryBuilder<Post> withTheNumberDifferently(int|null $number)
- * @mixin \Eloquent
  */
 class Post extends Model
 {

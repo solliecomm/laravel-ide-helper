@@ -48,7 +48,6 @@ use Illuminate\Support\Collection;
  * @method static \Illuminate\Database\Eloquent\Builder<AdvancedCast> whereCastToImmutableDate($value)
  * @method static \Illuminate\Database\Eloquent\Builder<AdvancedCast> whereCastToImmutableDatetime($value)
  * @method static \Illuminate\Database\Eloquent\Builder<AdvancedCast> whereCastToTimestamp($value)
- * @mixin \Eloquent
  */
 class AdvancedCast extends Model
 {

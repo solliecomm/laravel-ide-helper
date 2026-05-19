@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 --------------
 
+2026-05-19, 6.1.0
+------------------
+
+### Changed
+
+- Stop appending `@mixin \Eloquent` to every model docblock.
+
 2026-03-20, 6.0.0
 ------------------
 

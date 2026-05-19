@@ -17,7 +17,6 @@ use Illuminate\Database\Query\Builder;
  * @method static \Illuminate\Database\Eloquent\Builder<UnionTypeModel> query()
  * @method static \Illuminate\Database\Eloquent\Builder<UnionTypeModel> withNullableUnionTypeParameter(string|int|null $bar)
  * @method static \Illuminate\Database\Eloquent\Builder<UnionTypeModel> withUnionTypeParameter(string|int $bar)
- * @mixin \Eloquent
  */
 class UnionTypeModel extends Model
 {

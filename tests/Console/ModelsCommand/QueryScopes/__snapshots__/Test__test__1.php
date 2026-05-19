@@ -157,7 +157,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\QueryScopes\Models
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereUuidNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereYearNotNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereYearNullable($value)
- * @mixin \Eloquent
  */
 class Post extends PostParent
 {
@@ -207,7 +206,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<PostParent> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<PostParent> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<PostParent> query()
- * @mixin \Eloquent
  */
 class PostParent extends Model
 {

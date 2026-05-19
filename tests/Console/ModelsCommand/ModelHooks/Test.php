@@ -79,7 +79,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> query()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> whereId($value)
- * @mixin \Eloquent
  * @phpstorm-ignore argument.type
  */
 class Simple extends Model

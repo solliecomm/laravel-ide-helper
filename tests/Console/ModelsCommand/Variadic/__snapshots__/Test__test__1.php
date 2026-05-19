@@ -15,7 +15,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder<Simple> whereId($value)
  * @method static Builder<Simple> whereTypedVariadic(int ...$values)
  * @method static Builder<Simple> whereVariadic(...$values)
- * @mixin \Eloquent
  */
 class Simple extends Model
 {

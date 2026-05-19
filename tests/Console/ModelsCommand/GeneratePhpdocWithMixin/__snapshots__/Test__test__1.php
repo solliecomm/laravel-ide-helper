@@ -50,7 +50,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWith
  * @method static \Illuminate\Database\Eloquent\Builder<FinalPost> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<FinalPost> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<FinalPost> query()
- * @mixin \Eloquent
  */
 	#[\AllowDynamicProperties]
 	final class IdeHelperFinalPost {}
@@ -205,7 +204,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWith
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereUuidNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereYearNotNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereYearNullable($value)
- * @mixin \Eloquent
  */
 	#[\AllowDynamicProperties]
 	class IdeHelperPost {}

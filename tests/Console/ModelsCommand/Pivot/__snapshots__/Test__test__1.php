@@ -14,7 +14,6 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Pivot\Models\Pivots\Cust
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithPivot> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithPivot> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<ModelWithPivot> query()
- * @mixin \Eloquent
  */
 class ModelWithPivot extends Model
 {
@@ -37,7 +36,6 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  * @method static \Illuminate\Database\Eloquent\Builder<CustomPivot> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<CustomPivot> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<CustomPivot> query()
- * @mixin \Eloquent
  */
 class CustomPivot extends Pivot
 {

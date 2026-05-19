@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @method static \Illuminate\Database\Eloquent\Builder<Morphs> whereNullableRelationMorphToType($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Morphs> whereRelationMorphToId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Morphs> whereRelationMorphToType($value)
- * @mixin \Eloquent
  */
 class Morphs extends Model
 {

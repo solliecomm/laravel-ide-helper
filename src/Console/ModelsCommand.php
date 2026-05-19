@@ -918,19 +918,6 @@ class ModelsCommand extends Command
             $phpdoc->appendTag($tag);
         }
 
-        if ($this->write) {
-            $eloquentClassNameInModel = $this->getClassNameInDestinationFile($reflection, 'Eloquent');
-
-            // remove the already existing tag to prevent duplicates
-            foreach ($phpdoc->getTagsByName('mixin') as $tag) {
-                if ($tag->getContent() === $eloquentClassNameInModel) {
-                    $phpdoc->deleteTag($tag);
-                }
-            }
-
-            $phpdoc->appendTag(Tag::createInstance('@mixin '.$eloquentClassNameInModel, $phpdoc));
-        }
-
         if ($this->phpstorm_noinspections) {
             /**
              * Facades, Eloquent API

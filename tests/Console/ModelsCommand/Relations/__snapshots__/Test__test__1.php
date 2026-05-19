@@ -25,7 +25,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereNotNullColumnWithNoForeignKeyConstraint($value)
  * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereNullableColumnWithForeignKeyConstraint($value)
  * @method static \Illuminate\Database\Eloquent\Builder<BelongsToVariation> whereNullableColumnWithNoForeignKeyConstraint($value)
- * @mixin \Eloquent
  */
 class BelongsToVariation extends Model
 {
@@ -101,7 +100,6 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\Relations\Traits\HasTest
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> query()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> whereId($value)
- * @mixin \Eloquent
  */
 class Simple extends Model
 {

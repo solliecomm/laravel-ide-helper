@@ -155,7 +155,6 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateBasicPhpDocWithE
  * @method static Builder<Post> whereUuidNullable($value)
  * @method static Builder<Post> whereYearNotNullable($value)
  * @method static Builder<Post> whereYearNullable($value)
- * @mixin \Eloquent
  */
 class Post extends Model
 {

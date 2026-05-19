@@ -152,7 +152,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereUuidNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereYearNotNullable($value)
  * @method static \Illuminate\Database\Eloquent\Builder<Post> whereYearNullable($value)
- * @mixin \Eloquent
  */
 class Post extends Model
 {

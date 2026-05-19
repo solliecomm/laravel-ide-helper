@@ -16,7 +16,6 @@ use Iterator;
  * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> query()
  * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> withIntersectionTypeParameter((\Iterator&\Countable) $bar)
  * @method static \Illuminate\Database\Eloquent\Builder<IntersectionTypeModel> withNullableIntersectionTypeParameter(?(\Iterator&\Countable) $bar)
- * @mixin \Eloquent
  */
 class IntersectionTypeModel extends Model
 {

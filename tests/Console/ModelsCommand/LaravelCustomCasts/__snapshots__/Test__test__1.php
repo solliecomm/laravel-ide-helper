@@ -70,7 +70,6 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\LaravelCustomCasts\Casts
  * @method static \Illuminate\Database\Eloquent\Builder<CustomCast> whereCastedPropertyWithoutReturnType($value)
  * @method static \Illuminate\Database\Eloquent\Builder<CustomCast> whereExtendedCastedPropertyWithStaticReturnDocblock($value)
  * @method static \Illuminate\Database\Eloquent\Builder<CustomCast> whereExtendedCastedPropertyWithThisReturnDocblock($value)
- * @mixin \Eloquent
  */
 class CustomCast extends Model
 {

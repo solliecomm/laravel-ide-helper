@@ -15,7 +15,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static \Illuminate\Database\Eloquent\Builder<Dynamic> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Dynamic> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Dynamic> query()
- * @mixin \Eloquent
  */
 class Dynamic extends Model
 {

@@ -75,7 +75,6 @@ namespace Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GenerateMixinColle
  * @method static \Illuminate\Database\Eloquent\Builder<WithCollection> newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<WithCollection> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<WithCollection> query()
- * @mixin \Eloquent
  */
 	#[\AllowDynamicProperties]
 	class IdeHelperWithCollection {}

@@ -166,7 +166,6 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithFqn\Ca
  * @method static EloquentBuilder<Post> whereYearNullable($value)
  * @method static EloquentBuilder<Post> withTrashed()
  * @method static EloquentBuilder<Post> withoutTrashed()
- * @mixin Eloquent
  */
 class Post extends Model
 {

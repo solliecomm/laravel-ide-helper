@@ -68,7 +68,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<SimpleCast> whereCastToReal($value)
  * @method static \Illuminate\Database\Eloquent\Builder<SimpleCast> whereCastToString($value)
  * @method static \Illuminate\Database\Eloquent\Builder<SimpleCast> whereCastToTimestamp($value)
- * @mixin \Eloquent
  */
 class SimpleCast extends Model
 {

@@ -18,7 +18,6 @@ use Sollie\LaravelIdeHelper\Tests\Console\ModelsCommand\CustomCollection\Collect
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> query()
  * @method static \Illuminate\Database\Eloquent\Builder<Simple> whereId($value)
- * @mixin \Eloquent
  */
 class Simple extends Model
 {
